@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Xolvyn — AI-powered codebase intelligence | getxolvyn.com</title>
+<meta name="description" content="Xolvyn gives your engineering team AI-powered visibility into any codebase. Dependency maps, security audits, and instant onboarding in minutes.">
+<meta property="og:title" content="Xolvyn — AI-powered codebase intelligence">
+<meta property="og:description" content="Dependency maps, security audits, and instant onboarding for engineering teams.">
+<meta property="og:image" content="https://getxolvyn.com/og-image.png">
+<!-- TODO: Create 1200×630 OG image before launch -->
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%230A0A0A' width='32' height='32' rx='8'/><circle fill='%233B82F6' cx='16' cy='16' r='6'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+<div class="container">
+  <a href="#" class="nav-logo"><span class="dot"></span>Xolvyn</a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-cta"><a href="#waitlist" class="btn btn-primary">Join Waitlist</a></div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mobile-menu">
+  <a href="#features">Features</a>
+  <a href="#how">How it works</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a href="#waitlist">Join Waitlist</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="container hero-content">
+  <div class="hero-badge"><span class="badge-dot"></span>Launching Soon</div>
+  <h1>Your codebase,<br><span class="text-blue">finally understood.</span></h1>
+  <p class="hero-sub">Xolvyn maps your dependencies, audits your security, and gives every engineer an AI mentor that knows your entire architecture — in minutes.</p>
+  <div class="hero-ctas">
+    <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist &rarr;</a>
+    <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+  </div>
+  <p class="hero-social">Built by engineers who've shipped at scale.</p>
+
+  <div class="dep-graph fade-up">
+    <span class="graph-label mono">// xolvyn — scanning repo: monorepo-prod</span>
+    <span class="graph-stats mono">14 modules · 3 CVEs · 2 circular deps</span>
+    <svg id="graph-lines"></svg>
+    <div class="graph-node node-blue" style="top:12%;left:8%;animation-delay:0s">auth.service.ts</div>
+    <div class="graph-node node-blue" style="top:8%;left:38%;animation-delay:0.1s">jwt.middleware.ts</div>
+    <div class="graph-node node-green" style="top:16%;left:65%;animation-delay:0.2s">user.model.ts</div>
+    <div class="graph-node node-green" style="top:40%;left:5%;animation-delay:0.3s">db.config.ts</div>
+    <div class="graph-node node-blue" style="top:50%;left:35%;animation-delay:0.4s">payment.service.ts</div>
+    <div class="graph-node node-red" style="top:45%;left:68%;animation-delay:0.5s">lodash@3.2.1 &#9888; CVE</div>
+    <div class="graph-node node-amber" style="top:70%;left:18%;animation-delay:0.6s">circular dep</div>
+    <div class="graph-node node-blue" style="top:72%;left:52%;animation-delay:0.7s">redis.client.ts</div>
+    <div class="graph-node node-gray" style="top:80%;left:78%;animation-delay:0.8s">config.ts</div>
+  </div>
+</div>
+<div class="scroll-indicator">&darr;</div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="section" id="problems">
+<div class="container">
+  <div class="section-label fade-up">// THE PROBLEM</div>
+  <h2 class="section-title fade-up">Why engineering teams struggle with codebase visibility.</h2>
+  <p class="section-sub fade-up">These four problems cost engineering teams thousands of hours every year.</p>
+  <div class="pain-grid">
+    <div class="pain-card fade-up">
+      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="8" width="32" height="24" rx="4"/><line x1="14" y1="16" x2="26" y2="16"/><line x1="14" y1="22" x2="22" y2="22"/><circle cx="10" cy="28" r="2"/></svg>
+      <h3>Onboarding takes 3 weeks</h3>
+      <p>New engineers spend their first weeks reading code instead of shipping it. Nobody has time to explain the architecture. Tribal knowledge lives in Slack threads.</p>
+    </div>
+    <div class="pain-card fade-up">
+      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="14" r="6"/><line x1="20" y1="20" x2="10" y2="34"/><line x1="20" y1="20" x2="30" y2="34"/><line x1="20" y1="20" x2="20" y2="36"/></svg>
+      <h3>Nobody knows what depends on what</h3>
+      <p>One change breaks three services in production. The dependency graph lives in someone's head and that person is on holiday. Sound familiar?</p>
+    </div>
+    <div class="pain-card fade-up">
+      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 4L34 12v16L20 36 6 28V12z"/><line x1="20" y1="18" x2="20" y2="24"/><circle cx="20" cy="28" r="1.5" fill="currentColor"/></svg>
+      <h3>Security issues hide in plain sight</h3>
+      <p>Vulnerable packages sit in your codebase for months. You find out from a CVE alert at 2am, not from your own tooling.</p>
+    </div>
+    <div class="pain-card fade-up">
+      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="28" height="28" rx="4"/><line x1="12" y1="28" x2="12" y2="18"/><line x1="20" y1="28" x2="20" y2="14"/><line x1="28" y1="28" x2="28" y2="10"/></svg>
+      <h3>Tech debt is invisible until it's critical</h3>
+      <p>You know it's slowing the team down but you can't quantify it. Without data, you can't justify fixing it to leadership.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+<div class="container">
+  <div class="section-label fade-up">// WHAT XOLVYN DOES</div>
+  <h2 class="section-title fade-up">AI-powered codebase intelligence tools.</h2>
+  <p class="section-sub fade-up">Six tools for dependency mapping, security auditing, and team onboarding — zero config.</p>
+  <div class="feature-grid">
+    <div class="feature-card fade-up">
+      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="4"/><circle cx="26" cy="10" r="4"/><circle cx="18" cy="26" r="4"/><line x1="13" y1="12" x2="16" y2="23"/><line x1="23" y1="12" x2="20" y2="23"/><line x1="14" y1="10" x2="22" y2="10"/></svg>
+      <h3>Dependency Graph</h3>
+      <p>Parses your repository's AST to build a live, interactive dependency map. Layer-colored nodes, animated data flow edges, progressive disclosure — click to expand.</p>
+      <div class="terminal">$ xolvyn scan --repo my-app<br>&gt; 47 modules mapped, 89 edges</div>
+    </div>
+    <div class="feature-card fade-up">
+      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#22C55E" stroke-width="1.5"><path d="M18 4L30 10v12c0 6-12 10-12 10S6 28 6 22V10z"/><polyline points="13,18 17,22 24,14"/></svg>
+      <h3>Security Audit</h3>
+      <p>Runs 50+ security checks across all files. Detects hardcoded secrets, injection vectors, unsafe functions, and OWASP patterns. Letter grade with file-by-file breakdown.</p>
+      <div class="terminal">$ xolvyn audit<br>&gt; Score: B+ (78/100) — 3 findings</div>
+    </div>
+    <div class="feature-card fade-up">
+      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#A78BFA" stroke-width="1.5"><circle cx="18" cy="12" r="6"/><path d="M8 32c0-6 4-10 10-10s10 4 10 10"/><circle cx="28" cy="8" r="3"/><line x1="28" y1="5" x2="28" y2="11"/><line x1="25" y1="8" x2="31" y2="8"/></svg>
+      <h3>AI Mentor</h3>
+      <p>Unlike generic AI, @mentor is powered by your actual dependency graph. It knows which files import what and can guide new engineers through the codebase in minutes.</p>
+      <div class="terminal">&gt; Where is the auth logic?<br>&gt; lib/supabase/server.ts → 3 routes</div>
+    </div>
+    <div class="feature-card fade-up">
+      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#F97316" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><circle cx="24" cy="24" r="4"/><path d="M16 12h8v8"/><line x1="12" y1="16" x2="12" y2="28"/><line x1="24" y1="8" x2="24" y2="20"/></svg>
+      <h3>PR Impact Analysis</h3>
+      <p>Simulate the blast radius of any pull request. See which modules are directly modified, which downstream dependencies are affected, and which stay safe.</p>
+      <div class="terminal">&gt; PR #42: 1 modified, 3 impacted<br>&gt; 12 modules safe &#10003;</div>
+    </div>
+    <div class="feature-card fade-up">
+      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#38BDF8" stroke-width="1.5"><rect x="4" y="6" width="28" height="24" rx="3"/><line x1="4" y1="12" x2="32" y2="12"/><line x1="14" y1="12" x2="14" y2="30"/><rect x="18" y="16" width="10" height="3" rx="1"/><rect x="18" y="22" width="8" height="3" rx="1"/></svg>
+      <h3>VS Code Extension</h3>
+      <p>Install the Xolvyn extension and bring architecture maps, security auditing, and AI mentoring directly into your editor. One-click scan from the command palette.</p>
+      <div class="terminal">&gt; Xolvyn: Scan Project<br>&gt; Architecture map loaded &#10003;</div>
+    </div>
+    <div class="feature-card fade-up">
+      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#14B8A6" stroke-width="1.5"><rect x="6" y="4" width="24" height="28" rx="3"/><line x1="12" y1="12" x2="24" y2="12"/><line x1="12" y1="18" x2="24" y2="18"/><line x1="12" y1="24" x2="20" y2="24"/></svg>
+      <h3>Instant Onboarding Kit</h3>
+      <p>Auto-generates architecture docs, module summaries, and "start here" guides tailored to any new engineer's role. Cut ramp time from weeks to days.</p>
+      <div class="terminal">$ xolvyn onboard --role=backend<br>&gt; Onboarding kit ready (12 pages)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section" id="who">
+<div class="container">
+  <div class="section-label fade-up">// WHO IT'S FOR</div>
+  <h2 class="section-title fade-up">Codebase intelligence for CTOs and engineers.</h2>
+  <div class="who-grid fade-up">
+    <div class="who-col">
+      <span class="who-badge blue">For CTOs &amp; Eng Leaders</span>
+      <h3>Visibility you've never had into your own codebase.</h3>
+      <ul>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Justify refactoring with real complexity and coupling data</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Cut new hire ramp time from 3 weeks to 4 days — with proof</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Reduce 2am security incidents from undetected CVEs</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Understand your entire stack without reading 200,000 lines of code</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Export audit reports for SOC2, ISO 27001 compliance reviews</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Give your team a shared source of truth that updates automatically</li>
+      </ul>
+    </div>
+    <div class="who-col">
+      <span class="who-badge green">For Engineers</span>
+      <h3>Ship with confidence, not fear.</h3>
+      <ul>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Know the exact blast radius before every change you make</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Understand a completely unfamiliar module in under 5 minutes</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Find circular dependencies before they cause production bugs</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Ask the codebase questions in plain English and get real answers</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Auto-generate architecture docs for your PRs — stop writing them manually</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Spot vulnerable dependencies in your PR before your security team does</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- METRICS -->
+<section class="section" id="metrics">
+<div class="container">
+  <div class="section-label fade-up">// BY THE NUMBERS</div>
+  <h2 class="section-title fade-up">Codebase analysis performance benchmarks.</h2>
+  <p class="section-sub fade-up">Projected benchmarks from early alpha testing.</p>
+  <div class="metrics-grid fade-up">
+    <div class="metric-card">
+      <div class="number counter" data-target="5" data-suffix="x">0</div>
+      <div class="label">Faster engineer onboarding vs. team baseline</div>
+    </div>
+    <div class="metric-card">
+      <div class="number counter" data-target="73" data-suffix="%">0</div>
+      <div class="label">Of teams found critical CVEs on their first scan</div>
+    </div>
+    <div class="metric-card">
+      <div class="number counter" data-target="60" data-prefix="< " data-suffix="s">0</div>
+      <div class="label">To generate a full dependency map of any repo</div>
+    </div>
+  </div>
+  <div class="terminal-block fade-up">
+    <div class="cmd">$ xolvyn scan --repo monorepo-prod</div>
+    <br>
+    <div>&nbsp;&nbsp;Scanning 847 files across 23 modules...</div>
+    <br>
+    <div class="ok">&nbsp;&nbsp;&#10003; Dependency graph built &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.3s]</div>
+    <div class="ok">&nbsp;&nbsp;&#10003; CVE database checked &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.1s]</div>
+    <div class="warn">&nbsp;&nbsp;&#9888; 3 critical vulnerabilities found</div>
+    <div class="warn">&nbsp;&nbsp;&#9888; 2 circular dependencies detected</div>
+    <div class="ok">&nbsp;&nbsp;&#10003; Onboarding kit generated &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.8s]</div>
+    <br>
+    <div>&nbsp;&nbsp;View full report &rarr; getxolvyn.com/report/preview</div>
+  </div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+<div class="container">
+  <div class="section-label fade-up">// HOW IT WORKS</div>
+  <h2 class="section-title fade-up">How to analyze your codebase in 3 steps.</h2>
+  <p class="section-sub fade-up">Three steps. Zero config. Instant intelligence.</p>
+  <div class="steps fade-up">
+    <div class="step">
+      <span class="step-watermark">01</span>
+      <div class="step-icon blue">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="step-num blue">01 / Connect</div>
+      <h3>Paste a repository URL</h3>
+      <p>GitHub or GitLab — public or private. No configuration or YAML files needed. Works with monorepos and multi-repo setups.</p>
+      <div class="code-pill">github.com/yourorg/repo &#10003; connected</div>
+    </div>
+    <div class="step">
+      <span class="step-watermark">02</span>
+      <div class="step-icon mauve">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="step-num mauve">02 / Analyze</div>
+      <h3>Xolvyn analyzes your codebase</h3>
+      <p>We shallow-clone, parse the AST, map dependencies, and run 50+ security checks. All in-memory, instantly deleted.</p>
+      <div class="code-pill">scanning... 847 files <span class="progress-bar"><span class="progress-fill" style="width:84%"></span></span> 84%</div>
+    </div>
+    <div class="step">
+      <span class="step-watermark">03</span>
+      <div class="step-icon green">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="step-num green">03 / Ship</div>
+      <h3>Explore the interactive results</h3>
+      <p>Navigate the dependency map, review security findings, chat with @mentor, and invite your team. Updates on every push.</p>
+      <div class="code-pill">onboarding kit ready — share link &rarr;</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TESTIMONIALS (replaced with waitlist CTA until real quotes are collected) -->
+<section class="section" id="testimonials">
+<div class="container" style="text-align:center">
+  <div class="section-label fade-up">// FROM THE COMMUNITY</div>
+  <h2 class="section-title fade-up">Real feedback from beta engineers — coming soon.</h2>
+  <p class="section-sub fade-up" style="margin:0 auto 32px">We're onboarding our first beta users now. Real feedback from real engineers will appear here as we collect it.</p>
+  <a href="#waitlist" class="btn btn-primary fade-up">Join the beta &rarr;</a>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+<div class="container">
+  <div class="section-label fade-up">// PRICING</div>
+  <h2 class="section-title fade-up">Pricing plans for teams of every size.</h2>
+  <p class="section-sub fade-up">Start free. Scale when your team does.</p>
+  <div class="pricing-simple fade-up">
+    <div class="pricing-tiers">
+      <div class="pricing-pill">
+        <span class="tier-name">Free</span> — <span class="tier-price">$0</span> <span>for solo devs &amp; open source</span>
+      </div>
+      <div class="pricing-pill featured">
+        <span class="tier-name">Team</span> — <span class="tier-price">from $49/mo</span> <span>for growing teams</span>
+      </div>
+      <div class="pricing-pill">
+        <span class="tier-name">Enterprise</span> — <span>custom pricing on request</span>
+      </div>
+    </div>
+    <a href="#waitlist" class="btn btn-primary" style="margin:0 auto">View full pricing at launch &rarr;</a>
+  </div>
+  <p class="pricing-note fade-up" style="margin-top:24px">All plans include a 14-day free trial. No credit card required.</p>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+<div class="container">
+  <div class="section-label fade-up">// QUESTIONS</div>
+  <h2 class="section-title fade-up">Frequently asked questions about Xolvyn.</h2>
+
+  <div class="faq-list fade-up">
+    <div class="faq-item">
+      <div class="faq-q">How does Xolvyn access my code?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+      <div class="faq-a"><p>Xolvyn performs a temporary shallow-clone to parse your AST — the clone is deleted immediately after analysis. We never store your source code. We analyze the dependency graph and metadata only. Your code stays where it is.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does the initial scan take?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+      <div class="faq-a"><p>Most repos scan in under 60 seconds. Large monorepos with 1M+ lines typically take 3–5 minutes. Scans after the initial one are incremental and run in seconds on each push.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it work with monorepos?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+      <div class="faq-a"><p>Yes. Xolvyn handles monorepos natively — Nx, Turborepo, Lerna, Yarn Workspaces. It maps inter-package dependencies correctly and lets you filter the graph by package or team.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which languages are supported?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+      <div class="faq-a"><p>TypeScript, JavaScript, Python, Go, Ruby, Java, and Rust are fully supported. PHP and C# are in beta. More languages ship quarterly. Check back at launch for the full language support list.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there a self-hosted or on-premise option?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+      <div class="faq-a"><p>Yes — available on the Enterprise plan. Runs entirely within your infrastructure. Supports air-gapped environments. Contact us at sales@xolvyn.com for setup details.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What happens to my data?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+      <div class="faq-a"><p>We process dependency metadata only — never source code. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). SOC2 Type II certification is in progress. Enterprise security details available on request.</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section final-cta" id="waitlist">
+<div class="container" style="text-align:center">
+  <h2 class="section-title fade-up">Get early access to Xolvyn.</h2>
+  <p class="section-sub fade-up" style="margin:0 auto 32px">Join the waitlist for AI-powered codebase intelligence. First 500 signups get free Team plan access for 6 months.</p>
+  <div class="waitlist-form fade-up" id="waitlist-form-main">
+    <input type="email" placeholder="your@email.com" id="waitlist-email">
+    <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get early access &rarr;</button>
+  </div>
+
+  <!-- Step 2: Involvement selector (hidden by default) -->
+  <div id="waitlist-step-2" style="display:none">
+    <div style="margin-bottom:8px">
+      <h3 style="font-size:22px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:8px">One more thing — how do you want to be involved?</h3>
+      <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:28px">This helps us prioritize who gets access first.</p>
+    </div>
+
+    <div class="involvement-options">
+      <!-- Option A -->
+      <label class="involvement-card" data-value="notify">
+        <input type="radio" name="involvement" value="notify">
+        <div class="involvement-radio"></div>
+        <div class="involvement-text">
+          <span class="involvement-label">Just notify me at launch</span>
+          <span class="involvement-desc">I'm curious — send me an email when Xolvyn goes live.</span>
+        </div>
+      </label>
+
+      <!-- Option B -->
+      <label class="involvement-card" data-value="beta" data-accent="#3B82F6">
+        <input type="radio" name="involvement" value="beta">
+        <div class="involvement-radio"></div>
+        <div class="involvement-text">
+          <span class="involvement-label" style="color:#60A5FA">I want to beta test</span>
+          <span class="involvement-desc">I'll give feedback and help shape the product roadmap.</span>
+        </div>
+      </label>
+
+      <!-- Option C -->
+      <label class="involvement-card" data-value="founding" data-accent="#22C55E">
+        <input type="radio" name="involvement" value="founding">
+        <div class="involvement-radio"></div>
+        <div class="involvement-text">
+          <span class="involvement-label" style="color:#4ADE80">My team is ready — I want founding access</span>
+          <span class="involvement-desc">We're ready to pay from day one. I want locked-in pricing and direct founder access.</span>
+        </div>
+      </label>
+    </div>
+
+    <button class="btn btn-primary" id="waitlist-step2-btn" onclick="handleWaitlistStep2()" disabled style="margin:24px auto 0;opacity:0.4;cursor:not-allowed">Confirm &rarr;</button>
+  </div>
+
+  <div class="waitlist-success" id="waitlist-success">&#10003; You're on the list. We'll email you at launch.</div>
+  <p class="text-muted fade-up" id="waitlist-note" style="font-size:13px;margin-top:12px">No spam. No credit card. Unsubscribe anytime.</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:8px"><span class="dot"></span>Xolvyn</div>
+      <p>AI-powered codebase intelligence.</p>
+      <p style="margin-top:16px">&copy; 2026 Xolvyn, Inc.</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#how">How it works</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#">About</a><a href="#">Blog</a><a href="#">Security</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="#">X / Twitter</a><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Discord</a><a href="#">hello@xolvyn.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">Built for engineering teams who give a damn about their codebase.</div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
