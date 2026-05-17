@@ -1,25 +1,63 @@
 // ===== NAVBAR SCROLL =====
-const navbar = document.querySelector('.navbar');
+const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// ===== MOBILE MENU =====
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  hamburger.classList.toggle('active');
+// ===== MODAL SYSTEM =====
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function closeModalIfOverlay(event, id) {
+  if (event.target.id === id) closeModal(id);
+}
+
+// Close any open modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
 });
+
+// ===== MOBILE MENU =====
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburgerBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  hamburgerBtn.classList.toggle('active');
+});
+
 document.querySelectorAll('.mobile-menu a').forEach(a => {
-  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburgerBtn.classList.remove('active');
+  });
 });
 
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
+    const href = anchor.getAttribute('href');
+    if (href === '#') return;
     e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const target = document.querySelector(href);
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
@@ -32,7 +70,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // ===== FAQ ACCORDION =====
@@ -46,17 +84,119 @@ document.querySelectorAll('.faq-q').forEach(q => {
 });
 
 // ===== WAITLIST FORM — TWO-STEP FLOW =====
-const WEB3FORMS_KEY = '8a8ee698-8c4b-42d6-974b-cdbbffcc7cc7'; // Get yours at https://web3forms.com
-
+// =====================================================================
+// EMAIL STORAGE STRATEGY
+// ---------------------------------------------------------------------
+// Current: Web3Forms (free, up to 250 submissions/month)
+//   → All submissions hit hello@xolvyn.com inbox
+//
+// MIGRATION CHECKLIST (do before/at launch):
+//   [ ] STEP 1 — Setup Google Sheet as backup destination
+//       1. Create new Google Sheet "Xolvyn Waitlist"
+//       2. Tools → Apps Script → paste a doPost() webhook handler
+//       3. Deploy as Web App → copy URL
+//       4. Add a second fetch() call below with that URL (parallel save)
+//
+//   [ ] STEP 2 — At ~100 waitlist signups, migrate to ConvertKit/Mailchimp
+//       1. Export Google Sheet as CSV
+//       2. Import into ConvertKit (free up to 1,000 subscribers)
+//       3. Replace WEB3FORMS_KEY below with ConvertKit form API endpoint
+//       4. Test submission, success message, double opt-in email
+//
+//   [ ] STEP 3 — Setup automated email sequence
+//       - Day 0: Welcome + what to expect
+//       - Day 7: Behind-the-scenes update + ask for feedback
+//       - Day 30: Reveal pricing + lock-in window for waitlist
+//       - Launch day: Early access link
+// =====================================================================
+const WEB3FORMS_KEY = '8a8ee698-8c4b-42d6-974b-cdbbffcc7cc7';
 let waitlistEmail = '';
+let selectedPlan = ''; // Captures which pricing tile was clicked
 
-// Step 1: Validate email → show involvement options
+// ===== PLAN CLAIM — from locked pricing tiles =====
+function selectPlan(planName) {
+  selectedPlan = planName;
+
+  // Visual feedback — mark the chosen tile
+  document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('plan-selected'));
+  const clickedCard = document.querySelector(`.pricing-card[data-plan="${planName}"]`);
+  if (clickedCard) {
+    clickedCard.classList.add('plan-selected');
+    const btn = clickedCard.querySelector('.btn-plan-claim');
+    if (btn) btn.innerHTML = '&#10003; Claimed — scroll down';
+  }
+
+  // Smooth scroll to waitlist
+  const waitlistEl = document.getElementById('waitlist');
+  if (waitlistEl) waitlistEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Focus the email input after scroll settles
+  setTimeout(() => {
+    const emailInput = document.getElementById('waitlist-email');
+    if (emailInput) emailInput.focus();
+  }, 700);
+
+  // Show plan banner above the form
+  showPlanBanner(planName);
+}
+
+function showPlanBanner(planName) {
+  const planLabels = {
+    free: 'Free Tier',
+    pro: 'Pro Plan',
+    business: 'Business Plan',
+    enterprise: 'Enterprise'
+  };
+  const planColors = {
+    free: '#22C55E',
+    pro: '#3B82F6',
+    business: '#22C55E',
+    enterprise: '#A78BFA'
+  };
+
+  // Remove any existing banner
+  const oldBanner = document.getElementById('plan-banner');
+  if (oldBanner) oldBanner.remove();
+
+  // Create banner
+  const banner = document.createElement('div');
+  banner.id = 'plan-banner';
+  banner.className = 'plan-banner';
+  banner.innerHTML = `
+    <span class="plan-banner-dot" style="background:${planColors[planName]}"></span>
+    <span class="plan-banner-text">Interested in <strong style="color:${planColors[planName]}">${planLabels[planName]}</strong> — claim it below</span>
+    <button class="plan-banner-close" onclick="clearPlanSelection()" aria-label="Clear selection">&times;</button>
+  `;
+
+  const form = document.getElementById('waitlist-form-main');
+  if (form && form.parentNode) form.parentNode.insertBefore(banner, form);
+}
+
+function clearPlanSelection() {
+  selectedPlan = '';
+  const banner = document.getElementById('plan-banner');
+  if (banner) banner.remove();
+  document.querySelectorAll('.pricing-card').forEach(c => {
+    c.classList.remove('plan-selected');
+    const btn = c.querySelector('.btn-plan-claim');
+    if (btn) {
+      const plan = c.dataset.plan;
+      const labels = {
+        free: 'Claim Free Tier &rarr;',
+        pro: 'Claim Pro &rarr;',
+        business: 'Claim Business &rarr;',
+        enterprise: 'Talk to Founders &rarr;'
+      };
+      btn.innerHTML = labels[plan] || 'Claim &rarr;';
+    }
+  });
+}
+
 function handleWaitlistStep1() {
   const form = document.getElementById('waitlist-form-main');
-  const input = form.querySelector('input[type="email"]');
+  const input = document.getElementById('waitlist-email');
   const email = input.value.trim();
 
-  // Validate
   if (!email || !email.includes('@') || !email.includes('.')) {
     input.style.borderColor = '#EF4444';
     input.setAttribute('placeholder', 'Please enter a valid email');
@@ -67,12 +207,10 @@ function handleWaitlistStep1() {
     return;
   }
 
-  // Store email for step 2
   waitlistEmail = email;
-
-  // Hide form, show step 2
   form.style.display = 'none';
-  document.getElementById('waitlist-note').style.display = 'none';
+  const note = document.getElementById('waitlist-note');
+  if (note) note.style.display = 'none';
   document.getElementById('waitlist-step-2').style.display = 'block';
 }
 
@@ -80,13 +218,14 @@ function handleWaitlistStep1() {
 document.addEventListener('change', (e) => {
   if (e.target.name === 'involvement') {
     const btn = document.getElementById('waitlist-step2-btn');
-    btn.disabled = false;
-    btn.style.opacity = '1';
-    btn.style.cursor = 'pointer';
+    if (btn) {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btn.style.cursor = 'pointer';
+    }
   }
 });
 
-// Step 2: Submit email + involvement intent
 async function handleWaitlistStep2() {
   const involvement = document.querySelector('input[name="involvement"]:checked');
   if (!involvement || !waitlistEmail) return;
@@ -97,10 +236,26 @@ async function handleWaitlistStep2() {
   btn.disabled = true;
 
   const intentLabels = {
-    notify: '👀 Notify at launch',
-    beta: '🧪 Beta tester',
-    founding: '🚀 Founding access (ready to pay)'
+    notify: 'Notify at launch',
+    beta: 'Beta tester',
+    founding: 'Founding access — ready to pay'
   };
+  const planLabels = {
+    free: 'Free Tier',
+    pro: 'Pro Plan',
+    business: 'Business Plan',
+    enterprise: 'Enterprise'
+  };
+
+  // Include plan selection in subject and message
+  const planSuffix = selectedPlan ? ` [${planLabels[selectedPlan]}]` : '';
+  const subject = `New Xolvyn Waitlist Signup${planSuffix}`;
+
+  let message = `Email: ${waitlistEmail}\nIntent: ${intentLabels[involvement.value]}`;
+  if (selectedPlan) {
+    message += `\nInterested Plan: ${planLabels[selectedPlan]}`;
+  }
+  message += `\nTimestamp: ${new Date().toISOString()}`;
 
   try {
     const response = await fetch('https://api.web3forms.com/submit', {
@@ -108,10 +263,10 @@ async function handleWaitlistStep2() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        subject: '🚀 New Xolvyn Waitlist Signup',
+        subject: subject,
         from_name: 'Xolvyn Waitlist',
         email: waitlistEmail,
-        message: `New waitlist signup: ${waitlistEmail}\nIntent: ${intentLabels[involvement.value] || involvement.value}\n\nTimestamp: ${new Date().toISOString()}`
+        message: message
       })
     });
 
@@ -119,16 +274,18 @@ async function handleWaitlistStep2() {
 
     if (data.success) {
       document.getElementById('waitlist-step-2').style.display = 'none';
+      const banner = document.getElementById('plan-banner');
+      if (banner) banner.remove();
       const successEl = document.getElementById('waitlist-success');
-      successEl.style.display = 'block';
+      successEl.style.display = 'flex';
 
-      // Customize success message based on intent
+      const planText = selectedPlan ? ` for <strong>${planLabels[selectedPlan]}</strong>` : '';
       if (involvement.value === 'founding') {
-        successEl.innerHTML = '&#10003; You\'re on the <strong>founding access</strong> list. A founder will reach out personally.';
+        successEl.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg> <span>You're on the <strong>founding access</strong> list${planText}. A founder will reach out directly.</span>`;
       } else if (involvement.value === 'beta') {
-        successEl.innerHTML = '&#10003; You\'re in the <strong>beta program</strong>. We\'ll reach out soon with early access.';
+        successEl.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg> <span>You're in the <strong>beta program</strong>${planText}. We'll reach out with early access soon.</span>`;
       } else {
-        successEl.innerHTML = '&#10003; You\'re on the list. We\'ll email you at launch.';
+        successEl.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg> <span>You're on the list${planText}. We'll email you at launch.</span>`;
       }
     } else {
       throw new Error('Submission failed');
@@ -141,61 +298,10 @@ async function handleWaitlistStep2() {
   }
 }
 
-// ===== COUNTER ANIMATION =====
-function animateCounters() {
-  document.querySelectorAll('.counter').forEach(el => {
-    const target = parseInt(el.dataset.target);
-    const suffix = el.dataset.suffix || '';
-    const prefix = el.dataset.prefix || '';
-    let current = 0;
-    const increment = target / 40;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = prefix + Math.floor(current) + suffix;
-    }, 30);
+// ===== EMAIL INPUT — ENTER KEY =====
+const emailInput = document.getElementById('waitlist-email');
+if (emailInput) {
+  emailInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleWaitlistStep1();
   });
 }
-const metricsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounters();
-      metricsObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-const metricsSection = document.querySelector('.metrics-grid');
-if (metricsSection) metricsObserver.observe(metricsSection);
-
-// ===== DEPENDENCY GRAPH SVG LINES =====
-function drawLines() {
-  const svg = document.getElementById('graph-lines');
-  if (!svg) return;
-  const graph = document.querySelector('.dep-graph');
-  const nodes = document.querySelectorAll('.graph-node');
-  const connections = [
-    [0,1],[0,2],[1,3],[2,3],[4,5],[4,6],[0,7],[7,8],[3,8]
-  ];
-  svg.innerHTML = '';
-  const gRect = graph.getBoundingClientRect();
-  connections.forEach(([a,b]) => {
-    const na = nodes[a], nb = nodes[b];
-    if (!na || !nb) return;
-    const ra = na.getBoundingClientRect();
-    const rb = nb.getBoundingClientRect();
-    const x1 = ra.left + ra.width/2 - gRect.left;
-    const y1 = ra.top + ra.height/2 - gRect.top;
-    const x2 = rb.left + rb.width/2 - gRect.left;
-    const y2 = rb.top + rb.height/2 - gRect.top;
-    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
-    line.setAttribute('x1',x1);line.setAttribute('y1',y1);
-    line.setAttribute('x2',x2);line.setAttribute('y2',y2);
-    line.setAttribute('stroke','#3B82F6');
-    svg.appendChild(line);
-  });
-}
-window.addEventListener('load', () => setTimeout(drawLines, 600));
-window.addEventListener('resize', drawLines);

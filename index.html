@@ -2,15 +2,115 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Xolvyn — AI-powered codebase intelligence | getxolvyn.com</title>
-<meta name="description" content="Xolvyn gives your engineering team AI-powered visibility into any codebase. Dependency maps, security audits, and instant onboarding in minutes.">
-<meta property="og:title" content="Xolvyn — AI-powered codebase intelligence">
-<meta property="og:description" content="Dependency maps, security audits, and instant onboarding for engineering teams.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="googlebot" content="index,follow">
+
+<!-- TODO: After deploying, verify domain in Google Search Console and replace this content value -->
+<meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE">
+
+<title>Xolvyn — AI Codebase Intelligence | Understand Any Codebase in Minutes</title>
+<meta name="description" content="Xolvyn is an AI-powered codebase intelligence platform. Map architecture layers, audit security vulnerabilities, auto-fix CVEs, and onboard engineers in minutes — not weeks. Join the waitlist.">
+<meta name="keywords" content="codebase intelligence, AI code mentor, dependency graph tool, code architecture visualization, codebase onboarding tool, security audit tool, code security scanner, AI for developers, AST parser, AI code review, dev tools, software architecture, codebase analysis">
+<meta name="author" content="Xolvyn">
+<link rel="canonical" href="https://getxolvyn.com">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getxolvyn.com">
+<meta property="og:title" content="Xolvyn — Understand Any Codebase in Minutes">
+<meta property="og:description" content="AI-powered architecture explorer, security auditor, and code mentor. Map dependencies, find vulnerabilities, and onboard engineers faster. Join the waitlist.">
 <meta property="og:image" content="https://getxolvyn.com/og-image.png">
-<!-- TODO: Create 1200×630 OG image before launch -->
+<meta property="og:site_name" content="Xolvyn">
+
+<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%230A0A0A' width='32' height='32' rx='8'/><circle fill='%233B82F6' cx='16' cy='16' r='6'/></svg>">
+<meta name="twitter:site" content="@xolvyn">
+<meta name="twitter:title" content="Xolvyn — AI Codebase Intelligence">
+<meta name="twitter:description" content="Map architecture, audit security, and onboard engineers in minutes. Join the waitlist.">
+<meta name="twitter:image" content="https://getxolvyn.com/og-image.png">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" href="Xolvyn_Mark.png">
+<link rel="apple-touch-icon" href="Xolvyn_Mark.png">
+
+<!-- Structured data — JSON-LD for Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Xolvyn",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web, macOS, Windows, Linux",
+  "description": "AI-powered codebase intelligence platform. Maps architecture, audits security vulnerabilities, and onboards engineers in minutes.",
+  "url": "https://getxolvyn.com",
+  "image": "https://getxolvyn.com/og-image.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/PreOrder"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xolvyn",
+    "url": "https://getxolvyn.com",
+    "logo": "https://getxolvyn.com/Xolvyn_Mark.png"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Xolvyn store or train AI on my source code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Xolvyn performs a shallow git clone, runs analysis in memory, and immediately deletes the clone. We store only computed metadata — never your actual code. Your code is never used to train any AI model, ours or third-party."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is @mentor different from ChatGPT or GitHub Copilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generic AI tools answer from general training data. Xolvyn's @mentor is grounded in your real dependency graph — it knows which files exist, how they import each other, and gives precise file paths instead of guesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which programming languages does Xolvyn support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TypeScript, JavaScript, Python, Go, and Java with full AST-level dependency mapping. Monorepo tooling like Turborepo, Nx, Lerna, and Yarn Workspaces is supported natively. PHP, Ruby, and Rust are on the roadmap."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the AI Auto-Fix Engine create Pull Requests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Xolvyn Auto-Fix Engine reads vulnerable code, generates a safe AST-aware remediation, commits it to a new branch, and opens a Pull Request through the GitHub or GitLab App. Every fix shows a confidence score and nothing merges without your review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does Xolvyn launch and how do waitlist members benefit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Xolvyn launches in 2026. Waitlist members get first access, founding-member pricing locked in for life, and direct input on the product roadmap during beta."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,397 +119,782 @@
 <body>
 
 <!-- NAV -->
-<nav class="navbar">
-<div class="container">
-  <a href="#" class="nav-logo"><span class="dot"></span>Xolvyn</a>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#how">How it works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo" aria-label="Xolvyn — home">
+      <img src="Xolvyn_Full_Lockup.png" alt="Xolvyn" class="nav-logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#waitlist" class="btn btn-primary btn-nav">Get Early Access &rarr;</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <div class="nav-cta"><a href="#waitlist" class="btn btn-primary">Join Waitlist</a></div>
-  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
 </nav>
-<div class="mobile-menu">
+
+<div class="mobile-menu" id="mobile-menu">
   <a href="#features">Features</a>
-  <a href="#how">How it works</a>
   <a href="#pricing">Pricing</a>
   <a href="#faq">FAQ</a>
-  <a href="#waitlist">Join Waitlist</a>
+  <a href="#waitlist" class="mobile-cta">Get Early Access &rarr;</a>
 </div>
 
 <!-- HERO -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" aria-label="Xolvyn — AI codebase intelligence tool">
+<div class="hero-glow-top"></div>
 <div class="container hero-content">
-  <div class="hero-badge"><span class="badge-dot"></span>Launching Soon</div>
-  <h1>Your codebase,<br><span class="text-blue">finally understood.</span></h1>
-  <p class="hero-sub">Xolvyn maps your dependencies, audits your security, and gives every engineer an AI mentor that knows your entire architecture — in minutes.</p>
-  <div class="hero-ctas">
-    <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist &rarr;</a>
-    <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
-  </div>
-  <p class="hero-social">Built by engineers who've shipped at scale.</p>
 
-  <div class="dep-graph fade-up">
-    <span class="graph-label mono">// xolvyn — scanning repo: monorepo-prod</span>
-    <span class="graph-stats mono">14 modules · 3 CVEs · 2 circular deps</span>
-    <svg id="graph-lines"></svg>
-    <div class="graph-node node-blue" style="top:12%;left:8%;animation-delay:0s">auth.service.ts</div>
-    <div class="graph-node node-blue" style="top:8%;left:38%;animation-delay:0.1s">jwt.middleware.ts</div>
-    <div class="graph-node node-green" style="top:16%;left:65%;animation-delay:0.2s">user.model.ts</div>
-    <div class="graph-node node-green" style="top:40%;left:5%;animation-delay:0.3s">db.config.ts</div>
-    <div class="graph-node node-blue" style="top:50%;left:35%;animation-delay:0.4s">payment.service.ts</div>
-    <div class="graph-node node-red" style="top:45%;left:68%;animation-delay:0.5s">lodash@3.2.1 &#9888; CVE</div>
-    <div class="graph-node node-amber" style="top:70%;left:18%;animation-delay:0.6s">circular dep</div>
-    <div class="graph-node node-blue" style="top:72%;left:52%;animation-delay:0.7s">redis.client.ts</div>
-    <div class="graph-node node-gray" style="top:80%;left:78%;animation-delay:0.8s">config.ts</div>
+  <!-- 2-segment status badge -->
+  <div class="hero-badge fade-up">
+    <span class="badge-status">
+      <span class="badge-dot"></span>
+      <span>Coming Soon</span>
+    </span>
+    <span class="badge-info">Launching August 2026</span>
   </div>
-</div>
-<div class="scroll-indicator">&darr;</div>
-</section>
 
-<!-- PAIN POINTS -->
-<section class="section" id="problems">
-<div class="container">
-  <div class="section-label fade-up">// THE PROBLEM</div>
-  <h2 class="section-title fade-up">Why engineering teams struggle with codebase visibility.</h2>
-  <p class="section-sub fade-up">These four problems cost engineering teams thousands of hours every year.</p>
-  <div class="pain-grid">
-    <div class="pain-card fade-up">
-      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="8" width="32" height="24" rx="4"/><line x1="14" y1="16" x2="26" y2="16"/><line x1="14" y1="22" x2="22" y2="22"/><circle cx="10" cy="28" r="2"/></svg>
-      <h3>Onboarding takes 3 weeks</h3>
-      <p>New engineers spend their first weeks reading code instead of shipping it. Nobody has time to explain the architecture. Tribal knowledge lives in Slack threads.</p>
-    </div>
-    <div class="pain-card fade-up">
-      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="14" r="6"/><line x1="20" y1="20" x2="10" y2="34"/><line x1="20" y1="20" x2="30" y2="34"/><line x1="20" y1="20" x2="20" y2="36"/></svg>
-      <h3>Nobody knows what depends on what</h3>
-      <p>One change breaks three services in production. The dependency graph lives in someone's head and that person is on holiday. Sound familiar?</p>
-    </div>
-    <div class="pain-card fade-up">
-      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 4L34 12v16L20 36 6 28V12z"/><line x1="20" y1="18" x2="20" y2="24"/><circle cx="20" cy="28" r="1.5" fill="currentColor"/></svg>
-      <h3>Security issues hide in plain sight</h3>
-      <p>Vulnerable packages sit in your codebase for months. You find out from a CVE alert at 2am, not from your own tooling.</p>
-    </div>
-    <div class="pain-card fade-up">
-      <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="28" height="28" rx="4"/><line x1="12" y1="28" x2="12" y2="18"/><line x1="20" y1="28" x2="20" y2="14"/><line x1="28" y1="28" x2="28" y2="10"/></svg>
-      <h3>Tech debt is invisible until it's critical</h3>
-      <p>You know it's slowing the team down but you can't quantify it. Without data, you can't justify fixing it to leadership.</p>
-    </div>
-  </div>
-</div>
-</section>
+  <!-- H1: Primary SEO keyword + emotional hook -->
+  <h1 class="fade-up">
+    Give every engineer<br>
+    <span class="text-blue">a senior partner.</span>
+  </h1>
 
-<!-- FEATURES -->
-<section class="section" id="features">
-<div class="container">
-  <div class="section-label fade-up">// WHAT XOLVYN DOES</div>
-  <h2 class="section-title fade-up">AI-powered codebase intelligence tools.</h2>
-  <p class="section-sub fade-up">Six tools for dependency mapping, security auditing, and team onboarding — zero config.</p>
-  <div class="feature-grid">
-    <div class="feature-card fade-up">
-      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="4"/><circle cx="26" cy="10" r="4"/><circle cx="18" cy="26" r="4"/><line x1="13" y1="12" x2="16" y2="23"/><line x1="23" y1="12" x2="20" y2="23"/><line x1="14" y1="10" x2="22" y2="10"/></svg>
-      <h3>Dependency Graph</h3>
-      <p>Parses your repository's AST to build a live, interactive dependency map. Layer-colored nodes, animated data flow edges, progressive disclosure — click to expand.</p>
-      <div class="terminal">$ xolvyn scan --repo my-app<br>&gt; 47 modules mapped, 89 edges</div>
-    </div>
-    <div class="feature-card fade-up">
-      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#22C55E" stroke-width="1.5"><path d="M18 4L30 10v12c0 6-12 10-12 10S6 28 6 22V10z"/><polyline points="13,18 17,22 24,14"/></svg>
-      <h3>Security Audit</h3>
-      <p>Runs 50+ security checks across all files. Detects hardcoded secrets, injection vectors, unsafe functions, and OWASP patterns. Letter grade with file-by-file breakdown.</p>
-      <div class="terminal">$ xolvyn audit<br>&gt; Score: B+ (78/100) — 3 findings</div>
-    </div>
-    <div class="feature-card fade-up">
-      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#A78BFA" stroke-width="1.5"><circle cx="18" cy="12" r="6"/><path d="M8 32c0-6 4-10 10-10s10 4 10 10"/><circle cx="28" cy="8" r="3"/><line x1="28" y1="5" x2="28" y2="11"/><line x1="25" y1="8" x2="31" y2="8"/></svg>
-      <h3>AI Mentor</h3>
-      <p>Unlike generic AI, @mentor is powered by your actual dependency graph. It knows which files import what and can guide new engineers through the codebase in minutes.</p>
-      <div class="terminal">&gt; Where is the auth logic?<br>&gt; lib/supabase/server.ts → 3 routes</div>
-    </div>
-    <div class="feature-card fade-up">
-      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#F97316" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><circle cx="24" cy="24" r="4"/><path d="M16 12h8v8"/><line x1="12" y1="16" x2="12" y2="28"/><line x1="24" y1="8" x2="24" y2="20"/></svg>
-      <h3>PR Impact Analysis</h3>
-      <p>Simulate the blast radius of any pull request. See which modules are directly modified, which downstream dependencies are affected, and which stay safe.</p>
-      <div class="terminal">&gt; PR #42: 1 modified, 3 impacted<br>&gt; 12 modules safe &#10003;</div>
-    </div>
-    <div class="feature-card fade-up">
-      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#38BDF8" stroke-width="1.5"><rect x="4" y="6" width="28" height="24" rx="3"/><line x1="4" y1="12" x2="32" y2="12"/><line x1="14" y1="12" x2="14" y2="30"/><rect x="18" y="16" width="10" height="3" rx="1"/><rect x="18" y="22" width="8" height="3" rx="1"/></svg>
-      <h3>VS Code Extension</h3>
-      <p>Install the Xolvyn extension and bring architecture maps, security auditing, and AI mentoring directly into your editor. One-click scan from the command palette.</p>
-      <div class="terminal">&gt; Xolvyn: Scan Project<br>&gt; Architecture map loaded &#10003;</div>
-    </div>
-    <div class="feature-card fade-up">
-      <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#14B8A6" stroke-width="1.5"><rect x="6" y="4" width="24" height="28" rx="3"/><line x1="12" y1="12" x2="24" y2="12"/><line x1="12" y1="18" x2="24" y2="18"/><line x1="12" y1="24" x2="20" y2="24"/></svg>
-      <h3>Instant Onboarding Kit</h3>
-      <p>Auto-generates architecture docs, module summaries, and "start here" guides tailored to any new engineer's role. Cut ramp time from weeks to days.</p>
-      <div class="terminal">$ xolvyn onboard --role=backend<br>&gt; Onboarding kit ready (12 pages)</div>
-    </div>
-  </div>
-</div>
-</section>
+  <!-- Subheadline: shorter, keeps SEO terms -->
+  <p class="hero-sub fade-up">
+    AI-powered codebase intelligence that maps your architecture, audits security, and onboards new engineers in <strong>minutes — not weeks.</strong>
+  </p>
 
-<!-- WHO IT'S FOR -->
-<section class="section" id="who">
-<div class="container">
-  <div class="section-label fade-up">// WHO IT'S FOR</div>
-  <h2 class="section-title fade-up">Codebase intelligence for CTOs and engineers.</h2>
-  <div class="who-grid fade-up">
-    <div class="who-col">
-      <span class="who-badge blue">For CTOs &amp; Eng Leaders</span>
-      <h3>Visibility you've never had into your own codebase.</h3>
-      <ul>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Justify refactoring with real complexity and coupling data</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Cut new hire ramp time from 3 weeks to 4 days — with proof</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Reduce 2am security incidents from undetected CVEs</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Understand your entire stack without reading 200,000 lines of code</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Export audit reports for SOC2, ISO 27001 compliance reviews</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Give your team a shared source of truth that updates automatically</li>
-      </ul>
-    </div>
-    <div class="who-col">
-      <span class="who-badge green">For Engineers</span>
-      <h3>Ship with confidence, not fear.</h3>
-      <ul>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Know the exact blast radius before every change you make</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Understand a completely unfamiliar module in under 5 minutes</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Find circular dependencies before they cause production bugs</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Ask the codebase questions in plain English and get real answers</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Auto-generate architecture docs for your PRs — stop writing them manually</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22C55E" stroke-width="2"><polyline points="3,8 7,12 13,4"/></svg>Spot vulnerable dependencies in your PR before your security team does</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section>
+  <!-- Product UI Mockup -->
+  <div class="product-mockup fade-up" role="img" aria-label="Xolvyn architecture explorer interface preview">
 
-<!-- METRICS -->
-<section class="section" id="metrics">
-<div class="container">
-  <div class="section-label fade-up">// BY THE NUMBERS</div>
-  <h2 class="section-title fade-up">Codebase analysis performance benchmarks.</h2>
-  <p class="section-sub fade-up">Projected benchmarks from early alpha testing.</p>
-  <div class="metrics-grid fade-up">
-    <div class="metric-card">
-      <div class="number counter" data-target="5" data-suffix="x">0</div>
-      <div class="label">Faster engineer onboarding vs. team baseline</div>
-    </div>
-    <div class="metric-card">
-      <div class="number counter" data-target="73" data-suffix="%">0</div>
-      <div class="label">Of teams found critical CVEs on their first scan</div>
-    </div>
-    <div class="metric-card">
-      <div class="number counter" data-target="60" data-prefix="< " data-suffix="s">0</div>
-      <div class="label">To generate a full dependency map of any repo</div>
-    </div>
-  </div>
-  <div class="terminal-block fade-up">
-    <div class="cmd">$ xolvyn scan --repo monorepo-prod</div>
-    <br>
-    <div>&nbsp;&nbsp;Scanning 847 files across 23 modules...</div>
-    <br>
-    <div class="ok">&nbsp;&nbsp;&#10003; Dependency graph built &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.3s]</div>
-    <div class="ok">&nbsp;&nbsp;&#10003; CVE database checked &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.1s]</div>
-    <div class="warn">&nbsp;&nbsp;&#9888; 3 critical vulnerabilities found</div>
-    <div class="warn">&nbsp;&nbsp;&#9888; 2 circular dependencies detected</div>
-    <div class="ok">&nbsp;&nbsp;&#10003; Onboarding kit generated &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.8s]</div>
-    <br>
-    <div>&nbsp;&nbsp;View full report &rarr; getxolvyn.com/report/preview</div>
-  </div>
-</div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section" id="how">
-<div class="container">
-  <div class="section-label fade-up">// HOW IT WORKS</div>
-  <h2 class="section-title fade-up">How to analyze your codebase in 3 steps.</h2>
-  <p class="section-sub fade-up">Three steps. Zero config. Instant intelligence.</p>
-  <div class="steps fade-up">
-    <div class="step">
-      <span class="step-watermark">01</span>
-      <div class="step-icon blue">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <!-- Top bar -->
+    <div class="mock-topbar">
+      <div class="mock-repo">
+        <div class="mock-repo-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <div>
+          <div class="mock-repo-name">lumen-cloud / payments-api</div>
+          <div class="mock-repo-url">github.com/lumen-cloud/payments-api</div>
+        </div>
       </div>
-      <div class="step-num blue">01 / Connect</div>
-      <h3>Paste a repository URL</h3>
-      <p>GitHub or GitLab — public or private. No configuration or YAML files needed. Works with monorepos and multi-repo setups.</p>
-      <div class="code-pill">github.com/yourorg/repo &#10003; connected</div>
-    </div>
-    <div class="step">
-      <span class="step-watermark">02</span>
-      <div class="step-icon mauve">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+
+      <!-- Middle: blurred boxes group -->
+      <div class="mock-blurred-group">
+        <div class="mock-grade blurred-box">
+          <div class="mock-grade-ring">B+</div>
+          <div>
+            <div class="mock-grade-label">AUDIT</div>
+            <div class="mock-grade-score">80/100</div>
+          </div>
+        </div>
+        <div class="mock-stat blurred-box">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <strong>142</strong> <em>files</em>
+        </div>
+        <div class="mock-stat blurred-box">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <strong>5</strong> <em>layers</em>
+        </div>
+        <div class="mock-stat blurred-box">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong>~2h</strong> <em>read time</em>
+        </div>
+        <div class="mock-action-btn blurred-box">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          PR Mode
+        </div>
+        <div class="mock-action-btn blurred-box">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8 7l3 8M16 7l-3 8"/></svg>
+          Graph
+        </div>
+        <div class="mock-action-btn blurred-box">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Story
+        </div>
+        <div class="mock-action-btn blurred-box">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
+          Full Report
+        </div>
       </div>
-      <div class="step-num mauve">02 / Analyze</div>
-      <h3>Xolvyn analyzes your codebase</h3>
-      <p>We shallow-clone, parse the AST, map dependencies, and run 50+ security checks. All in-memory, instantly deleted.</p>
-      <div class="code-pill">scanning... 847 files <span class="progress-bar"><span class="progress-fill" style="width:84%"></span></span> 84%</div>
+
+      <!-- @mentor — always clear, glowing, never blurred -->
+      <button class="mock-mentor-btn" type="button" aria-label="AI mentor preview">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#3B82F6" stroke="#3B82F6" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span>@mentor</span>
+      </button>
     </div>
-    <div class="step">
-      <span class="step-watermark">03</span>
-      <div class="step-icon green">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+
+    <!-- Main body -->
+    <div class="mock-body">
+
+      <!-- Left: Architecture Layers sidebar -->
+      <div class="mock-sidebar">
+        <div class="mock-sidebar-header">
+          <span class="mock-sidebar-title">ARCHITECTURE LAYERS</span>
+          <span class="mock-sidebar-meta">142 files &middot; 5 layers</span>
+        </div>
+
+        <!-- Layer: Utilities -->
+        <div class="mock-layer">
+          <div class="mock-layer-header">
+            <span class="mock-layer-dot" style="background:#A855F7"></span>
+            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <span class="mock-layer-name">Utilities</span>
+            <span class="mock-layer-count">7</span>
+            <span class="mock-layer-arrow">&rsaquo;</span>
+          </div>
+        </div>
+
+        <!-- Layer: Models -->
+        <div class="mock-layer">
+          <div class="mock-layer-header">
+            <span class="mock-layer-dot" style="background:#10B981"></span>
+            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            <span class="mock-layer-name">Models</span>
+            <span class="mock-layer-count">12</span>
+            <span class="mock-layer-arrow">&rsaquo;</span>
+          </div>
+        </div>
+
+        <!-- Layer: API Layer — expanded with selected file -->
+        <div class="mock-layer expanded">
+          <div class="mock-layer-header active-layer">
+            <span class="mock-layer-dot" style="background:#10B981"></span>
+            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="mock-layer-name">API Layer</span>
+            <span class="mock-layer-count">14</span>
+            <span class="mock-layer-arrow open">&rsaquo;</span>
+          </div>
+          <div class="mock-files">
+            <div class="mock-file active-file">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>subscription.controller.js</span>
+              <span class="mock-file-bar"><span style="width:75%;background:#EAB308"></span></span>
+              <span class="mock-file-count">8 &uarr;</span>
+            </div>
+            <div class="mock-file">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>payment.controller.js</span>
+              <span class="mock-file-bar"><span style="width:60%;background:#EAB308"></span></span>
+              <span class="mock-file-count">6 &uarr;</span>
+            </div>
+            <div class="mock-file">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>webhook.controller.js</span>
+              <span class="mock-file-bar"><span style="width:50%;background:#EAB308"></span></span>
+              <span class="mock-file-count">5 &uarr;</span>
+            </div>
+            <div class="mock-file">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>auth.middleware.js</span>
+              <span class="mock-file-bar"><span style="width:35%;background:#22C55E"></span></span>
+              <span class="mock-file-count">4 &uarr;</span>
+            </div>
+            <div class="mock-file">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>billing.route.js</span>
+              <span class="mock-file-bar"><span style="width:30%;background:#22C55E"></span></span>
+              <span class="mock-file-count">3 &uarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer: Services -->
+        <div class="mock-layer">
+          <div class="mock-layer-header">
+            <span class="mock-layer-dot" style="background:#F59E0B"></span>
+            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <span class="mock-layer-name">Services</span>
+            <span class="mock-layer-count">9</span>
+            <span class="mock-layer-arrow">&rsaquo;</span>
+          </div>
+        </div>
+
+        <!-- Layer: Core -->
+        <div class="mock-layer">
+          <div class="mock-layer-header">
+            <span class="mock-layer-dot" style="background:#06B6D4"></span>
+            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span class="mock-layer-name">Core</span>
+            <span class="mock-layer-count">5</span>
+            <span class="mock-layer-arrow">&rsaquo;</span>
+          </div>
+        </div>
       </div>
-      <div class="step-num green">03 / Ship</div>
-      <h3>Explore the interactive results</h3>
-      <p>Navigate the dependency map, review security findings, chat with @mentor, and invite your team. Updates on every push.</p>
-      <div class="code-pill">onboarding kit ready — share link &rarr;</div>
+
+      <!-- Right: File detail panel -->
+      <div class="mock-detail-panel">
+        <!-- File breadcrumb header -->
+        <div class="mock-file-header">
+          <div class="mock-file-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <strong>subscription.controller.js</strong>
+            <span class="mock-file-tag api">API</span>
+          </div>
+          <div class="mock-file-breadcrumb">backend/controllers/subscription.controller.js</div>
+        </div>
+
+        <!-- Why This Matters card -->
+        <div class="mock-why-card">
+          <div class="mock-why-header">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>
+            <span>WHY THIS MATTERS</span>
+          </div>
+
+          <div class="mock-why-section">
+            <div class="mock-why-icon-wrap" style="background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.25)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#3B82F6" stroke="#3B82F6" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="mock-why-content">
+              <div class="mock-why-label" style="color:#60A5FA">PURPOSE</div>
+              <p class="mock-why-text blurred-text">This controller orchestrates subscription lifecycle management — creation, plan upgrades, downgrades, cancellation flows, and dunning logic when payments fail.</p>
+            </div>
+          </div>
+
+          <div class="mock-why-section">
+            <div class="mock-why-icon-wrap" style="background:rgba(167,139,250,0.12);border-color:rgba(167,139,250,0.25)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div class="mock-why-content">
+              <div class="mock-why-label" style="color:#C4B5FD">ARCHITECTURE ROLE</div>
+              <p class="mock-why-text blurred-text">As an API-layer controller, it coordinates data flow between Stripe webhooks, the subscription model, billing service, and the audit logger for compliance.</p>
+            </div>
+          </div>
+
+          <div class="mock-why-section">
+            <div class="mock-why-icon-wrap" style="background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.25)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.4.4.7.9.8 1.5.1.4.2.8.2 1.3v1.5h6v-1.5c0-.5.1-.9.2-1.3.1-.6.4-1.1.8-1.5A7 7 0 0 0 12 2z"/></svg>
+            </div>
+            <div class="mock-why-content">
+              <div class="mock-why-label" style="color:#4ADE80">DEVELOPER NOTE</div>
+              <p class="mock-why-text blurred-text">Address the empty catch blocks at lines 129 and 164 — failed webhook retries are being swallowed silently, masking real billing failures from observability.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imports section -->
+        <div class="mock-imports">
+          <div class="mock-imports-header">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            <span>IMPORTS (5)</span>
+          </div>
+          <div class="mock-import-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="mock-import-name">stripe.client.js</span>
+            <span class="mock-import-tag util">UTIL</span>
+            <span class="mock-import-arrow">&rsaquo;</span>
+          </div>
+          <div class="mock-import-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="mock-import-name">subscription.model.js</span>
+            <span class="mock-import-tag model">MODEL</span>
+            <span class="mock-import-arrow">&rsaquo;</span>
+          </div>
+          <div class="mock-import-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="mock-import-name">customer.model.js</span>
+            <span class="mock-import-tag model">MODEL</span>
+            <span class="mock-import-arrow">&rsaquo;</span>
+          </div>
+          <div class="mock-import-row">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="mock-import-name">audit.logger.js</span>
+            <span class="mock-import-tag core">CORE</span>
+            <span class="mock-import-arrow">&rsaquo;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: Learning path bar -->
+    <div class="mock-learningbar">
+      <div class="mock-lb-left">
+        <div class="mock-lb-icon">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div>
+          <span class="mock-lb-title">LEARNING PATH</span>
+          <span class="mock-lb-meta">87 modules &middot; ~2h</span>
+        </div>
+      </div>
+      <div class="mock-lb-bar">
+        <div class="mock-lb-segment" style="background:#A855F7;flex:5"></div>
+        <div class="mock-lb-segment" style="background:#10B981;flex:8"></div>
+        <div class="mock-lb-segment" style="background:#10B981;flex:10"></div>
+        <div class="mock-lb-segment" style="background:#F59E0B;flex:6"></div>
+        <div class="mock-lb-segment" style="background:#06B6D4;flex:4"></div>
+      </div>
+      <div class="mock-lb-next">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="#3B82F6"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>Next: <strong>payment.controller.js</strong></span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+    </div>
+
+    <!-- Bottom bar: Search -->
+    <div class="mock-searchbar">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span class="mock-search-text">Search files, functions, or ask @mentor anything...</span>
+      <span class="mock-search-kbd">&#8984;K</span>
+    </div>
+
+    <!-- Subtle gradient at very bottom -->
+    <div class="mock-blur-overlay" aria-hidden="true"></div>
+  </div>
+
+  <!-- Trust indicators below mockup -->
+  <div class="hero-trust fade-up">
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Zero code retention</span>
+    </div>
+    <div class="trust-sep">&middot;</div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>GitHub &amp; GitLab OAuth</span>
+    </div>
+    <div class="trust-sep">&middot;</div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>No AI training on your code</span>
+    </div>
+    <div class="trust-sep">&middot;</div>
+    <div class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>5+ languages supported</span>
     </div>
   </div>
+
 </div>
 </section>
 
-<!-- TESTIMONIALS (replaced with waitlist CTA until real quotes are collected) -->
-<section class="section" id="testimonials">
-<div class="container" style="text-align:center">
-  <div class="section-label fade-up">// FROM THE COMMUNITY</div>
-  <h2 class="section-title fade-up">Real feedback from beta engineers — coming soon.</h2>
-  <p class="section-sub fade-up" style="margin:0 auto 32px">We're onboarding our first beta users now. Real feedback from real engineers will appear here as we collect it.</p>
-  <a href="#waitlist" class="btn btn-primary fade-up">Join the beta &rarr;</a>
-</div>
-</section>
-
-<!-- PRICING -->
-<section class="section" id="pricing">
-<div class="container">
-  <div class="section-label fade-up">// PRICING</div>
-  <h2 class="section-title fade-up">Pricing plans for teams of every size.</h2>
-  <p class="section-sub fade-up">Start free. Scale when your team does.</p>
-  <div class="pricing-simple fade-up">
-    <div class="pricing-tiers">
-      <div class="pricing-pill">
-        <span class="tier-name">Free</span> — <span class="tier-price">$0</span> <span>for solo devs &amp; open source</span>
-      </div>
-      <div class="pricing-pill featured">
-        <span class="tier-name">Team</span> — <span class="tier-price">from $49/mo</span> <span>for growing teams</span>
-      </div>
-      <div class="pricing-pill">
-        <span class="tier-name">Enterprise</span> — <span>custom pricing on request</span>
-      </div>
-    </div>
-    <a href="#waitlist" class="btn btn-primary" style="margin:0 auto">View full pricing at launch &rarr;</a>
-  </div>
-  <p class="pricing-note fade-up" style="margin-top:24px">All plans include a 14-day free trial. No credit card required.</p>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="section" id="faq">
-<div class="container">
-  <div class="section-label fade-up">// QUESTIONS</div>
-  <h2 class="section-title fade-up">Frequently asked questions about Xolvyn.</h2>
-
-  <div class="faq-list fade-up">
-    <div class="faq-item">
-      <div class="faq-q">How does Xolvyn access my code?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-      <div class="faq-a"><p>Xolvyn performs a temporary shallow-clone to parse your AST — the clone is deleted immediately after analysis. We never store your source code. We analyze the dependency graph and metadata only. Your code stays where it is.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How long does the initial scan take?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-      <div class="faq-a"><p>Most repos scan in under 60 seconds. Large monorepos with 1M+ lines typically take 3–5 minutes. Scans after the initial one are incremental and run in seconds on each push.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Does it work with monorepos?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-      <div class="faq-a"><p>Yes. Xolvyn handles monorepos natively — Nx, Turborepo, Lerna, Yarn Workspaces. It maps inter-package dependencies correctly and lets you filter the graph by package or team.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Which languages are supported?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-      <div class="faq-a"><p>TypeScript, JavaScript, Python, Go, Ruby, Java, and Rust are fully supported. PHP and C# are in beta. More languages ship quarterly. Check back at launch for the full language support list.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is there a self-hosted or on-premise option?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-      <div class="faq-a"><p>Yes — available on the Enterprise plan. Runs entirely within your infrastructure. Supports air-gapped environments. Contact us at sales@xolvyn.com for setup details.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What happens to my data?<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-      <div class="faq-a"><p>We process dependency metadata only — never source code. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). SOC2 Type II certification is in progress. Enterprise security details available on request.</p></div>
+<!-- ===== SECTION 3: PAIN POINTS ===== -->
+<section class="section" id="problems" aria-labelledby="problems-heading">
+  <div class="container">
+    <div class="section-label fade-up">// THE PROBLEM XOLVYN SOLVES</div>
+    <h2 class="section-title fade-up" id="problems-heading">Engineering teams are losing thousands of hours</h2>
+    <!-- <p class="section-sub fade-up">Every fast-moving software team faces the same two compounding problems. They cost real money — slower shipping, painful onboarding, and production incidents nobody saw coming. Xolvyn is purpose-built to solve both.</p> -->
+    <div class="pain-grid">
+      <article class="pain-card fade-up">
+        <div class="pain-icon-wrap blue" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Onboarding a new engineer takes 3+ weeks of senior time</h3>
+        <p>Every new hire spends their first month reading unfamiliar code instead of shipping features. The architecture knowledge they need lives in the heads of your most senior engineers — and those engineers are your most expensive people to interrupt with "how does this work?" questions. Slow onboarding directly delays product velocity and quietly burns engineering budget.</p>
+        <div class="pain-stat">&gt; avg. engineering onboarding cost: <strong>$30,000+</strong> per hire</div>
+      </article>
+      <article class="pain-card fade-up">
+        <div class="pain-icon-wrap red" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17" r="1" fill="#EF4444"/></svg>
+        </div>
+        <h3>Security vulnerabilities and broken dependencies hide for months</h3>
+        <p>Hardcoded API keys, vulnerable npm packages, SQL injection vectors, and circular dependencies silently accumulate in your repository. Most teams discover these problems through 2am CVE alerts or post-incident reviews — not from their own tooling. Manual code reviews miss the majority of high-severity issues, and the average breach goes undetected for nearly 200 days.</p>
+        <div class="pain-stat">&gt; avg. time to detect a breach: <strong>194 days</strong> (IBM Security Report 2023)</div>
+      </article>
     </div>
   </div>
-</div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- ===== SECTION 4: FEATURES ===== -->
+<section class="section" id="features" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="section-label fade-up">// THE XOLVYN PLATFORM</div>
+    <h2 class="section-title fade-up" id="features-heading">Four powerful tools. One unified codebase intelligence platform</h2>
+    <!-- <p class="section-sub fade-up">Xolvyn combines AI architecture mapping, automated security auditing, an AI code mentor, and one-click vulnerability remediation into a single platform for modern engineering teams. Paste any GitHub or GitLab URL — no configuration, no CLI, no setup calls. Your full codebase analysis is ready in under 60 seconds.</p> -->
+    <div class="feature-grid">
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-wrap" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.2)" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>AI Architecture Explorer</h3>
+        <p>Xolvyn parses your repository's AST to build an interactive architecture map of your codebase. Every file is organized into a clear layer tree — Utilities, Models, Services, API, Core. Click any module to inspect its imports, exports, function signatures, complexity score, and an AI-generated explanation of what it does. The fastest way to understand any codebase, large or small.</p>
+        <div class="terminal" aria-label="Architecture explorer example output">$ analyzing github.com/your-org/api<br>&gt; 86 files &middot; 4 layers &middot; ~93min read time</div>
+      </article>
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-wrap" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.2)" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Automated Security Audit Engine</h3>
+        <p>50+ security checks run automatically across every file in your repository. The Xolvyn security scanner detects hardcoded API keys and secrets, SQL injection vectors, unsafe eval() usage, XSS vulnerabilities, vulnerable npm and pip packages, and dozens of OWASP Top 10 patterns — each with CVSS scores, CWE classifications, and exportable audit reports in JSON, CSV, SARIF, or HTML format.</p>
+        <div class="terminal" aria-label="Security audit example output">&gt; Audit score: B+ (80/100)<br>&gt; 2 critical &middot; 1 auto-fixable CVE found</div>
+      </article>
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-wrap" style="background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.2)" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>AI Code Mentor — @mentor</h3>
+        <p>Unlike generic AI assistants like ChatGPT or GitHub Copilot, @mentor is grounded in your actual codebase. It knows which files exist, how every module connects, and which functions call which. Ask plain-English questions like "where is the auth logic?", "which files have the most dependents?", or "explain the data flow for user login" — and get answers backed by real code, not hallucinations.</p>
+        <div class="terminal" aria-label="AI mentor example query">&gt; Where is auth logic?<br>&gt; lib/supabase/server.ts &rarr; 3 API routes</div>
+      </article>
+
+      <article class="feature-card fade-up">
+        <div class="feature-icon-wrap" style="background:rgba(249,115,22,0.08);border-color:rgba(249,115,22,0.2)" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="1.8"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>AI Auto-Fix Engine for CVEs</h3>
+        <p>Found a security vulnerability? Xolvyn's Auto-Fix Engine generates a safe code remediation, commits it to a new branch, and opens a Pull Request on your GitHub or GitLab repository — automatically. Supports both code-level fixes (regex hardening, unsafe call replacements) and dependency version bumps (package.json, requirements.txt, go.mod). Every fix shows a confidence score before being applied, and nothing merges without your review.</p>
+        <div class="terminal" aria-label="Auto-fix engine example output">&gt; Fix generated &middot; PR opened<br>&gt; github.com/org/repo/pull/43 &#10003;</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: HOW IT WORKS ===== -->
+<section class="section" id="how" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="section-label fade-up">// HOW XOLVYN WORKS</div>
+    <h2 class="section-title fade-up" id="how-heading">From repository URL to complete codebase intelligence — in 3 steps</h2>
+    <!-- <p class="section-sub fade-up">No setup calls, no YAML configuration files, no command-line installation. Xolvyn analyzes any GitHub or GitLab repository the moment you paste the URL — public or private, single-service or monorepo. The entire architecture map, security audit, and AI context generation runs in under 60 seconds.</p> -->
+    <div class="steps fade-up">
+      <div class="step">
+        <span class="step-watermark">01</span>
+        <div class="step-icon blue">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <div class="step-num blue">01 / Connect</div>
+        <h3>Paste any GitHub or GitLab URL</h3>
+        <p>Public or private repositories — no configuration, no YAML files, no installation required. Works with monorepos, multi-package workspaces, and single-service APIs. GitHub and GitLab OAuth for private repos.</p>
+        <div class="code-pill">github.com/my-org/backend-api &nbsp;<span style="color:#22C55E">&#10003;</span></div>
+      </div>
+      <div class="step">
+        <span class="step-watermark">02</span>
+        <div class="step-icon mauve">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="step-num mauve">02 / Analyze</div>
+        <h3>Xolvyn maps, audits, and understands your codebase</h3>
+        <p>We perform a shallow git clone (depth 1), parse the AST across every file, build a layered architecture map, run 50+ security checks, and load the full context into @mentor — all in memory, nothing stored.</p>
+        <div class="code-pill">scanning 86 files <span class="progress-bar"><span class="progress-fill" style="width:80%"></span></span> done</div>
+      </div>
+      <div class="step">
+        <span class="step-watermark">03</span>
+        <div class="step-icon green">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="step-num green">03 / Explore</div>
+        <h3>Navigate, audit, ask questions, and fix issues</h3>
+        <p>Browse the architecture layer tree, inspect any file's imports and function signatures, chat with @mentor, review security findings, trigger AI auto-fixes, and follow the learning path to onboard in minutes.</p>
+        <div class="code-pill">architecture ready &middot; @mentor online &#9889;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: PRICING (LOCKED — PRE-LAUNCH) ===== -->
+<section class="section" id="pricing" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="section-label fade-up">// PRICING PLANS</div>
+    <h2 class="section-title fade-up" id="pricing-heading">Founding-member pricing unlocks at launch</h2>
+    <!-- <p class="section-sub fade-up">Xolvyn offers four plans designed for solo developers, fast-shipping teams, growing engineering orgs, and enterprises. Tell us which plan fits your team and we'll lock in your founding-member price for life — even after public pricing increases. Click any tier below to claim your spot.</p> -->
+
+    <div class="pricing-grid fade-up">
+
+      <!-- Free Tile -->
+      <div class="pricing-card pricing-locked" data-plan="free" onclick="selectPlan('free')">
+        <div class="pricing-locked-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> LOCKED</div>
+        <div class="pricing-plan-name">Free</div>
+        <div class="pricing-price-hidden">
+          <span class="price-blur">$??</span>
+          <span class="price-suffix">/mo</span>
+        </div>
+        <div class="pricing-desc">For solo developers exploring public repositories.</div>
+        <ul class="pricing-features-hint">
+          <li><span class="dot" style="background:#22C55E"></span>Public repo analysis</li>
+          <li><span class="dot" style="background:#22C55E"></span>Architecture explorer</li>
+          <li><span class="dot" style="background:#22C55E"></span>@mentor (limited)</li>
+          <li><span class="dot" style="background:#22C55E"></span>Basic audit</li>
+        </ul>
+        <button class="btn-plan-claim" type="button">Claim Free Tier &rarr;</button>
+      </div>
+
+      <!-- Pro Tile -->
+      <div class="pricing-card pricing-locked pricing-locked-featured" data-plan="pro" onclick="selectPlan('pro')">
+        <div class="pricing-popular">Most Wanted</div>
+        <div class="pricing-locked-badge featured-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> FOUNDING PRICE</div>
+        <div class="pricing-plan-name" style="color:#60A5FA">Pro</div>
+        <div class="pricing-price-hidden">
+          <span class="price-blur">$??</span>
+          <span class="price-suffix">/mo</span>
+        </div>
+        <div class="pricing-desc">Full power for individual devs who ship fast.</div>
+        <ul class="pricing-features-hint">
+          <li><span class="dot" style="background:#3B82F6"></span>Everything in Free</li>
+          <li><span class="dot" style="background:#3B82F6"></span>Private repos</li>
+          <li><span class="dot" style="background:#3B82F6"></span>AI Auto-Fix Engine</li>
+          <li><span class="dot" style="background:#3B82F6"></span>PR Impact Analysis</li>
+          <li><span class="dot" style="background:#3B82F6"></span>VS Code extension</li>
+        </ul>
+        <button class="btn-plan-claim claim-featured" type="button">Claim Pro &rarr;</button>
+      </div>
+
+      <!-- Business Tile -->
+      <div class="pricing-card pricing-locked" data-plan="business" onclick="selectPlan('business')">
+        <div class="pricing-locked-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> LOCKED</div>
+        <div class="pricing-plan-name" style="color:#4ADE80">Business</div>
+        <div class="pricing-price-hidden">
+          <span class="price-blur">$??</span>
+          <span class="price-suffix">/seat/mo</span>
+        </div>
+        <div class="pricing-desc">For teams that need shared workflows.</div>
+        <ul class="pricing-features-hint">
+          <li><span class="dot" style="background:#22C55E"></span>Everything in Pro</li>
+          <li><span class="dot" style="background:#22C55E"></span>Team dashboard</li>
+          <li><span class="dot" style="background:#22C55E"></span>Org-wide PR analysis</li>
+          <li><span class="dot" style="background:#22C55E"></span>Pooled AI credits</li>
+          <li><span class="dot" style="background:#22C55E"></span>Priority support</li>
+        </ul>
+        <button class="btn-plan-claim" type="button">Claim Business &rarr;</button>
+      </div>
+
+      <!-- Enterprise Tile -->
+      <div class="pricing-card pricing-locked" data-plan="enterprise" onclick="selectPlan('enterprise')">
+        <div class="pricing-locked-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> CUSTOM</div>
+        <div class="pricing-plan-name" style="color:#C4B5FD">Enterprise</div>
+        <div class="pricing-price-hidden">
+          <span class="price-blur enterprise-price">Custom</span>
+        </div>
+        <div class="pricing-desc">Self-hosted, SSO, dedicated onboarding.</div>
+        <ul class="pricing-features-hint">
+          <li><span class="dot" style="background:#A78BFA"></span>Everything in Business</li>
+          <li><span class="dot" style="background:#A78BFA"></span>Self-hosted option</li>
+          <li><span class="dot" style="background:#A78BFA"></span>SSO &amp; SAML</li>
+          <li><span class="dot" style="background:#A78BFA"></span>Dedicated SLA</li>
+          <li><span class="dot" style="background:#A78BFA"></span>Founder direct line</li>
+        </ul>
+        <button class="btn-plan-claim" type="button">Talk to Founders &rarr;</button>
+      </div>
+
+    </div>
+
+    <p class="pricing-note fade-up">&#128274; Pricing reveals at launch. Founding waitlist members get prices locked in for life — even if rates increase at general availability.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 7: FAQ ===== -->
+<section class="section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-label fade-up">// FREQUENTLY ASKED QUESTIONS</div>
+    <h2 class="section-title fade-up" id="faq-heading">Common questions about Xolvyn, security, and the waitlist</h2>
+    <p class="section-sub fade-up">Can't find your answer? Email us anytime at <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a>.</p>
+
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-q">Does Xolvyn store or train AI on my source code?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>No, never. Xolvyn performs a shallow git clone with depth=1 into an isolated temporary directory, runs the entire analysis in memory, and immediately deletes the clone. We store only computed metadata — architecture maps, complexity scores, and security findings — never your source code itself. Your code is never used to train any AI model, ours or third-party. Your intellectual property stays yours.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is the @mentor AI different from ChatGPT or GitHub Copilot?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Generic AI tools like ChatGPT and GitHub Copilot answer questions based on general training data — they have no awareness of what's actually in your specific codebase. Xolvyn's @mentor is grounded in your real dependency graph. It knows every file that exists, how each module imports others, what every function exports, and how layers connect. Ask "where is the auth logic?" and you get an actual file path and the routes it connects to — never a hallucination.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Which programming languages and frameworks does Xolvyn support?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Xolvyn currently supports TypeScript, JavaScript (both ESM and CommonJS), Python, Go, and Java with full AST-level dependency mapping. The security audit engine works on every text-based source file regardless of language. Monorepo tooling — including Turborepo, Nx, Lerna, and Yarn Workspaces — is supported natively. PHP, Ruby, and Rust are on the roadmap for the next quarterly release.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does the AI Auto-Fix Engine create Pull Requests?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>When a security finding is marked auto-fixable, clicking "Apply Fix" triggers the Xolvyn Auto-Fix Engine. It reads the vulnerable code snippet, generates a safe replacement using AST-aware remediation logic, commits the fix to a new branch on your repository, and opens a Pull Request automatically through the GitHub or GitLab App. For dependency CVEs, it bumps the version in your package.json, requirements.txt, or go.mod and opens the PR. Every fix includes a confidence score, and nothing merges without your explicit review and approval.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">When does Xolvyn launch and how do waitlist members benefit?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Xolvyn launches in 2026. Waitlist members get three things: first access (before general availability), founding-member pricing locked in for life (even if our public prices increase), and direct input into the product roadmap during the beta period. Join the waitlist below and tell us which plan fits your team — we'll reach out personally with your locked-in price when we open beta access.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 8: WAITLIST CTA ===== -->
 <section class="section final-cta" id="waitlist">
-<div class="container" style="text-align:center">
-  <h2 class="section-title fade-up">Get early access to Xolvyn.</h2>
-  <p class="section-sub fade-up" style="margin:0 auto 32px">Join the waitlist for AI-powered codebase intelligence. First 500 signups get free Team plan access for 6 months.</p>
-  <div class="waitlist-form fade-up" id="waitlist-form-main">
-    <input type="email" placeholder="your@email.com" id="waitlist-email">
-    <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get early access &rarr;</button>
-  </div>
+  <div class="container">
+    <div class="waitlist-inner">
+      <div class="waitlist-glow"></div>
+      <div class="section-label fade-up" style="text-align:center">// GET EARLY ACCESS</div>
+      <h2 class="section-title fade-up" style="text-align:center;max-width:600px;margin:0 auto 16px">Be the first to give every engineer a senior partner.</h2>
+      <p class="section-sub fade-up" style="text-align:center;margin:0 auto 40px">Join the waitlist for Xolvyn — the AI-powered codebase intelligence platform. Waitlist members get first access, founding pricing, and direct input on the roadmap.</p>
 
-  <!-- Step 2: Involvement selector (hidden by default) -->
-  <div id="waitlist-step-2" style="display:none">
-    <div style="margin-bottom:8px">
-      <h3 style="font-size:22px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:8px">One more thing — how do you want to be involved?</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:28px">This helps us prioritize who gets access first.</p>
+      <!-- Step 1: Email -->
+      <div class="waitlist-form fade-up" id="waitlist-form-main">
+        <input type="email" placeholder="your@email.com" id="waitlist-email" aria-label="Your work email address">
+        <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get Early Access &rarr;</button>
+      </div>
+      <p class="waitlist-note fade-up" id="waitlist-note">No spam. No credit card. Unsubscribe anytime.</p>
+
+      <!-- Step 2: Involvement -->
+      <div id="waitlist-step-2" style="display:none">
+        <h3 class="step2-title">One more thing — how do you want to be involved?</h3>
+        <p class="step2-sub">This helps us prioritize who gets access first and how we reach out.</p>
+        <div class="involvement-options">
+          <label class="involvement-card" data-value="notify">
+            <input type="radio" name="involvement" value="notify">
+            <div class="involvement-radio"></div>
+            <div class="involvement-text">
+              <span class="involvement-label">Notify me at launch</span>
+              <span class="involvement-desc">Send me an email when Xolvyn goes live. I want to explore it then.</span>
+            </div>
+          </label>
+          <label class="involvement-card" data-value="beta" data-accent="#3B82F6">
+            <input type="radio" name="involvement" value="beta">
+            <div class="involvement-radio"></div>
+            <div class="involvement-text">
+              <span class="involvement-label" style="color:#60A5FA">I want to beta test</span>
+              <span class="involvement-desc">I'll give feedback, report issues, and help shape the product roadmap.</span>
+            </div>
+          </label>
+          <label class="involvement-card" data-value="founding" data-accent="#22C55E">
+            <input type="radio" name="involvement" value="founding">
+            <div class="involvement-radio"></div>
+            <div class="involvement-text">
+              <span class="involvement-label" style="color:#4ADE80">My team is ready — founding access</span>
+              <span class="involvement-desc">We want to pay from day one and lock in founding pricing. I want direct founder contact.</span>
+            </div>
+          </label>
+        </div>
+        <button class="btn btn-primary" id="waitlist-step2-btn" onclick="handleWaitlistStep2()" disabled style="margin:28px auto 0;display:block;opacity:0.4;cursor:not-allowed">Confirm my spot &rarr;</button>
+      </div>
+
+      <!-- Success state -->
+      <div class="waitlist-success" id="waitlist-success">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        You're on the list. We'll be in touch soon.
+      </div>
+
+      <!-- Social proof numbers -->
+      <!-- <div class="waitlist-proof fade-up">
+        <div class="wp-item">
+          <strong>500+</strong>
+          <span>engineers on the waitlist</span>
+        </div>
+        <div class="wp-sep"></div>
+        <div class="wp-item">
+          <strong>7-day</strong>
+          <span>free trial at launch</span>
+        </div>
+        <div class="wp-sep"></div>
+        <div class="wp-item">
+          <strong>Founding</strong>
+          <span>pricing locked in</span>
+        </div>
+      </div> -->
     </div>
-
-    <div class="involvement-options">
-      <!-- Option A -->
-      <label class="involvement-card" data-value="notify">
-        <input type="radio" name="involvement" value="notify">
-        <div class="involvement-radio"></div>
-        <div class="involvement-text">
-          <span class="involvement-label">Just notify me at launch</span>
-          <span class="involvement-desc">I'm curious — send me an email when Xolvyn goes live.</span>
-        </div>
-      </label>
-
-      <!-- Option B -->
-      <label class="involvement-card" data-value="beta" data-accent="#3B82F6">
-        <input type="radio" name="involvement" value="beta">
-        <div class="involvement-radio"></div>
-        <div class="involvement-text">
-          <span class="involvement-label" style="color:#60A5FA">I want to beta test</span>
-          <span class="involvement-desc">I'll give feedback and help shape the product roadmap.</span>
-        </div>
-      </label>
-
-      <!-- Option C -->
-      <label class="involvement-card" data-value="founding" data-accent="#22C55E">
-        <input type="radio" name="involvement" value="founding">
-        <div class="involvement-radio"></div>
-        <div class="involvement-text">
-          <span class="involvement-label" style="color:#4ADE80">My team is ready — I want founding access</span>
-          <span class="involvement-desc">We're ready to pay from day one. I want locked-in pricing and direct founder access.</span>
-        </div>
-      </label>
-    </div>
-
-    <button class="btn btn-primary" id="waitlist-step2-btn" onclick="handleWaitlistStep2()" disabled style="margin:24px auto 0;opacity:0.4;cursor:not-allowed">Confirm &rarr;</button>
   </div>
-
-  <div class="waitlist-success" id="waitlist-success">&#10003; You're on the list. We'll email you at launch.</div>
-  <p class="text-muted fade-up" id="waitlist-note" style="font-size:13px;margin-top:12px">No spam. No credit card. Unsubscribe anytime.</p>
-</div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-<div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:8px"><span class="dot"></span>Xolvyn</div>
-      <p>AI-powered codebase intelligence.</p>
-      <p style="margin-top:16px">&copy; 2026 Xolvyn, Inc.</p>
+<!-- ===== SECTION 9: FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo-link" aria-label="Xolvyn — home">
+          <img src="Xolvyn_Full_Lockup.png" alt="Xolvyn" class="footer-logo-img">
+        </a>
+        <p>AI-powered codebase intelligence. Understand any repository in minutes, not weeks.</p>
+        <p class="footer-copy">&copy; 2026 Xolvyn. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#" onclick="openModal('about-modal'); return false;">About</a>
+        <a href="#" onclick="openModal('security-modal'); return false;">Security &amp; Privacy</a>
+        <a href="mailto:hello@xolvyn.dev">Contact</a>
+      </div>
+      <div>
+        <h4>Stay in Touch</h4>
+        <a href="https://x.com/xolvyn" target="_blank" rel="noopener">X / Twitter</a>
+        <!-- <a href="https://github.com/xolvyn" target="_blank" rel="noopener">GitHub</a> -->
+        <a href="https://www.linkedin.com/company/xolvyn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:hello@xolvyn.dev">hello@xolvyn.dev</a>
+      </div>
     </div>
-    <div>
-      <h4>Product</h4>
-      <a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#how">How it works</a>
-    </div>
-    <div>
-      <h4>Company</h4>
-      <a href="#">About</a><a href="#">Blog</a><a href="#">Security</a>
-    </div>
-    <div>
-      <h4>Connect</h4>
-      <a href="#">X / Twitter</a><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Discord</a><a href="#">hello@xolvyn.com</a>
+    <div class="footer-bottom">
+      <span>Built for engineering teams who give a damn about their codebase.</span>
+      <div class="footer-legal">
+        <a href="#" onclick="openModal('privacy-modal'); return false;">Privacy Policy</a>
+        <a href="#" onclick="openModal('terms-modal'); return false;">Terms of Service</a>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">Built for engineering teams who give a damn about their codebase.</div>
-</div>
 </footer>
+
+<!-- ===== MODALS ===== -->
+<div class="modal-overlay" id="about-modal" onclick="closeModalIfOverlay(event, 'about-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('about-modal')" aria-label="Close">&times;</button>
+    <div class="modal-icon" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.25)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><circle cx="12" cy="8" r="1" fill="#3B82F6"/></svg>
+    </div>
+    <h3>About Xolvyn</h3>
+    <p>Xolvyn is building the intelligence layer for modern codebases — an AI-powered platform that maps your architecture, audits your security, and gives every engineer on the team a senior partner they can ask anything.</p>
+    <p>We're a small team of engineers who've felt the pain firsthand: 3-week onboarding, invisible dependencies, security issues discovered at 2am. Xolvyn is what we wished existed at every company we've worked at.</p>
+    <p class="modal-meta">Launching 2026 &middot; <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a></p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="security-modal" onclick="closeModalIfOverlay(event, 'security-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('security-modal')" aria-label="Close">&times;</button>
+    <div class="modal-icon" style="background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.25)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
+    </div>
+    <h3>Security &amp; Privacy</h3>
+    <ul class="modal-list">
+      <li><strong>Zero code retention.</strong> Xolvyn performs a shallow git clone, runs analysis in memory, and immediately deletes your source. We store only computed metadata — never your actual code.</li>
+      <li><strong>No AI training on your code.</strong> Your codebase is never used to train any AI model — ours or third-party.</li>
+      <li><strong>OAuth-only authentication.</strong> We use GitHub and GitLab OAuth. Your tokens are encrypted at rest with AES-256 and transmitted over TLS 1.3.</li>
+      <li><strong>SOC 2 Type II in progress.</strong> Targeting certification before general availability. Enterprise self-hosted option available for air-gapped environments.</li>
+      <li><strong>GDPR &amp; CCPA compliant.</strong> Right to data deletion honored within 30 days. Email <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a> for requests.</li>
+    </ul>
+    <p class="modal-meta">Last updated: 2026 &middot; A full security whitepaper will be published at launch.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="privacy-modal" onclick="closeModalIfOverlay(event, 'privacy-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('privacy-modal')" aria-label="Close">&times;</button>
+    <div class="modal-icon" style="background:rgba(167,139,250,0.1);border-color:rgba(167,139,250,0.25)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <h3>Privacy Policy</h3>
+    <p><strong>Data we collect:</strong> Only your email address (waitlist), GitHub OAuth tokens (encrypted, when product launches), and computed metadata from your analyses.</p>
+    <p><strong>Data we never collect:</strong> Your source code, your conversations with @mentor, your IP address for tracking, or any data beyond what's needed for the product to function.</p>
+    <p><strong>Third parties:</strong> Web3Forms (waitlist email delivery), Google Analytics (anonymous aggregate usage only), Gemini AI (for @mentor — no code training, no retention). That's it.</p>
+    <p><strong>Your rights:</strong> Email <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a> to access, export, or delete your data. We honor requests within 30 days.</p>
+    <p class="modal-meta">A complete privacy policy will be published at product launch.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="terms-modal" onclick="closeModalIfOverlay(event, 'terms-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('terms-modal')" aria-label="Close">&times;</button>
+    <div class="modal-icon" style="background:rgba(249,115,22,0.1);border-color:rgba(249,115,22,0.25)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+    </div>
+    <h3>Terms of Service</h3>
+    <p>Xolvyn is currently in pre-launch. By joining the waitlist, you agree that:</p>
+    <ul class="modal-list">
+      <li>Your email will be used to notify you about Xolvyn's launch and product updates.</li>
+      <li>You can unsubscribe at any time using the link in any email we send.</li>
+      <li>Founding member pricing — locked in for life — applies only to waitlist signups before general availability.</li>
+      <li>Beta participation, if you opt in, includes providing product feedback in good faith.</li>
+    </ul>
+    <p class="modal-meta">Full terms of service will be published at product launch.</p>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
