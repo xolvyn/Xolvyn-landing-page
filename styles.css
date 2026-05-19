@@ -113,6 +113,82 @@ img {
   line-height: 1.65
 }
 
+.brand-intro {
+  padding: 64px 0 40px;
+}
+
+.brand-intro-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 40px 48px;
+  text-align: center;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.brand-intro-card:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.09);
+  transform: translateY(-2px);
+}
+
+.brand-intro-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 18px;
+}
+
+.brand-definition {
+  font-size: 18px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+
+.brand-definition strong {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.brand-definition strong.text-blue {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .brand-intro {
+    padding: 44px 0 28px;
+  }
+  .brand-intro-card {
+    padding: 28px 22px;
+    border-radius: 14px;
+  }
+  .brand-intro-label {
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+  .brand-definition {
+    font-size: 15.5px;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-intro-card {
+    padding: 24px 18px;
+  }
+  .brand-definition {
+    font-size: 14.5px;
+  }
+}
+
 .text-muted {
   color: rgba(255, 255, 255, 0.45)
 }
