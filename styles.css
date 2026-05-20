@@ -124,7 +124,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 40px 48px;
-  text-align: center;
+  text-align: left;
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -134,13 +134,7 @@ img {
   transform: translateY(-2px);
 }
 
-.brand-intro-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+.brand-intro-card .section-label {
   margin-bottom: 18px;
 }
 
@@ -169,14 +163,12 @@ img {
     padding: 28px 22px;
     border-radius: 14px;
   }
-  .brand-intro-label {
-    font-size: 11px;
+  .brand-intro-card .section-label {
     margin-bottom: 14px;
   }
   .brand-definition {
     font-size: 15.5px;
     line-height: 1.7;
-    text-align: left;
   }
 }
 
