@@ -4204,19 +4204,23 @@ a.blog-card:hover {
   }
 
   .blog-card-featured {
-    padding: 26px;
-    padding-top: 50px
+    padding: 22px
   }
 
   .blog-card-featured::after {
     top: 22px;
     right: 22px;
     font-size: 9.5px;
-    padding: 3px 8px
+    padding: 3px 8px;
+    letter-spacing: 0.08em
+  }
+
+  .blog-card-featured .blog-card-tag {
+    max-width: calc(100% - 90px)
   }
 
   .blog-card-featured .blog-card-title {
-    font-size: 22px
+    font-size: 21px
   }
 
   .blog-card-title {
@@ -4294,5 +4298,17 @@ a.blog-card:hover {
   .article-table td {
     padding: 10px 12px;
     font-size: 13px
+  }
+
+  /* Featured card: shorten tag label + tighten badge so both fit on one row */
+  .blog-card-featured .blog-card-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+    letter-spacing: 0.04em
+  }
+
+  .blog-card-featured::after {
+    font-size: 9px;
+    padding: 2px 7px
   }
 }
