@@ -163,35 +163,137 @@
         </div>
         <p class="role-tagline">You'll work on real features that ship to real users &mdash; the web app, the integrations, and the self-contained pieces that make Xolvyn feel alive. You'll build new things and help keep the existing ones sharp, with the founder right there to pair with and unblock you.</p>
 
-        <div class="role-cols">
-          <div class="role-col">
-            <h4>// What you'll do</h4>
-            <ul>
-              <li>Work on the <strong>web product</strong> &mdash; ship real features and help keep the existing pages polished.</li>
-              <li>Help build the <strong>PR-impact bot</strong> &mdash; showing what a pull request touches across the dependency graph.</li>
-              <li>Pitch in on <strong>team workspaces</strong> &mdash; shared maps, roles, and org-wide analysis.</li>
-              <li>Help build a <strong>VS Code extension</strong> that brings @mentor into the editor.</li>
-              <li>Learn the integration side &mdash; GitHub/GitLab OAuth, email, billing, and the API routes behind it all.</li>
-            </ul>
+        <!-- Responsibilities -->
+        <div class="role-col role-do">
+          <h4>// What you'll do</h4>
+          <ul>
+            <li>Work on the <strong>web product</strong> &mdash; ship real features and help keep the existing pages polished.</li>
+            <li>Help build the <strong>PR-impact bot</strong> &mdash; showing what a pull request touches across the dependency graph.</li>
+            <li>Pitch in on <strong>team workspaces</strong> &mdash; shared maps, roles, and org-wide analysis.</li>
+            <li>Help build a <strong>VS Code extension</strong> that brings @mentor into the editor.</li>
+            <li>Learn the integration side &mdash; GitHub/GitLab OAuth, email, billing, and the API routes behind it all.</li>
+          </ul>
+        </div>
+
+        <!-- The full stack — what you'll work with and grow into, not a checklist you must already know -->
+        <div class="role-stack">
+          <h4>// The stack you'll work with &mdash; and grow into</h4>
+          <p class="role-stack-intro">This is the complete toolkit behind a highly scalable product. Read it as a map of what you'll touch over time, not a checklist you must already have memorized.</p>
+
+          <div class="role-stack-grid">
+            <div class="stack-group">
+              <h5>Language &amp; Runtime</h5>
+              <ul>
+                <li><strong>TypeScript</strong> <span class="q">entire codebase &mdash; non-negotiable</span></li>
+                <li><strong>Node.js</strong></li>
+                <li><strong>Bun</strong> <span class="q">performance-critical services</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Frontend</h5>
+              <ul>
+                <li><strong>Next.js</strong> <span class="q">App Router</span></li>
+                <li><strong>React</strong></li>
+                <li><strong>Redux Toolkit</strong></li>
+                <li><strong>Tailwind CSS</strong></li>
+                <li><strong>Framer Motion</strong></li>
+                <li><strong>Lucide React</strong></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Backend &amp; API</h5>
+              <ul>
+                <li><strong>Express.js / Fastify</strong> <span class="q">dedicated backend services</span></li>
+                <li><strong>REST API design</strong></li>
+                <li><strong>GraphQL</strong> <span class="q">basic understanding</span></li>
+                <li><strong>WebSockets / Server-Sent Events</strong> <span class="q">real-time analysis updates</span></li>
+                <li><strong>Webhooks</strong> <span class="q">GitHub / GitLab PR events</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Database &amp; Caching</h5>
+              <ul>
+                <li><strong>PostgreSQL</strong> <span class="q">primary database</span></li>
+                <li><strong>Supabase</strong> <span class="q">hosted Postgres + auth + real-time</span></li>
+                <li><strong>Prisma ORM</strong> or <strong>Drizzle ORM</strong></li>
+                <li><strong>Redis</strong> <span class="q">caching, job queues, session management</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Job Queues &amp; Async Processing</h5>
+              <ul>
+                <li><strong>BullMQ</strong> <span class="q">background job queues for repo analysis</span></li>
+                <li><strong>Worker threads / worker pools</strong></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Cloud &amp; Infrastructure</h5>
+              <ul>
+                <li><strong>AWS</strong> <span class="q">EC2 / ECS, S3, SES, Lambda, CloudFront, RDS / Aurora</span></li>
+                <li><strong>Docker + Docker Compose</strong></li>
+                <li><strong>Kubernetes (K8s)</strong> <span class="q">container orchestration at scale</span></li>
+                <li><strong>Nginx</strong> <span class="q">reverse proxy and load balancing</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>DevOps &amp; CI/CD</h5>
+              <ul>
+                <li><strong>GitHub Actions</strong> <span class="q">automated pipelines, testing, deployment</span></li>
+                <li><strong>Docker image builds</strong> <span class="q">and registry management</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Integrations &amp; Auth</h5>
+              <ul>
+                <li><strong>GitHub REST API + Webhooks</strong></li>
+                <li><strong>GitLab REST API + Webhooks</strong></li>
+                <li><strong>OAuth 2.0</strong> <span class="q">GitHub / GitLab login</span></li>
+                <li><strong>JWT + session management</strong></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Monitoring &amp; Observability</h5>
+              <ul>
+                <li><strong>Sentry</strong> <span class="q">error tracking</span></li>
+                <li><strong>Datadog</strong> <span class="q">or equivalent &mdash; metrics, logs, tracing</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Security</h5>
+              <ul>
+                <li><strong>Rate limiting</strong></li>
+                <li><strong>CORS &amp; security headers</strong> <span class="q">Helmet.js</span></li>
+                <li><strong>Parameterized queries</strong> <span class="q">SQL injection prevention</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Testing</h5>
+              <ul>
+                <li><strong>Jest / Vitest</strong> <span class="q">unit &amp; integration</span></li>
+                <li><strong>Playwright</strong> or <strong>Cypress</strong> <span class="q">end-to-end</span></li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <h5>Version Control</h5>
+              <ul>
+                <li><strong>Git</strong> <span class="q">branching, PRs, code review, reading diffs</span></li>
+              </ul>
+            </div>
           </div>
-          <div class="role-col">
-            <h4>// What we're looking for</h4>
-            <ul>
-              <li>Basic familiarity with <strong>TypeScript</strong> &mdash; you're comfortable in JavaScript and keen to get better.</li>
-              <li>Some hands-on experience with <strong>React</strong> &mdash; any <strong>Next.js</strong> is a bonus.</li>
-              <li>You've built something with a modern frontend &mdash; <strong>Tailwind</strong> and basic state management don't scare you.</li>
-              <li>A little <strong>Node.js</strong> &mdash; enough that opening an API route feels doable, not scary.</li>
-              <li>Comfortable with <strong>Git</strong>, and happy to read unfamiliar code and ask good questions.</li>
-              <li>Keen to <strong>take a task to the finish line</strong> &mdash; and we'll help you get there.</li>
-            </ul>
-          </div>
-          <div class="role-col nice-to-have">
-            <h4>// Nice-to-have</h4>
-            <ul>
-              <li>You've tinkered with a <strong>VS Code extension</strong> or other developer tooling.</li>
-              <li>Genuine interest in <strong>dev tools</strong> &mdash; you have opinions about the ones you use.</li>
-              <li>A side project, hackathon, or open-source contribution you're proud of.</li>
-            </ul>
+
+          <div class="stack-note">
+            <p>You don't need to know all of this on day one. If you're solid on <strong>TypeScript, Next.js, Node.js, and Git</strong> &mdash; and genuinely excited to learn the rest &mdash; we want to hear from you.</p>
           </div>
         </div>
 
