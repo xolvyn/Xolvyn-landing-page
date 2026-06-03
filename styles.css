@@ -4334,3 +4334,540 @@ a.blog-card:hover {
     padding: 2px 7px
   }
 }
+
+/* =====================================================================
+   CAREERS PAGE
+   Reuses existing tokens: .section, .container, .section-label,
+   .section-title, .fade-up, .btn, .text-blue, card surfaces, .modal.
+   ===================================================================== */
+
+/* Careers hero — tighter than the product hero (no product mockup) */
+.careers-hero {
+  padding: 150px 0 56px
+}
+
+.careers-hero .hero-sub {
+  margin-bottom: 0
+}
+
+/* "1 open role" badge segment uses the blue accent instead of green */
+.badge-status.badge-hiring {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18) 0%, rgba(59, 130, 246, 0.07) 100%);
+  color: #60A5FA
+}
+
+.badge-status.badge-hiring .badge-dot {
+  background: #3B82F6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+  animation-name: badgePulseBlue
+}
+
+@keyframes badgePulseBlue {
+
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6)
+  }
+
+  50% {
+    box-shadow: 0 0 18px rgba(59, 130, 246, 1)
+  }
+}
+
+/* ===== ROLE CARD (repeatable) ===== */
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px
+}
+
+.role-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 34px;
+  transition: all 0.3s
+}
+
+.role-card:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.09)
+}
+
+.role-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 6px
+}
+
+.role-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.96);
+  line-height: 1.2
+}
+
+.role-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap
+}
+
+.role-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 6px 11px;
+  white-space: nowrap
+}
+
+.role-tagline {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 8px 0 26px;
+  max-width: 720px
+}
+
+.role-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 28px
+}
+
+.role-col h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 14px
+}
+
+.role-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px
+}
+
+.role-col li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72)
+}
+
+.role-col li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: rgba(59, 130, 246, 0.55)
+}
+
+.role-col.nice-to-have li::before {
+  background: rgba(167, 139, 250, 0.5)
+}
+
+.role-col li strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600
+}
+
+.role-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+.role-actions .text-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s
+}
+
+.role-actions .text-link:hover {
+  color: #60A5FA
+}
+
+/* ===== "WHAT THIS ACTUALLY IS" — radically honest ===== */
+.honest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px
+}
+
+.honest-block {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 6px 18px;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 2px solid rgba(59, 130, 246, 0.35);
+  border-radius: 12px;
+  padding: 24px 26px;
+  transition: all 0.3s
+}
+
+.honest-block:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-left-color: rgba(59, 130, 246, 0.7)
+}
+
+.honest-num {
+  grid-row: 1 / span 2;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.18);
+  line-height: 1
+}
+
+.honest-block h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px
+}
+
+.honest-block p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.68)
+}
+
+.honest-block p + p {
+  margin-top: 10px
+}
+
+.honest-block p strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600
+}
+
+.honest-block .mono-accent {
+  font-family: 'JetBrains Mono', monospace;
+  color: #60A5FA;
+  font-size: 13.5px
+}
+
+/* ===== APPLICATION CHALLENGE ===== */
+.challenge-card {
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(59, 130, 246, 0.06) 0%, transparent 55%),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 40px 42px
+}
+
+.challenge-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4ADE80;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 100px;
+  padding: 6px 14px;
+  margin-bottom: 18px
+}
+
+.challenge-card > p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 760px
+}
+
+.challenge-card > p strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600
+}
+
+.challenge-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 30px 0 8px;
+  counter-reset: chstep
+}
+
+.challenge-step {
+  position: relative;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 22px
+}
+
+.challenge-step::before {
+  counter-increment: chstep;
+  content: counter(chstep, decimal-leading-zero);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #60A5FA;
+  display: block;
+  margin-bottom: 10px
+}
+
+.challenge-step h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 7px;
+  letter-spacing: -0.01em
+}
+
+.challenge-step p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.62)
+}
+
+.challenge-fallback {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: 22px
+}
+
+.challenge-fallback svg {
+  flex-shrink: 0;
+  margin-top: 2px
+}
+
+.challenge-fallback p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.66)
+}
+
+.challenge-fallback strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600
+}
+
+.challenge-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+.challenge-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6
+}
+
+/* ===== APPLY MODAL EXTRAS (reuses .modal) ===== */
+.modal .modal-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 4px 0 20px;
+  counter-reset: applystep
+}
+
+.modal .modal-step {
+  position: relative;
+  padding-left: 38px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72)
+}
+
+.modal .modal-step::before {
+  counter-increment: applystep;
+  content: counter(applystep);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: #60A5FA;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.modal .modal-step strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600
+}
+
+.modal-motive {
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 20px
+}
+
+.modal-motive .modal-motive-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #60A5FA;
+  margin-bottom: 7px
+}
+
+.modal-motive p {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  margin-bottom: 0 !important;
+  font-style: italic
+}
+
+.modal .btn-apply-mail {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 6px
+}
+
+/* ===== VIEW-SOURCE EASTER EGG (#secret) ===== */
+.secret-reveal {
+  display: none
+}
+
+.secret-reveal:target {
+  display: block;
+  animation: slideUpModal 0.4s ease
+}
+
+.secret-reveal .secret-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background:
+    radial-gradient(120% 160% at 100% 0%, rgba(167, 139, 250, 0.08) 0%, transparent 55%),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 16px;
+  padding: 36px 38px;
+  text-align: center
+}
+
+.secret-reveal .secret-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #A78BFA;
+  margin-bottom: 14px
+}
+
+.secret-reveal h2 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.96);
+  margin-bottom: 14px
+}
+
+.secret-reveal p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 520px;
+  margin: 0 auto 14px
+}
+
+.secret-reveal .btn {
+  margin-top: 8px
+}
+
+/* ===== CAREERS RESPONSIVE ===== */
+@media(max-width:900px) {
+  .role-cols {
+    grid-template-columns: 1fr;
+    gap: 24px
+  }
+
+  .challenge-steps {
+    grid-template-columns: 1fr
+  }
+}
+
+@media(max-width:768px) {
+  .careers-hero {
+    padding: 120px 0 44px
+  }
+
+  .role-card {
+    padding: 24px 22px
+  }
+
+  .role-title {
+    font-size: 20px
+  }
+
+  .role-card-head {
+    gap: 12px
+  }
+
+  .honest-block {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 22px
+  }
+
+  .honest-num {
+    grid-row: auto;
+    font-size: 18px;
+    margin-bottom: 4px
+  }
+
+  .challenge-card {
+    padding: 28px 22px
+  }
+
+  .secret-reveal .secret-card {
+    padding: 28px 22px
+  }
+
+  .secret-reveal h2 {
+    font-size: 22px
+  }
+}
