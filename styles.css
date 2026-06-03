@@ -554,6 +554,56 @@ img {
   font-weight: 600
 }
 
+/* Quiet trust strip — muted credibility between the badge and the H1 */
+.hero-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 12px;
+  max-width: 660px;
+  margin: -6px auto 26px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em
+}
+
+.hero-trust-strip .hts-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap
+}
+
+.hero-trust-strip svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  opacity: 0.8
+}
+
+.hero-trust-strip .hts-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0
+}
+
+@media(max-width:768px) {
+  .hero-trust-strip {
+    font-size: 11px;
+    gap: 8px 10px;
+    margin-bottom: 22px
+  }
+
+  /* drop the dividers once items wrap, so stray dots don't dangle */
+  .hero-trust-strip .hts-dot {
+    display: none
+  }
+}
+
 /* ===== PRODUCT MOCKUP — WIDE ===== */
 .product-mockup {
   width: 100%;
