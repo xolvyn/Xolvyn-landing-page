@@ -148,7 +148,7 @@ function showPlanBanner(planName) {
   const planLabels = {
     free: 'Free Tier',
     pro: 'Pro Plan',
-    business: 'Business Plan',
+    business: 'Team Plan',
     enterprise: 'Enterprise'
   };
   const planColors = {
@@ -188,7 +188,7 @@ function clearPlanSelection() {
       const labels = {
         free: 'Claim Free Tier &rarr;',
         pro: 'Claim Pro &rarr;',
-        business: 'Claim Business &rarr;',
+        business: 'Claim Team &rarr;',
         enterprise: 'Talk to Founders &rarr;'
       };
       btn.innerHTML = labels[plan] || 'Claim &rarr;';
@@ -247,7 +247,7 @@ async function handleWaitlistStep2() {
   const planLabels = {
     free: 'Free Tier',
     pro: 'Pro Plan',
-    business: 'Business Plan',
+    business: 'Team Plan',
     enterprise: 'Enterprise'
   };
 
