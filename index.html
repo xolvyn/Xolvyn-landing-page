@@ -795,16 +795,24 @@
 
     <div class="faq-list fade-up">
       <div class="faq-item">
+        <div class="faq-q">How is Xolvyn different from free open-source codebase analyzers?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Free graph and visualization tools draw you a dependency map and stop there — they don't find vulnerabilities, don't scan for CVEs, don't rank findings by blast radius, don't open fix PRs, and don't produce an executive-friendly letter grade. Xolvyn fuses that architectural awareness with active security scanning, so the map isn't just something to look at — it's what tells you which vulnerability actually matters. That combination is something pure visualization tools cannot do.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why not just use Snyk or Semgrep plus a separate graph tool?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Running them side by side misses the point: a vulnerability's real risk depends on what depends on it. A medium-severity finding on a load-bearing file that 47 modules import is far more urgent than a critical finding on an isolated leaf node nothing touches — but two disconnected tools can't tell you that. Only fusing the security scan with the dependency graph turns a pile of findings into actionable prioritization.</p></div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q">Does Xolvyn store or train AI on my source code?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>No, never. Xolvyn performs a shallow git clone with depth=1 into an isolated temporary directory, runs the entire analysis in memory, and immediately deletes the clone. We store only computed metadata — architecture maps, complexity scores, and security findings — never your source code itself. Your code is never used to train any AI model, ours or third-party. Your intellectual property stays yours.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How is the @mentor AI different from ChatGPT or GitHub Copilot?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>Generic AI tools like ChatGPT and GitHub Copilot answer questions based on general training data — they have no awareness of what's actually in your specific codebase. Xolvyn's @mentor is grounded in your real dependency graph. It knows every file that exists, how each module imports others, what every function exports, and how layers connect. Ask "where is the auth logic?" and you get an actual file path and the routes it connects to — never a hallucination.</p></div>
+        <div class="faq-a"><p>@mentor is grounded in your repo's actual dependency graph — it answers with real file paths and import chains instead of hallucinated guesses.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Which programming languages and frameworks does Xolvyn support?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>Xolvyn currently supports TypeScript, JavaScript (both ESM and CommonJS), Python, Go, and Java with full AST-level dependency mapping. The security audit engine works on every text-based source file regardless of language. Monorepo tooling — including Turborepo, Nx, Lerna, and Yarn Workspaces — is supported natively. PHP, Ruby, and Rust are on the roadmap for the next quarterly release.</p></div>
+        <div class="faq-a"><p>Xolvyn currently supports TypeScript, JavaScript (both ESM and CommonJS), Python, Go, and Java with full AST-level dependency mapping. The security audit engine works on every text-based source file regardless of language. Monorepo tooling — including Turborepo, Nx, Lerna, and Yarn Workspaces — is supported natively.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How does the AI Auto-Fix Engine create Pull Requests?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
