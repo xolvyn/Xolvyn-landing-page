@@ -155,6 +155,48 @@ img {
   font-weight: 700;
 }
 
+/* Concrete-credibility chips (under the brand-intro definition) */
+.cred-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.cred-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  padding: 7px 14px;
+}
+
+.cred-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media(max-width:768px) {
+  .cred-chips {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .cred-chip {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .brand-intro {
     padding: 44px 0 28px;
