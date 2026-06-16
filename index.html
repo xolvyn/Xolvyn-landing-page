@@ -19,18 +19,23 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="googlebot" content="index,follow">
 
-<title>Code Security Ranked by Blast Radius | Xolvyn</title>
-<meta name="description" content="Xolvyn maps your codebase, ranks vulnerabilities by blast radius, and opens fixes as pull requests — so you fix what can actually break things first.">
-<meta name="keywords" content="codebase intelligence, AI code mentor, dependency graph tool, code architecture visualization, codebase onboarding tool, security audit tool, code security scanner, AI for developers, AST parser, AI code review, dev tools, software architecture, codebase analysis">
+<title>Architecture-Aware Code Security Scanner | Xolvyn</title>
+<meta name="description" content="Xolvyn scans your GitHub or GitLab repo, maps the dependency graph, and ranks every vulnerability by blast radius — so your team fixes what's load-bearing first. Free for public repos.">
+<meta name="keywords" content="architecture-aware code security, blast radius vulnerability scanner, dependency graph security tool, code security scanner, codebase intelligence, CVE scanner, OWASP code audit, AST-based security analysis, vulnerability prioritization, DevSecOps tool, code architecture visualization">
 <meta name="author" content="Xolvyn">
 <link rel="canonical" href="https://getxolvyn.com">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getxolvyn.com">
-<meta property="og:title" content="Code Security Ranked by Blast Radius | Xolvyn">
-<meta property="og:description" content="Map your codebase, find the vulnerabilities that actually matter, and fix them as pull requests — all from one analysis.">
+<meta property="og:title" content="Architecture-Aware Code Security Scanner | Xolvyn">
+<meta property="og:description" content="Scan your repo, map the dependency graph, and rank every vulnerability by blast radius — fix what's load-bearing first.">
 <meta property="og:image" content="https://getxolvyn.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Xolvyn — code security ranked by blast radius">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Xolvyn">
 
 <!-- Twitter / X -->
@@ -39,6 +44,7 @@
 <meta name="twitter:title" content="Code Security Ranked by Blast Radius | Xolvyn">
 <meta name="twitter:description" content="Map your codebase, find the vulnerabilities that actually matter, and fix them as pull requests — all from one analysis.">
 <meta name="twitter:image" content="https://getxolvyn.com/og-image.png">
+<meta name="twitter:image:alt" content="Xolvyn — code security ranked by blast radius">
 
 <!-- Favicons -->
 <link rel="icon" type="image/png" href="Xolvyn_Mark.png">
@@ -52,7 +58,7 @@
   "name": "Xolvyn",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Web",
-  "description": "Architecture-aware code security and codebase-understanding platform. Scans repositories for 50+ vulnerability classes and CVEs, ranks findings by blast radius, analyzes pull-request impact, and opens AST-aware fix pull requests.",
+  "description": "Architecture-aware code security scanner. Xolvyn scans any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, builds an AST-based dependency graph, and ranks every finding by blast radius — how many files depend on the affected code — so teams fix what's load-bearing first. Auto-Fix Engine opens remediation pull requests for human review.",
   "url": "https://getxolvyn.com",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for public repositories during private beta." }
 }
@@ -124,15 +130,6 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getxolvyn.com" }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Xolvyn",
   "url": "https://getxolvyn.com",
@@ -143,6 +140,15 @@
     "https://x.com/xolvyn",
     "https://github.com/xolvyn",
     "https://www.linkedin.com/company/xolvyn"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getxolvyn.com/" }
   ]
 }
 </script>
@@ -158,7 +164,7 @@
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="/" onclick="if(location.pathname==='/'){event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}" class="nav-logo" aria-label="Xolvyn — home">
-      <img src="Xolvyn_Full_Lockup.png" alt="Xolvyn — Architecture-aware security auditing" class="nav-logo-img" width="1200" height="300">
+      <img src="Xolvyn_Full_Lockup.png" alt="Xolvyn — Architecture-aware security auditing" class="nav-logo-img" width="1200" height="400">
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
@@ -185,8 +191,8 @@
 
 <!-- SCROLL HERO — pinned 4-slide showcase -->
 <section class="scrollhero" id="hero" aria-label="Xolvyn — understand, secure, and fix your codebase">
-  <h1 class="sr-only">Understand your codebase. Secure it. Fix it.</h1>
-  <p class="hero-definition">Xolvyn is an architecture-aware security platform that scans any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, maps how every file connects, and ranks each finding by blast radius &mdash; how many files depend on the affected code &mdash; so teams fix what&rsquo;s load-bearing first.</p>
+  <h1 class="sr-only">Architecture-Aware Code Security &mdash; Understand, Secure, and Fix Your Codebase | Xolvyn</h1>
+  <p class="hero-definition">Xolvyn is an architecture-aware code security platform that scans any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, maps how every file connects, and ranks each finding by blast radius &mdash; how many files depend on the affected code &mdash; so teams fix what&rsquo;s load-bearing first.</p>
 
   <div class="scrollhero-track" id="scrollhero-track">
     <div class="scrollhero-viewport">
@@ -209,8 +215,8 @@
 
         <article class="scrollhero-slide" data-slide="0">
           <div class="slide-copy">
-            <h2 class="slide-heading">Understand your <span class="text-blue">codebase</span></h2>
-            <p class="slide-sub">See how every file connects &mdash; layers, dependencies, and what each module does. Onboard new engineers in days.</p>
+            <h2 class="slide-heading">See how your codebase <span class="text-blue">connects</span></h2>
+            <p class="slide-sub">Xolvyn maps every file, dependency, and architecture layer in your repo &mdash; so your team always knows what depends on what.</p>
           </div>
           <div class="slide-visual">
             <div class="duo-window ae-window" role="img" aria-label="Xolvyn architecture map showing a codebase's files grouped by layer with their dependencies">
@@ -847,7 +853,7 @@
         <input type="email" placeholder="your@email.com" id="waitlist-email" aria-label="Your work email address">
         <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get Early Access &rarr;</button>
       </div>
-      <p class="waitlist-note fade-up" id="waitlist-note" style="text-align:center">Free for public repos &middot; No install &middot; Launching 2026</p>
+      <p class="waitlist-note fade-up" id="waitlist-note" style="text-align:center">Free for public repos &middot; No install &middot; Launching August 2026</p>
 
       <!-- Step 2: Involvement -->
       <div id="waitlist-step-2" style="display:none">
@@ -912,7 +918,7 @@
       <div>
         <h4>Company</h4>
         <button type="button" class="footer-modal-btn" onclick="openModal('about-modal')">About</button>
-        <a href="careers">Careers</a>
+        <a href="/careers">Careers</a>
         <button type="button" class="footer-modal-btn" onclick="openModal('security-modal')">Security &amp; Privacy</button>
         <a href="mailto:hello@xolvyn.dev">Contact</a>
       </div>
@@ -946,7 +952,7 @@
     <h3>About Xolvyn</h3>
     <p>Xolvyn is building the intelligence layer for modern codebases — a platform that runs 50+ security checks, maps your architecture, and ranks every finding by blast radius so teams fix what can actually break things first.</p>
     <p>We're a small team of engineers who've felt the pain firsthand: 3-week onboarding, invisible dependencies, security issues discovered at 2am. Xolvyn is what we wished existed at every company we've worked at.</p>
-    <p class="modal-meta">Launching 2026 &middot; <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a></p>
+    <p class="modal-meta">Launching August 2026 &middot; <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a></p>
   </div>
 </div>
 
