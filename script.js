@@ -324,6 +324,15 @@ if (emailInput) {
   var mqMobile = window.matchMedia('(max-width: 768px)');
   var isStatic = false;
   var io = null;
+  var slidesEl = hero.querySelector('.scrollhero-slides');
+  var carouselBound = false;
+  var carIdx = -1;
+
+  function setDotsActive(active) {
+    for (var d = 0; d < dots.length; d++) {
+      dots[d].classList.toggle('is-active', d === active);
+    }
+  }
 
   /* -------------------------------------------------------------------
      CORE — smoothed scroll engine.
@@ -430,10 +439,7 @@ if (emailInput) {
     // glow parallax from the smoothed value (preserves translateX centering)
     if (glow) glow.style.transform = 'translateX(-50%) translateY(' + (current * 48 - 24).toFixed(1) + 'px)';
     setGlow(active);
-
-    for (var d = 0; d < dots.length; d++) {
-      dots[d].classList.toggle('is-active', d === active);
-    }
+    setDotsActive(active);
   }
 
   function frame() {
@@ -472,12 +478,22 @@ if (emailInput) {
   function onResize() {
     measure();
     kick();
+    if (carouselBound) {
+      carIdx = -1; // force re-measure of active slide height after the reflow
+      onCarouselScroll();
+    }
   }
 
   // progress rail: click a dot to scroll to that slide's position
   dots.forEach(function (dot, i) {
     dot.addEventListener('click', function () {
-      if (isStatic) return;
+      if (isStatic) {
+        // mobile swipe deck: page the carousel horizontally to slide i
+        if (carouselBound && slidesEl) {
+          slidesEl.scrollTo({ left: i * slidesEl.clientWidth, behavior: 'smooth' });
+        }
+        return;
+      }
       window.scrollTo({ top: Math.round(trackTop + (i / (N - 1)) * total), behavior: 'smooth' });
     });
   });
@@ -486,6 +502,45 @@ if (emailInput) {
   function teardownIO() {
     if (io) { io.disconnect(); io = null; }
     slides.forEach(function (s) { s.classList.remove('io-pending', 'io-in'); });
+  }
+
+  /* adaptive height: size the deck to the current slide so sparse slides
+     don't sit in a tall empty panel inherited from the dense ones */
+  function setDeckHeight(idx) {
+    if (!slidesEl || !slides[idx]) return;
+    var h = slides[idx].offsetHeight;
+    if (h) slidesEl.style.height = h + 'px';
+  }
+
+  /* mobile swipe deck: keep the dots, glow + deck height synced to the slide */
+  function onCarouselScroll() {
+    var w = slidesEl.clientWidth;
+    if (!w) return;
+    var idx = clamp(Math.round(slidesEl.scrollLeft / w), 0, N - 1);
+    if (idx === carIdx) return;
+    carIdx = idx;
+    setDotsActive(idx);
+    setGlow(idx);
+    setDeckHeight(idx);
+  }
+
+  function bindCarousel() {
+    if (carouselBound || !slidesEl) return;
+    carIdx = 0;
+    slidesEl.scrollLeft = 0;
+    setDotsActive(0);
+    setGlow(0);
+    setDeckHeight(0);
+    slidesEl.addEventListener('scroll', onCarouselScroll, { passive: true });
+    carouselBound = true;
+  }
+
+  function unbindCarousel() {
+    if (!carouselBound) return;
+    slidesEl.removeEventListener('scroll', onCarouselScroll);
+    slidesEl.style.height = '';
+    carouselBound = false;
+    carIdx = -1;
   }
 
   function setupIO() {
@@ -504,13 +559,22 @@ if (emailInput) {
   function applyMode() {
     isStatic = mqReduce.matches || mqMobile.matches;
     hero.classList.toggle('is-static', isStatic);
+    // mobile gets the horizontal swipe deck; reduced-motion desktop stays stacked
+    hero.classList.toggle('is-carousel', mqMobile.matches);
     teardownIO();
+    unbindCarousel();
     if (isStatic) {
       if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
       parts.forEach(clearSlide);
       if (glow) glow.style.transform = '';
       setGlow(0);
-      if (!mqReduce.matches) setupIO();
+      if (mqMobile.matches) {
+        // swipe deck: dots act as the pager, synced to scroll position
+        setDotsActive(0);
+        bindCarousel();
+      } else if (!mqReduce.matches) {
+        setupIO();
+      }
     } else {
       measure();
       current = -1; // snap to position, then glide from there

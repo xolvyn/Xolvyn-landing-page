@@ -1,0 +1,19 @@
+# Xolvyn
+> Architecture-aware code security auditing. Xolvyn scans any GitHub or GitLab
+> repository for 50+ vulnerability classes and CVEs, maps the dependency graph,
+> and ranks every finding by blast radius — how many files depend on the affected
+> code — so teams fix what is load-bearing first. Private beta; launching 2026.
+
+## Core pages
+- [Home](https://getxolvyn.com): Product overview, features, pricing, FAQ.
+- [Blog](https://getxolvyn.com/blog): Code security, dependency graphs, engineering onboarding.
+- [Onboard New Engineers in 3 Days](https://getxolvyn.com/articles/onboard-engineers-codebase-3-days)
+- [Careers](https://getxolvyn.com/careers): Open roles — full-stack and AI/ML developer internships.
+
+## Key facts
+- Ranks vulnerabilities by blast radius (severity x number of dependent files), not CVSS alone.
+- AST-based dependency mapping for TypeScript, JavaScript, Python, Go, and Java.
+- 50+ security checks + CVE scanning; OWASP/CWE-aligned; letter grade (A-D) and 0-100 score.
+- Auto-Fix Engine opens remediation pull requests on GitHub/GitLab; human review required.
+- Privacy: shallow clone, in-memory analysis, immediate deletion; never trains on user code.
+- Contact: hello@xolvyn.dev
