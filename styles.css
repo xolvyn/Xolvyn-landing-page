@@ -10,7 +10,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* clip, not hidden: hidden turns html/body into scroll containers and
+     silently breaks position:sticky (the scroll-hero pin). clip gives the
+     same no-horizontal-scroll guarantee without creating a scroll container. */
   overflow-x: hidden;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%
 }
@@ -21,6 +25,7 @@ body {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
   overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.01em;
   max-width: 100vw;
@@ -481,27 +486,22 @@ img {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 120px 0 80px;
+  padding: 100px 0 80px;
   overflow: hidden
 }
 
 .hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none
+  display: none
 }
 
 .hero-glow-top {
   position: absolute;
-  top: -100px;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
-  height: 500px;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.06) 0%, transparent 65%);
   pointer-events: none
 }
 
@@ -574,26 +574,78 @@ img {
 }
 
 .hero h1 {
-  font-size: 52px;
-  font-weight: 800;
-  line-height: 1.06;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.95)
+  font-size: clamp(34px, 5.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF
 }
 
 .hero-sub {
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.65;
+  font-size: clamp(16px, 2vw, 19px);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
   max-width: 560px;
-  margin: 0 auto 48px;
+  margin: 0 auto 32px;
   font-weight: 400
 }
 
-.hero-sub strong {
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 600
+/* CTA row */
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px
+}
+
+.btn-hero {
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.25s ease
+}
+
+.btn-hero.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3)
+}
+
+.btn-hero.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85)
+}
+
+.btn-hero.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff
+}
+
+/* Microcopy */
+.hero-micro {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 auto 72px;
+  text-align: center
+}
+
+@media(max-width:768px) {
+  .hero { padding: 88px 0 56px }
+  .hero h1 { margin-bottom: 20px }
+  .hero-sub { margin-bottom: 28px }
+  .hero-cta-row {
+    flex-direction: column;
+    gap: 10px
+  }
+  .hero-cta-row .btn-hero {
+    width: 100%;
+    justify-content: center;
+    text-align: center
+  }
+  .hero-micro { margin-bottom: 48px }
 }
 
 /* Quiet trust strip — muted credibility between the badge and the H1 */
@@ -5154,5 +5206,1973 @@ a.blog-card:hover {
 
   .secret-reveal h2 {
     font-size: 22px
+  }
+}
+/* ===== HERO MOCKUP — SECURITY REPORT (static replica) ===== */
+.sec-report-mock {
+  text-align: left;
+  overflow: hidden
+}
+
+/* Header */
+.sec-report-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07)
+}
+
+.sec-report-id {
+  display: flex;
+  align-items: center;
+  gap: 11px
+}
+
+.sec-report-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  flex-shrink: 0
+}
+
+.sec-report-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.95)
+}
+
+.sec-report-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px
+}
+
+.sec-report-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap
+}
+
+.sec-report-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+  padding: 5px 10px
+}
+
+.sec-report-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  padding: 6px 11px
+}
+
+/* Severity stat cards */
+.sec-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 16px 18px 12px
+}
+
+.sec-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 11px;
+  padding: 14px 10px
+}
+
+.sec-stat-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.sec-stat-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1
+}
+
+.sec-stat-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.5)
+}
+
+/* Risk summary */
+.sec-risk-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0 18px 14px
+}
+
+.sec-risk-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap
+}
+
+.sec-risk-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FBBF24;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: 100px;
+  padding: 5px 12px
+}
+
+.sec-owasp-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  padding: 3px 7px
+}
+
+.sec-owasp-tag strong {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700
+}
+
+.sec-risk-right {
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+.sec-muted-pill {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  padding: 4px 10px;
+  white-space: nowrap
+}
+
+/* Findings table */
+.sec-findings {
+  padding: 0 12px 6px
+}
+
+.sec-finding-row {
+  display: grid;
+  grid-template-columns: 84px 1.35fr 78px 52px 116px 1.8fr;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+}
+
+.sec-finding-head {
+  border-top: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(255, 255, 255, 0.4);
+  padding-bottom: 9px
+}
+
+.sec-col-blast {
+  color: #60A5FA
+}
+
+.sec-sev {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 5px;
+  white-space: nowrap
+}
+
+.sev-critical {
+  color: #F87171;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.32)
+}
+
+.sev-high {
+  color: #FB923C;
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.32)
+}
+
+.sev-medium {
+  color: #FBBF24;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.32)
+}
+
+.sec-file {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.85)
+}
+
+.sec-line {
+  color: rgba(255, 255, 255, 0.4)
+}
+
+.sec-cwe {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #F59E0B
+}
+
+.sec-cvss {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px;
+  font-weight: 700
+}
+
+/* Blast radius — the visual anchor the headline promises */
+.sec-blast {
+  display: flex;
+  flex-direction: column;
+  gap: 5px
+}
+
+.sec-blast-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92)
+}
+
+.sec-blast-num.sec-blast-low {
+  color: rgba(255, 255, 255, 0.55)
+}
+
+.sec-blast-bar {
+  display: block;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden
+}
+
+.sec-blast-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 3px
+}
+
+.sec-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.8)
+}
+
+.sec-rule {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.38)
+}
+
+/* Footer */
+.sec-report-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.015)
+}
+
+.sec-footer-engine {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.42)
+}
+
+.sec-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap
+}
+
+.sec-footer-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.65)
+}
+
+.sec-footer-score strong {
+  color: rgba(255, 255, 255, 0.95)
+}
+
+.sec-footer-grade {
+  color: #FBBF24;
+  font-weight: 700
+}
+
+.sec-footer-powered {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45)
+}
+
+.sec-auditor {
+  font-family: 'JetBrains Mono', monospace;
+  color: #60A5FA
+}
+
+/* ===== MOBILE: Security Report mockup (≤768px) ===== */
+@media(max-width:768px) {
+  /* Header stacks so the repo pill + Export never get cut off */
+  .sec-report-header { gap: 12px; padding: 14px 16px }
+  .sec-report-actions { width: 100%; gap: 8px }
+  .sec-report-repo { flex: 1 1 100%; justify-content: flex-start; font-size: 11px; min-width: 0; word-break: break-all }
+  .sec-report-export { flex: 0 0 auto }
+  .sec-report-sub { font-size: 10px }
+
+  /* 4 stat cards -> 2x2 */
+  .sec-stat-row { grid-template-columns: repeat(2, 1fr); padding: 14px 16px 10px }
+  .sec-stat-num { font-size: 22px }
+
+  /* Risk summary wraps cleanly */
+  .sec-risk-row { padding: 0 16px 14px }
+  .sec-risk-right { flex-wrap: wrap }
+
+  /* Findings: table -> stacked cards (kills horizontal overflow) */
+  .sec-findings { padding: 0 14px 4px }
+  .sec-finding-row.sec-finding-head { display: none }
+
+  .sec-finding-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 14px;
+    margin-bottom: 10px
+  }
+  .sec-finding-row:last-child { margin-bottom: 0 }
+
+  /* Line 1: severity pill + file */
+  .sec-finding-row > span:nth-child(1) { order: 1 }
+  .sec-finding-row > .sec-file { order: 2; flex: 1 1 auto; min-width: 0; word-break: break-word }
+
+  /* Line 2: CWE + CVSS as small labelled chips */
+  .sec-finding-row > .sec-cwe,
+  .sec-finding-row > .sec-cvss {
+    font-size: 11px;
+    padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.03)
+  }
+  .sec-finding-row > .sec-cwe { order: 4 }
+  .sec-finding-row > .sec-cvss { order: 5 }
+  .sec-finding-row > .sec-cvss::before {
+    content: "CVSS ";
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 500
+  }
+
+  /* Blast radius: full-width + emphasized — the key data point stays prominent */
+  .sec-finding-row > .sec-blast {
+    order: 6;
+    flex: 1 1 100%;
+    gap: 7px;
+    background: rgba(59, 130, 246, 0.06);
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    border-radius: 8px;
+    padding: 9px 11px
+  }
+  .sec-finding-row > .sec-blast::before {
+    content: "BLAST RADIUS";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.07em;
+    color: #60A5FA
+  }
+  .sec-finding-row > .sec-blast .sec-blast-num { font-size: 15px }
+  .sec-finding-row > .sec-blast .sec-blast-bar { height: 6px }
+
+  /* Description full-width */
+  .sec-finding-row > .sec-desc { order: 7; flex: 1 1 100% }
+
+  /* Footer stacks */
+  .sec-footer-right { width: 100%; gap: 12px }
+}
+
+/* ===== MOBILE: comparison table -> stacked cards (≤768px) ===== */
+@media(max-width:768px) {
+  .compare-wrap { overflow-x: visible }
+  .compare-table { min-width: 0 }
+  .compare-table thead { display: none }
+  .compare-table tbody,
+  .compare-table tr,
+  .compare-table th,
+  .compare-table td { display: block }
+
+  .compare-table tr {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden
+  }
+  .compare-table th[scope="row"] {
+    text-align: left;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    width: auto
+  }
+  .compare-table td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: right
+  }
+  .compare-table tr td:last-child { border-bottom: none }
+  .compare-table td.compare-col-xolvyn { background: rgba(59, 130, 246, 0.06) }
+
+  /* Row labels via the column headers (no markup change needed) */
+  .compare-table td::before {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    margin-right: 12px
+  }
+  .compare-table td:nth-child(2)::before { content: "Xolvyn" }
+  .compare-table td:nth-child(3)::before { content: "Generic security scanners" }
+  .compare-table td:nth-child(4)::before { content: "Generic graph tools" }
+}
+
+/* ===== MOBILE: tap targets, trust strips, overflow guards (≤768px) ===== */
+@media(max-width:768px) {
+  .btn,
+  .btn-primary,
+  .btn-plan-claim,
+  .faq-q { min-height: 44px }
+  .mobile-menu a { min-height: 44px }
+
+  /* trust rows wrap instead of overflowing */
+  .hero-trust { flex-wrap: wrap; row-gap: 8px }
+  .hero-trust-strip { max-width: 100% }
+
+  /* belt-and-suspenders against horizontal overflow */
+  .product-mockup,
+  img,
+  table { max-width: 100% }
+}
+
+/* ===== MOBILE: hero type scale (≤480 / ≤390 / ≤360) ===== */
+@media(max-width:480px) {
+  .hero h1 { font-size: 30px; line-height: 1.12 }
+  .hero-sub { font-size: 14.5px }
+  .section-title { font-size: 22px }
+}
+
+@media(max-width:390px) {
+  .hero h1 { font-size: 27px }
+}
+
+@media(max-width:360px) {
+  .hero h1 { font-size: 24px }
+  .hero-sub { font-size: 14px }
+}
+
+/* ===================================================================
+   HERO DUAL MOCKUP — one dependency map, two views
+   Card A (Understand / architecture) behind + offset top-left,
+   Card B (Secure / security report) in front + offset bottom-right.
+   =================================================================== */
+.hero-duo {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  text-align: center
+}
+
+.hero-duo-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 7px 16px;
+  margin-bottom: 24px
+}
+
+.hero-duo-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.7)
+}
+
+.hero-duo-stack {
+  position: relative;
+  padding-top: 52px
+}
+
+.duo-card {
+  text-align: left
+}
+
+.duo-tab {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 13px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  z-index: 1;
+  margin-left: 16px;
+  margin-bottom: -1px
+}
+
+.duo-tab-a {
+  color: #C4B5FD;
+  background: rgba(167, 139, 250, 0.14);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-bottom: none
+}
+
+.duo-tab-b {
+  color: #FCA5A5;
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.32);
+  border-bottom: none
+}
+
+.duo-window {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden
+}
+
+/* Card A — Understand: behind, top-left, slightly recessed */
+.duo-card-understand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  z-index: 1;
+  transform: scale(0.97);
+  transform-origin: top left
+}
+
+.duo-card-understand .duo-window {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5)
+}
+
+/* Card B — Secure: front, bottom-right, primary */
+.duo-card-secure {
+  position: relative;
+  width: 76%;
+  margin-left: auto;
+  z-index: 2
+}
+
+.duo-card-secure .duo-window {
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.7), 0 0 60px rgba(239, 68, 68, 0.06)
+}
+
+/* Architecture explorer (Card A interior) */
+.ae-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07)
+}
+
+.ae-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.ae-mentor {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: #60A5FA;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 100px;
+  padding: 4px 9px
+}
+
+.ae-body {
+  display: grid;
+  grid-template-columns: 132px 1fr
+}
+
+.ae-sidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 10px
+}
+
+.ae-sidebar-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+  padding: 0 4px
+}
+
+.ae-layer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 7px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7)
+}
+
+.ae-layer-active {
+  background: rgba(59, 130, 246, 0.1);
+  color: rgba(255, 255, 255, 0.95)
+}
+
+.ae-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0
+}
+
+.ae-layer-name {
+  flex: 1;
+  white-space: nowrap
+}
+
+.ae-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4)
+}
+
+.ae-detail {
+  padding: 14px 16px
+}
+
+.ae-file {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 14px
+}
+
+.ae-section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 7px
+}
+
+.ae-blurb {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 16px
+}
+
+.ae-imports {
+  display: flex;
+  flex-direction: column;
+  gap: 6px
+}
+
+.ae-import {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px 10px
+}
+
+/* Mobile: stack the two cards vertically, security first, full-width (no overlap) */
+@media(max-width:768px) {
+  .hero-duo { max-width: 100% }
+
+  .hero-duo-stack {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 26px
+  }
+
+  .duo-card {
+    position: static;
+    width: 100%;
+    transform: none
+  }
+
+  .duo-card-understand { order: 2 }
+
+  .duo-card-secure {
+    order: 1;
+    margin-left: 0
+  }
+}
+
+@media(max-width:480px) {
+  .ae-body { grid-template-columns: 108px 1fr }
+  .ae-detail { padding: 12px 14px }
+}
+
+
+/* ===== HERO ANCHOR LINE ===== */
+.hero-anchor {
+  max-width: 620px;
+  margin: -28px auto 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5)
+}
+/* ===== FINDINGS CARD (hero visual) ===== */
+.findings-card {
+  position: relative;
+  max-width: 940px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: visible
+}
+
+.findings-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0
+}
+
+.findings-inner {
+  position: relative;
+  z-index: 1;
+  background: #0E0E0E;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%)
+}
+
+.findings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px
+}
+
+.findings-repo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: -0.01em
+}
+
+.findings-grade {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  border-radius: 100px;
+  padding: 5px 12px;
+  letter-spacing: 0.01em
+}
+
+.findings-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 16px
+}
+
+.findings-list {
+  display: flex;
+  flex-direction: column
+}
+
+.finding-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+}
+
+.finding-row-last {
+  border-bottom: none
+}
+
+.finding-left {
+  flex: 1;
+  min-width: 0
+}
+
+.finding-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px
+}
+
+.finding-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0
+}
+
+.finding-file {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.finding-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.4;
+  padding-left: 18px
+}
+
+.finding-right {
+  width: 140px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-top: 2px
+}
+
+.finding-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px
+}
+
+.finding-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden
+}
+
+.finding-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease
+}
+
+/* Findings card mobile */
+@media(max-width:768px) {
+  .findings-inner { padding: 20px }
+  .finding-row { gap: 16px }
+  .finding-right { width: 100px }
+  .finding-file { font-size: 13px }
+  .finding-desc { font-size: 12px }
+  .findings-repo { font-size: 12px }
+}
+
+@media(max-width:480px) {
+  .findings-inner { padding: 16px }
+  .finding-right { width: 80px }
+  .finding-file { font-size: 12px }
+  .finding-count { font-size: 12px }
+}
+
+/* ===== HOW IT WORKS ===== */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px
+}
+
+.how-step {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 26px;
+  transition: all .3s
+}
+
+.how-step:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.09);
+  transform: translateY(-2px)
+}
+
+.how-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px
+}
+
+.how-step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.18)
+}
+
+.how-step-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.how-step h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 9px
+}
+
+.how-step p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.6)
+}
+
+@media(max-width:768px) {
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 14px
+  }
+}
+
+/* =====================================================================
+   HERO V3 — TEXT-FORWARD (locked copy from CONTENT.md)
+   Type + whitespace are the visual; background stays atmospheric.
+   ===================================================================== */
+
+/* Very faint grid, masked so it concentrates behind the headline */
+.hero::before {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 30%, transparent 75%);
+  pointer-events: none
+}
+
+/* Soft blue glow behind the headline (~0.10) */
+.hero-glow-top {
+  top: -40px;
+  width: 880px;
+  height: 560px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.10) 0%, transparent 68%)
+}
+
+/* Quiet drifting accent blob, bottom-right corner */
+.hero-blob {
+  position: absolute;
+  right: -140px;
+  bottom: -160px;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.07), transparent 65%);
+  filter: blur(70px);
+  pointer-events: none;
+  animation: heroBlobDrift 22s ease-in-out infinite alternate
+}
+
+@keyframes heroBlobDrift {
+  from {
+    transform: translate(0, 0)
+  }
+
+  to {
+    transform: translate(-64px, -48px)
+  }
+}
+
+/* Minimal muted status pill */
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 8px 18px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px)
+}
+
+.hero-pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+  animation: badgePulseBlue 2s ease-in-out infinite;
+  flex-shrink: 0
+}
+
+/* Final say on hero type scale — overrides earlier mobile shrink rules */
+.hero {
+  padding: 152px 0 96px
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px
+}
+
+.hero-sub {
+  font-size: clamp(16px, 2vw, 19px);
+  max-width: 580px;
+  margin-bottom: 32px
+}
+
+.hero-cta-row {
+  margin-bottom: 16px
+}
+
+.hero-micro {
+  margin: 0 auto
+}
+
+/* Trust bar — thin, muted, directly beneath the hero */
+.trust-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.012);
+  padding: 16px 0
+}
+
+.trust-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center
+}
+
+.trust-bar-sep {
+  color: rgba(255, 255, 255, 0.18)
+}
+
+@media(max-width:768px) {
+  .hero {
+    padding: 120px 0 64px
+  }
+
+  .trust-bar {
+    padding: 14px 0
+  }
+
+  .trust-bar-inner {
+    font-size: 12px;
+    gap: 6px 14px
+  }
+
+  .trust-bar-sep {
+    display: none
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-blob,
+  .hero-pill-dot {
+    animation: none
+  }
+
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none
+  }
+}
+
+/* Keep the careers hero on its own spacing (the .hero override above is landing-only) */
+.careers-hero {
+  padding: 150px 0 56px
+}
+
+@media(max-width:768px) {
+  .careers-hero {
+    padding: 120px 0 44px
+  }
+}
+
+/* =====================================================================
+   SCROLL HERO — pinned 4-slide showcase
+   Track provides scroll distance; sticky viewport pins; JS maps scroll
+   progress to slide transforms (transform/opacity only, GPU-friendly).
+   ===================================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0
+}
+
+.scrollhero {
+  position: relative;
+  background: #0A0A0A
+}
+
+.scrollhero-track {
+  height: 450vh;
+  position: relative
+}
+
+.scrollhero-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden
+}
+
+/* reuse the hero glow, recentered for the pinned viewport */
+.scrollhero-glow {
+  top: -140px;
+  width: 980px;
+  height: 620px;
+  transition: background 0.6s ease
+}
+
+/* Persistent top pill */
+.scrollhero-top {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none
+}
+
+.scrollhero-top .hero-pill {
+  margin-bottom: 0;
+  pointer-events: auto
+}
+
+/* Slides */
+.scrollhero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 2
+}
+
+.scrollhero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  /* top padding clears the fixed navbar + status pill, matching the old hero's
+     breathing room below the nav */
+  padding: 168px 24px 72px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none
+}
+
+/* graceful no-JS default: first slide visible */
+.scrollhero-slide[data-slide="0"] {
+  opacity: 1;
+  visibility: visible
+}
+
+.scrollhero-slide.is-current {
+  pointer-events: auto
+}
+
+.slide-copy {
+  text-align: center;
+  max-width: 760px;
+  will-change: transform, opacity
+}
+
+.slide-heading {
+  font-size: clamp(30px, 4.2vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 14px
+}
+
+.slide-sub {
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  max-width: 620px;
+  margin: 0 auto
+}
+
+.slide-visual {
+  width: min(780px, 92vw);
+  display: flex;
+  justify-content: center;
+  will-change: transform, opacity
+}
+
+.slide-placeholder {
+  width: 100%;
+  height: min(44vh, 380px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55)
+}
+
+/* Progress rail */
+.scrollhero-progress {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5
+}
+
+.progress-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background .3s ease, height .3s ease
+}
+
+.progress-dot.is-active {
+  background: #3B82F6;
+  height: 22px
+}
+
+/* Mobile: pinned hero adjustments so content fits in the viewport */
+@media (max-width: 768px) {
+  .scrollhero-slide {
+    padding: 130px 16px 20px;
+    justify-content: flex-start;
+    gap: 14px
+  }
+
+  .scrollhero-top {
+    top: 72px
+  }
+
+  .slide-heading {
+    font-size: clamp(22px, 6.5vw, 30px);
+    margin-bottom: 6px
+  }
+
+  .slide-sub {
+    font-size: 13.5px;
+    line-height: 1.45;
+    margin-bottom: 0
+  }
+
+  .slide-visual {
+    width: 100%;
+    overflow: visible
+  }
+
+  /* Scale the product cards down to fit the mobile viewport fully */
+  .slide-visual .duo-window,
+  .slide-visual .ae-window,
+  .slide-visual .sec-report-mock,
+  .slide-visual .gh-window {
+    transform: scale(0.78);
+    transform-origin: top center;
+    margin-bottom: -12%
+  }
+
+  .scrollhero-progress {
+    right: 6px;
+    gap: 7px
+  }
+
+  .progress-dot {
+    width: 5px;
+    height: 5px
+  }
+
+  .progress-dot.is-active {
+    height: 16px
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollhero-slide {
+    padding: 120px 12px 16px;
+    gap: 10px
+  }
+
+  .scrollhero-top {
+    top: 64px
+  }
+
+  .slide-heading {
+    font-size: clamp(20px, 6vw, 26px);
+    margin-bottom: 4px
+  }
+
+  .slide-sub {
+    font-size: 13px;
+    line-height: 1.4
+  }
+
+  .slide-visual .duo-window,
+  .slide-visual .ae-window,
+  .slide-visual .sec-report-mock,
+  .slide-visual .gh-window {
+    transform: scale(0.68);
+    margin-bottom: -18%
+  }
+}
+
+/* ---------------------------------------------------------------------
+   STATIC FALLBACK — mobile (<768px) and prefers-reduced-motion.
+   Pin disabled; slides render as normal stacked sections.
+   --------------------------------------------------------------------- */
+.scrollhero.is-static .scrollhero-track {
+  height: auto
+}
+
+.scrollhero.is-static .scrollhero-viewport {
+  position: static;
+  height: auto;
+  overflow: visible
+}
+
+.scrollhero.is-static .scrollhero-slides {
+  position: static
+}
+
+.scrollhero.is-static .scrollhero-slide {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  gap: 18px;
+  padding: 40px 20px
+}
+
+.scrollhero.is-static .slide-copy,
+.scrollhero.is-static .slide-visual {
+  transform: none !important;
+  opacity: 1 !important
+}
+
+.scrollhero.is-static .scrollhero-top {
+  position: static;
+  padding: 112px 0 4px;
+  pointer-events: auto
+}
+
+.scrollhero.is-static .scrollhero-progress {
+  display: none
+}
+
+.scrollhero.is-static .slide-heading {
+  font-size: clamp(26px, 7vw, 34px)
+}
+
+/* ---------------------------------------------------------------------
+   SLIDE VISUALS — reused product windows inside the pinned viewport
+   --------------------------------------------------------------------- */
+.slide-visual .duo-window {
+  width: 100%;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55)
+}
+
+/* the architecture explorer reads better slightly narrower */
+.slide-visual .ae-window {
+  max-width: 660px
+}
+
+/* Short laptop viewports: tighten the budget so heading + window fit 100vh */
+@media (min-width: 769px) and (max-height: 860px) {
+  .scrollhero-slide {
+    padding-top: 128px;
+    gap: 18px
+  }
+
+  .scrollhero-top {
+    top: 72px
+  }
+
+  .slide-heading {
+    font-size: clamp(26px, 3.4vw, 40px);
+    margin-bottom: 10px
+  }
+
+  .slide-sub {
+    font-size: 15px
+  }
+
+  .scrollhero .sec-report-header {
+    padding: 12px 14px
+  }
+
+  .scrollhero .sec-stat-row {
+    padding: 12px 14px 8px;
+    gap: 8px
+  }
+
+  .scrollhero .sec-stat-card {
+    padding: 10px 8px;
+    gap: 3px
+  }
+
+  .scrollhero .sec-stat-num {
+    font-size: 20px
+  }
+
+  .scrollhero .sec-finding-row {
+    padding: 8px 10px;
+    gap: 10px
+  }
+
+  .scrollhero .sec-report-footer {
+    padding: 10px 14px
+  }
+
+  .scrollhero .ae-detail {
+    padding: 12px 14px
+  }
+
+  .scrollhero .ae-blurb {
+    margin-bottom: 12px
+  }
+
+  .scrollhero .gh-comment-body {
+    padding: 10px 12px
+  }
+
+  .scrollhero .gh-table td,
+  .scrollhero .gh-table th {
+    padding: 5px 9px
+  }
+}
+
+/* ---------------------------------------------------------------------
+   GITHUB DARK-MODE PR RECREATIONS (slides 3-4)
+   GitHub dark palette: canvas #0d1117, raised #161b22, border #30363d.
+   --------------------------------------------------------------------- */
+.gh-window {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55)
+}
+
+.slide-visual .gh-window {
+  max-width: 660px
+}
+
+.gh-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: #9198a1
+}
+
+.gh-titlebar-sep {
+  color: #3d444d
+}
+
+.gh-muted {
+  color: #9198a1
+}
+
+/* PR head (slide 4) */
+.gh-pr-head {
+  padding: 14px 16px 13px;
+  border-bottom: 1px solid #30363d
+}
+
+.gh-pr-title {
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #f0f6fc
+}
+
+.gh-pr-num {
+  color: #9198a1;
+  font-weight: 400
+}
+
+.gh-pr-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 9px;
+  font-size: 12.5px
+}
+
+.gh-merged-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #8250df;
+  color: #fff;
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600
+}
+
+.gh-branch {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #58a6ff;
+  background: rgba(68, 147, 248, 0.12);
+  border-radius: 5px;
+  padding: 1px 6px
+}
+
+/* Comment card */
+.gh-comment {
+  margin: 14px 16px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden
+}
+
+.gh-comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  font-size: 12.5px
+}
+
+.gh-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  flex-shrink: 0
+}
+
+.gh-login {
+  font-weight: 600;
+  color: #f0f6fc
+}
+
+.gh-bot-pill {
+  font-size: 10.5px;
+  color: #9198a1;
+  border: 1px solid #3d444d;
+  border-radius: 100px;
+  padding: 1px 8px;
+  line-height: 1.5
+}
+
+.gh-comment-body {
+  padding: 13px 14px;
+  font-size: 13px;
+  color: #e6edf3
+}
+
+.gh-comment-text {
+  line-height: 1.6;
+  color: #e6edf3
+}
+
+.gh-inline-code {
+  font-size: 12px;
+  background: rgba(110, 118, 129, 0.18);
+  border-radius: 5px;
+  padding: 1px 6px
+}
+
+.gh-analysis-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0f6fc;
+  margin-bottom: 12px
+}
+
+.gh-grade {
+  color: #3fb950;
+  font-weight: 700
+}
+
+/* Markdown-style tables */
+.gh-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  margin-bottom: 13px
+}
+
+.gh-table:last-child {
+  margin-bottom: 2px
+}
+
+.gh-table th,
+.gh-table td {
+  border: 1px solid #30363d;
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: middle
+}
+
+.gh-table th {
+  background: #161b22;
+  color: #9198a1;
+  font-weight: 600;
+  font-size: 11.5px
+}
+
+.gh-table td {
+  color: #e6edf3
+}
+
+.gh-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px
+}
+
+.gh-subhead {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #f0f6fc;
+  margin-bottom: 8px
+}
+
+.gh-sev {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 100px;
+  white-space: nowrap
+}
+
+.gh-sev-medium {
+  color: #d29922;
+  border: 1px solid rgba(210, 153, 34, 0.4);
+  background: rgba(187, 128, 9, 0.1)
+}
+
+.gh-sev-low {
+  color: #9198a1;
+  border: 1px solid #3d444d;
+  background: rgba(110, 118, 129, 0.1)
+}
+
+/* Commit + merged rows (slide 4) */
+.gh-commit-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 16px 12px;
+  padding: 10px 12px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  font-size: 12.5px;
+  color: #e6edf3
+}
+
+.gh-commit-msg {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.gh-verified {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #3fb950;
+  border: 1px solid rgba(63, 185, 80, 0.4);
+  border-radius: 100px;
+  padding: 2px 10px
+}
+
+.gh-merged-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 16px 16px;
+  padding: 10px 12px;
+  background: rgba(130, 80, 223, 0.1);
+  border: 1px solid rgba(130, 80, 223, 0.4);
+  border-radius: 8px;
+  font-size: 12.5px;
+  color: #e6edf3
+}
+
+/* Mobile: tables tighten and wrap instead of overflowing */
+@media(max-width:768px) {
+  .gh-titlebar {
+    flex-wrap: wrap;
+    padding: 9px 12px
+  }
+
+  .gh-comment {
+    margin: 12px 12px
+  }
+
+  .gh-commit-row,
+  .gh-merged-row {
+    margin-left: 12px;
+    margin-right: 12px;
+    flex-wrap: wrap
+  }
+
+  .gh-commit-msg {
+    white-space: normal
+  }
+
+  .gh-pr-title {
+    font-size: 14px
+  }
+
+  .gh-table th,
+  .gh-table td {
+    padding: 5px 7px;
+    font-size: 11px
+  }
+
+  .gh-mono {
+    font-size: 10.5px
+  }
+
+  .gh-table .gh-mono {
+    word-break: break-word
+  }
+}
+
+/* ---------------------------------------------------------------------
+   SCROLL HERO — POLISH (checkpoint 4)
+   Per-slide glow mood, glow parallax, clickable rail, mobile reveals.
+   --------------------------------------------------------------------- */
+
+/* Glow hue shifts with the active slide: blue -> blue -> neutral -> green */
+.scrollhero .scrollhero-glow {
+  will-change: transform
+}
+
+.scrollhero.glow-0 .scrollhero-glow {
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.10) 0%, transparent 68%)
+}
+
+.scrollhero.glow-1 .scrollhero-glow {
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 68%)
+}
+
+.scrollhero.glow-2 .scrollhero-glow {
+  background: radial-gradient(ellipse at center, rgba(148, 163, 184, 0.07) 0%, transparent 68%)
+}
+
+.scrollhero.glow-3 .scrollhero-glow {
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.09) 0%, transparent 68%)
+}
+
+/* Progress dots are real buttons now */
+.progress-dot {
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  border: none
+}
+
+.progress-dot:hover {
+  background: rgba(255, 255, 255, 0.4)
+}
+
+.progress-dot.is-active:hover {
+  background: #3B82F6
+}
+
+.progress-dot:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 3px
+}
+
+/* Mobile static mode: gentle fade-up reveals (skipped for reduced motion) */
+.scrollhero.is-static .scrollhero-slide.io-pending {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .6s ease, transform .6s ease
+}
+
+.scrollhero.is-static .scrollhero-slide.io-pending.io-in {
+  opacity: 1;
+  transform: none
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollhero-glow {
+    transition: none
+  }
+
+  .scrollhero.is-static .scrollhero-slide.io-pending {
+    opacity: 1;
+    transform: none;
+    transition: none
   }
 }

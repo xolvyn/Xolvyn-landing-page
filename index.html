@@ -155,357 +155,342 @@
   <a href="#waitlist" class="mobile-cta">Get Early Access &rarr;</a>
 </div>
 
-<!-- HERO -->
-<section class="hero" id="hero" aria-label="Xolvyn — Architecture-aware security auditing">
-<div class="hero-glow-top"></div>
-<div class="container hero-content">
+<!-- SCROLL HERO — pinned 4-slide showcase -->
+<section class="scrollhero" id="hero" aria-label="Xolvyn — understand, secure, and fix your codebase">
+  <h1 class="sr-only">Understand your codebase. Secure it. Fix it.</h1>
 
-  <!-- 2-segment status badge -->
-  <div class="hero-badge fade-up">
-    <span class="badge-status">
-      <span class="badge-dot"></span>
-      <span>Now in Private Beta</span>
-    </span>
-    <span class="badge-info">Launching August 2026</span>
-  </div>
+  <div class="scrollhero-track" id="scrollhero-track">
+    <div class="scrollhero-viewport">
+      <div class="hero-glow-top scrollhero-glow" id="scrollhero-glow"></div>
 
-  <!-- Quiet trust strip: muted credibility between badge and H1 -->
-  <div class="hero-trust-strip fade-up" aria-label="Security and privacy posture">
-    <span class="hts-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      OAuth-only access
-    </span>
-    <span class="hts-dot" aria-hidden="true"></span>
-    <span class="hts-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
-      In-memory analysis
-    </span>
-    <span class="hts-dot" aria-hidden="true"></span>
-    <span class="hts-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
-      Zero retention
-    </span>
-    <span class="hts-dot" aria-hidden="true"></span>
-    <span class="hts-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg>
-      GDPR-compliant
-    </span>
-  </div>
-
-  <!-- H1: Primary SEO keyword + emotional hook -->
-  <h1 class="fade-up">
-    Stop triaging 300 alerts.<br>
-    <span class="text-blue">Fix the 12 that are load-bearing.</span>
-  </h1>
-
-  <!-- Subheadline: shorter, keeps SEO terms -->
-  <h2 class="hero-sub fade-up">
-    Xolvyn scans your repo for 50+ vulnerability classes and CVEs, maps how every file connects, and ranks each finding by <strong>blast radius &mdash; so you fix what can actually break things first.</strong> Paste a GitHub URL. Results in 60 seconds. No install.
-  </h2>
-
-  <!-- Product UI Mockup -->
-  <div class="product-mockup fade-up" role="img" aria-label="Xolvyn architecture explorer interface preview">
-
-    <!-- Top bar -->
-    <div class="mock-topbar">
-      <div class="mock-repo">
-        <div class="mock-repo-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </div>
-        <div>
-          <div class="mock-repo-name">lumen-cloud / payments-api</div>
-          <div class="mock-repo-url">github.com/lumen-cloud/payments-api</div>
+      <!-- Persistent: status pill (does not transition) -->
+      <div class="scrollhero-top">
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          <span>Now in private beta &middot; Launching 2026</span>
         </div>
       </div>
 
-      <!-- Middle: blurred boxes group -->
-      <div class="mock-blurred-group">
-        <div class="mock-grade blurred-box">
-          <div class="mock-grade-ring">B+</div>
-          <div>
-            <div class="mock-grade-label">AUDIT</div>
-            <div class="mock-grade-score">80/100</div>
+      <!-- Slides -->
+      <div class="scrollhero-slides">
+
+        <article class="scrollhero-slide" data-slide="0">
+          <div class="slide-copy">
+            <h2 class="slide-heading">Understand your <span class="text-blue">codebase</span></h2>
+            <p class="slide-sub">See how every file connects &mdash; layers, dependencies, and what each module does. Onboard new engineers in days.</p>
           </div>
-        </div>
-        <div class="mock-stat blurred-box">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <strong>142</strong> <em>files</em>
-        </div>
-        <div class="mock-stat blurred-box">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <strong>5</strong> <em>layers</em>
-        </div>
-        <div class="mock-stat blurred-box">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <strong>~2h</strong> <em>read time</em>
-        </div>
-        <div class="mock-action-btn blurred-box">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-          PR Mode
-        </div>
-        <div class="mock-action-btn blurred-box">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8 7l3 8M16 7l-3 8"/></svg>
-          Graph
-        </div>
-        <div class="mock-action-btn blurred-box">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          Story
-        </div>
-        <div class="mock-action-btn blurred-box">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
-          Full Report
-        </div>
+          <div class="slide-visual">
+            <div class="duo-window ae-window" role="img" aria-label="Xolvyn architecture explorer — layers, dependencies, and what each module does">
+              <div class="ae-topbar">
+                <span class="ae-repo">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  lumen-cloud / payments-api
+                </span>
+                <span class="ae-mentor">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="#3B82F6" stroke="#3B82F6" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  @mentor
+                </span>
+              </div>
+              <div class="ae-body">
+                <div class="ae-sidebar">
+                  <div class="ae-sidebar-title">ARCHITECTURE LAYERS</div>
+                  <div class="ae-layer"><span class="ae-dot" style="background:#A855F7"></span><span class="ae-layer-name">Utilities</span><span class="ae-count">7</span></div>
+                  <div class="ae-layer"><span class="ae-dot" style="background:#10B981"></span><span class="ae-layer-name">Models</span><span class="ae-count">12</span></div>
+                  <div class="ae-layer ae-layer-active"><span class="ae-dot" style="background:#3B82F6"></span><span class="ae-layer-name">API Layer</span><span class="ae-count">14</span></div>
+                  <div class="ae-layer"><span class="ae-dot" style="background:#F59E0B"></span><span class="ae-layer-name">Services</span><span class="ae-count">9</span></div>
+                  <div class="ae-layer"><span class="ae-dot" style="background:#06B6D4"></span><span class="ae-layer-name">Core</span><span class="ae-count">5</span></div>
+                </div>
+                <div class="ae-detail">
+                  <div class="ae-file">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <strong>subscription.controller.js</strong>
+                  </div>
+                  <div class="ae-section-label">WHAT THIS DOES</div>
+                  <p class="ae-blurb">Orchestrates the subscription lifecycle &mdash; create, upgrade, cancel, and the dunning logic that runs when a payment fails.</p>
+                  <div class="ae-section-label">IMPORTS (4)</div>
+                  <div class="ae-imports">
+                    <span class="ae-import">stripe.client.js</span>
+                    <span class="ae-import">subscription.model.js</span>
+                    <span class="ae-import">customer.model.js</span>
+                    <span class="ae-import">audit.logger.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scrollhero-slide" data-slide="1">
+          <div class="slide-copy">
+            <h2 class="slide-heading">Secure it &mdash; ranked by <span class="text-blue">blast radius</span></h2>
+            <p class="slide-sub">50+ checks and CVE scanning, every finding ranked by how much of your system it can break. Fix what's load-bearing first.</p>
+          </div>
+          <div class="slide-visual">
+            <div class="duo-window sec-report-mock" role="img" aria-label="Xolvyn security report — findings ranked by blast radius">
+              <div class="sec-report-header">
+                <div class="sec-report-id">
+                  <div class="sec-report-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="16.4" r="0.7" fill="#fff" stroke="none"/></svg>
+                  </div>
+                  <div>
+                    <div class="sec-report-title">Security Report</div>
+                    <div class="sec-report-sub">ID: 7b231469 &middot; 5/26/2026</div>
+                  </div>
+                </div>
+                <div class="sec-report-actions">
+                  <span class="sec-report-repo">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    github.com/lumen-cloud/payments-api
+                  </span>
+                  <button class="sec-report-export" type="button">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Export
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="sec-stat-row">
+                <div class="sec-stat-card">
+                  <span class="sec-stat-icon" style="color:#EF4444;background:rgba(239,68,68,0.1)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg></span>
+                  <span class="sec-stat-num" style="color:#EF4444">2</span>
+                  <span class="sec-stat-label">Critical</span>
+                </div>
+                <div class="sec-stat-card">
+                  <span class="sec-stat-icon" style="color:#F97316;background:rgba(249,115,22,0.1)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg></span>
+                  <span class="sec-stat-num" style="color:#F97316">1</span>
+                  <span class="sec-stat-label">High</span>
+                </div>
+                <div class="sec-stat-card">
+                  <span class="sec-stat-icon" style="color:#F59E0B;background:rgba(245,158,11,0.1)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                  <span class="sec-stat-num" style="color:#F59E0B">16</span>
+                  <span class="sec-stat-label">Medium</span>
+                </div>
+                <div class="sec-stat-card">
+                  <span class="sec-stat-icon" style="color:#A78BFA;background:rgba(167,139,250,0.1)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"/><polyline points="2.32 6.16 12 11 21.68 6.16"/><line x1="12" y1="22.76" x2="12" y2="11"/></svg></span>
+                  <span class="sec-stat-num" style="color:#A78BFA">3</span>
+                  <span class="sec-stat-label">Dep CVEs</span>
+                </div>
+              </div>
+
+              <div class="sec-findings">
+                <div class="sec-finding-row sec-finding-head">
+                  <span>Severity</span>
+                  <span>File</span>
+                  <span>CWE</span>
+                  <span>CVSS</span>
+                  <span class="sec-col-blast">Blast radius</span>
+                  <span>Description</span>
+                </div>
+                <div class="sec-finding-row">
+                  <span><span class="sec-sev sev-critical">Critical</span></span>
+                  <span class="sec-file">auth/session.js<span class="sec-line">:47</span></span>
+                  <span class="sec-cwe">CWE-89</span>
+                  <span class="sec-cvss" style="color:#EF4444">9.1</span>
+                  <span class="sec-blast">
+                    <span class="sec-blast-num">47 files</span>
+                    <span class="sec-blast-bar"><span style="width:92%;background:#EF4444"></span></span>
+                  </span>
+                  <span class="sec-desc">SQL injection in session lookup<span class="sec-rule">no-raw-sql</span></span>
+                </div>
+                <div class="sec-finding-row">
+                  <span><span class="sec-sev sev-high">High</span></span>
+                  <span class="sec-file">api/webhook.js<span class="sec-line">:104</span></span>
+                  <span class="sec-cwe">CWE-307</span>
+                  <span class="sec-cvss" style="color:#F97316">7.5</span>
+                  <span class="sec-blast">
+                    <span class="sec-blast-num">31 files</span>
+                    <span class="sec-blast-bar"><span style="width:61%;background:#F59E0B"></span></span>
+                  </span>
+                  <span class="sec-desc">Auth route missing rate limiting<span class="sec-rule">missing-rate-limiter</span></span>
+                </div>
+                <div class="sec-finding-row">
+                  <span><span class="sec-sev sev-medium">Medium</span></span>
+                  <span class="sec-file">utils/format.js<span class="sec-line">:46</span></span>
+                  <span class="sec-cwe">CWE-79</span>
+                  <span class="sec-cvss" style="color:#F59E0B">5.4</span>
+                  <span class="sec-blast">
+                    <span class="sec-blast-num sec-blast-low">3 files</span>
+                    <span class="sec-blast-bar"><span style="width:14%;background:rgba(148,163,184,0.7)"></span></span>
+                  </span>
+                  <span class="sec-desc">Unescaped output &mdash; XSS risk<span class="sec-rule">no-unescaped-output</span></span>
+                </div>
+              </div>
+
+              <div class="sec-report-footer">
+                <span class="sec-footer-engine">Engine v2.0.0 &middot; 17 rules &middot; 1.2s</span>
+                <span class="sec-footer-right">
+                  <span class="sec-footer-score">Score: <strong>68/100</strong> <span class="sec-footer-grade">(B-)</span></span>
+                  <span class="sec-footer-powered"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><polyline points="9 12 11 14 15 10"/></svg> Powered by Xolvyn <span class="sec-auditor">@auditor</span></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scrollhero-slide" data-slide="2">
+          <div class="slide-copy">
+            <h2 class="slide-heading">Reviewed on every <span class="text-blue">pull request</span></h2>
+            <p class="slide-sub">Xolvyn grades and analyzes each PR right in GitHub &mdash; before you merge.</p>
+          </div>
+          <div class="slide-visual">
+            <div class="gh-window" role="img" aria-label="Xolvyn bot analysis comment on a GitHub pull request — grade A">
+              <div class="gh-titlebar">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+                <span>lumen-cloud / payments-api</span>
+                <span class="gh-titlebar-sep" aria-hidden="true">&middot;</span>
+                <span>Pull request #128</span>
+              </div>
+              <div class="gh-comment">
+                <div class="gh-comment-header">
+                  <img src="Xolvyn_Mark.png" alt="" class="gh-avatar">
+                  <span class="gh-login">xolvyn</span>
+                  <span class="gh-bot-pill">bot</span>
+                  <span class="gh-muted">commented &middot; just now</span>
+                </div>
+                <div class="gh-comment-body">
+                  <div class="gh-analysis-line">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="#3fb950" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>
+                    <span>Xolvyn Analysis &mdash; Grade: <span class="gh-grade">A</span></span>
+                  </div>
+                  <table class="gh-table">
+                    <thead>
+                      <tr><th>Metric</th><th>Result</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Files Analyzed</td><td class="gh-mono">22</td></tr>
+                      <tr><td>Dependencies Mapped</td><td class="gh-mono">22 nodes, 10 edges</td></tr>
+                      <tr><td>Security Issues</td><td class="gh-mono">8 &mdash; 0 critical, 0 high, 3 medium, 5 low</td></tr>
+                      <tr><td>Analysis Time</td><td class="gh-mono">14.9s</td></tr>
+                    </tbody>
+                  </table>
+                  <div class="gh-subhead">Security Findings</div>
+                  <table class="gh-table">
+                    <thead>
+                      <tr><th>Severity</th><th>Rule</th><th>Location</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="gh-sev gh-sev-medium">Medium</span></td>
+                        <td class="gh-mono">max-function-length</td>
+                        <td class="gh-mono">App.jsx L12 &middot; Nav.jsx L4 &middot; Hero.jsx L6</td>
+                      </tr>
+                      <tr>
+                        <td><span class="gh-sev gh-sev-low">Low</span></td>
+                        <td class="gh-mono">max-line-length</td>
+                        <td class="gh-mono">index.html L151</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="scrollhero-slide" data-slide="3">
+          <div class="slide-copy">
+            <h2 class="slide-heading"><span class="text-blue">Fixed automatically</span>, as a pull request</h2>
+            <p class="slide-sub">Vulnerable dependency? Xolvyn opens the fix as a real PR. You review and merge &mdash; it never merges on its own.</p>
+          </div>
+          <div class="slide-visual">
+            <div class="gh-window" role="img" aria-label="Merged GitHub pull request opened automatically by the Xolvyn AutoFixEngine">
+              <div class="gh-titlebar">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+                <span>lumen-cloud / payments-api</span>
+              </div>
+              <div class="gh-pr-head">
+                <div class="gh-pr-title">[Xolvyn Auto-fix] Bump vite to ^8.0.11 <span class="gh-pr-num">#131</span></div>
+                <div class="gh-pr-meta">
+                  <span class="gh-merged-badge">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z"/></svg>
+                    Merged
+                  </span>
+                  <span class="gh-muted"><span class="gh-login">xolvyn</span> merged 1 commit into <span class="gh-branch">main</span></span>
+                </div>
+              </div>
+              <div class="gh-comment">
+                <div class="gh-comment-header">
+                  <img src="Xolvyn_Mark.png" alt="" class="gh-avatar">
+                  <span class="gh-login">xolvyn</span>
+                  <span class="gh-bot-pill">bot</span>
+                  <span class="gh-muted">commented &middot; just now</span>
+                </div>
+                <div class="gh-comment-body">
+                  <p class="gh-comment-text">This automated pull request bumps <span class="gh-mono gh-inline-code">vite</span> to <span class="gh-mono gh-inline-code">^8.0.11</span> to resolve known vulnerabilities. Generated automatically by Xolvyn AutoFixEngine.</p>
+                </div>
+              </div>
+              <div class="gh-commit-row">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="#9198a1" aria-hidden="true"><path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg>
+                <span class="gh-commit-msg">chore(deps): bump vite to ^8.0.11</span>
+                <span class="gh-verified">Verified</span>
+              </div>
+              <div class="gh-merged-row">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="#a371f7" aria-hidden="true"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z"/></svg>
+                <span>Pull request successfully merged and closed</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
 
-      <!-- @mentor — always clear, glowing, never blurred -->
-      <button class="mock-mentor-btn" type="button" aria-label="AI mentor preview">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="#3B82F6" stroke="#3B82F6" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        <span>@mentor</span>
-      </button>
-    </div>
-
-    <!-- Main body -->
-    <div class="mock-body">
-
-      <!-- Left: Architecture Layers sidebar -->
-      <div class="mock-sidebar">
-        <div class="mock-sidebar-header">
-          <span class="mock-sidebar-title">ARCHITECTURE LAYERS</span>
-          <span class="mock-sidebar-meta">142 files &middot; 5 layers</span>
-        </div>
-
-        <!-- Layer: Utilities -->
-        <div class="mock-layer">
-          <div class="mock-layer-header">
-            <span class="mock-layer-dot" style="background:#A855F7"></span>
-            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            <span class="mock-layer-name">Utilities</span>
-            <span class="mock-layer-count">7</span>
-            <span class="mock-layer-arrow">&rsaquo;</span>
-          </div>
-        </div>
-
-        <!-- Layer: Models -->
-        <div class="mock-layer">
-          <div class="mock-layer-header">
-            <span class="mock-layer-dot" style="background:#10B981"></span>
-            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-            <span class="mock-layer-name">Models</span>
-            <span class="mock-layer-count">12</span>
-            <span class="mock-layer-arrow">&rsaquo;</span>
-          </div>
-        </div>
-
-        <!-- Layer: API Layer — expanded with selected file -->
-        <div class="mock-layer expanded">
-          <div class="mock-layer-header active-layer">
-            <span class="mock-layer-dot" style="background:#10B981"></span>
-            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <span class="mock-layer-name">API Layer</span>
-            <span class="mock-layer-count">14</span>
-            <span class="mock-layer-arrow open">&rsaquo;</span>
-          </div>
-          <div class="mock-files">
-            <div class="mock-file active-file">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span>subscription.controller.js</span>
-              <span class="mock-file-bar"><span style="width:75%;background:#EAB308"></span></span>
-              <span class="mock-file-count">8 &uarr;</span>
-            </div>
-            <div class="mock-file">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span>payment.controller.js</span>
-              <span class="mock-file-bar"><span style="width:60%;background:#EAB308"></span></span>
-              <span class="mock-file-count">6 &uarr;</span>
-            </div>
-            <div class="mock-file">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span>webhook.controller.js</span>
-              <span class="mock-file-bar"><span style="width:50%;background:#EAB308"></span></span>
-              <span class="mock-file-count">5 &uarr;</span>
-            </div>
-            <div class="mock-file">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span>auth.middleware.js</span>
-              <span class="mock-file-bar"><span style="width:35%;background:#22C55E"></span></span>
-              <span class="mock-file-count">4 &uarr;</span>
-            </div>
-            <div class="mock-file">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span>billing.route.js</span>
-              <span class="mock-file-bar"><span style="width:30%;background:#22C55E"></span></span>
-              <span class="mock-file-count">3 &uarr;</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Layer: Services -->
-        <div class="mock-layer">
-          <div class="mock-layer-header">
-            <span class="mock-layer-dot" style="background:#F59E0B"></span>
-            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            <span class="mock-layer-name">Services</span>
-            <span class="mock-layer-count">9</span>
-            <span class="mock-layer-arrow">&rsaquo;</span>
-          </div>
-        </div>
-
-        <!-- Layer: Core -->
-        <div class="mock-layer">
-          <div class="mock-layer-header">
-            <span class="mock-layer-dot" style="background:#06B6D4"></span>
-            <svg class="mock-layer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span class="mock-layer-name">Core</span>
-            <span class="mock-layer-count">5</span>
-            <span class="mock-layer-arrow">&rsaquo;</span>
-          </div>
-        </div>
+      <!-- Progress rail (clickable) -->
+      <div class="scrollhero-progress" aria-label="Hero slides">
+        <button type="button" class="progress-dot is-active" aria-label="Go to slide 1 — Understand your codebase"></button>
+        <button type="button" class="progress-dot" aria-label="Go to slide 2 — Secure it, ranked by blast radius"></button>
+        <button type="button" class="progress-dot" aria-label="Go to slide 3 — Reviewed on every pull request"></button>
+        <button type="button" class="progress-dot" aria-label="Go to slide 4 — Fixed automatically, as a pull request"></button>
       </div>
 
-      <!-- Right: File detail panel -->
-      <div class="mock-detail-panel">
-        <!-- File breadcrumb header -->
-        <div class="mock-file-header">
-          <div class="mock-file-title">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <strong>subscription.controller.js</strong>
-            <span class="mock-file-tag api">API</span>
-          </div>
-          <div class="mock-file-breadcrumb">backend/controllers/subscription.controller.js</div>
-        </div>
-
-        <!-- Why This Matters card -->
-        <div class="mock-why-card">
-          <div class="mock-why-header">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>
-            <span>WHY THIS MATTERS</span>
-          </div>
-
-          <div class="mock-why-section">
-            <div class="mock-why-icon-wrap" style="background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.25)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#3B82F6" stroke="#3B82F6" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <div class="mock-why-content">
-              <div class="mock-why-label" style="color:#60A5FA">PURPOSE</div>
-              <p class="mock-why-text blurred-text">This controller orchestrates subscription lifecycle management — creation, plan upgrades, downgrades, cancellation flows, and dunning logic when payments fail.</p>
-            </div>
-          </div>
-
-          <div class="mock-why-section">
-            <div class="mock-why-icon-wrap" style="background:rgba(167,139,250,0.12);border-color:rgba(167,139,250,0.25)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            </div>
-            <div class="mock-why-content">
-              <div class="mock-why-label" style="color:#C4B5FD">ARCHITECTURE ROLE</div>
-              <p class="mock-why-text blurred-text">As an API-layer controller, it coordinates data flow between Stripe webhooks, the subscription model, billing service, and the audit logger for compliance.</p>
-            </div>
-          </div>
-
-          <div class="mock-why-section">
-            <div class="mock-why-icon-wrap" style="background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.25)">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.4.4.7.9.8 1.5.1.4.2.8.2 1.3v1.5h6v-1.5c0-.5.1-.9.2-1.3.1-.6.4-1.1.8-1.5A7 7 0 0 0 12 2z"/></svg>
-            </div>
-            <div class="mock-why-content">
-              <div class="mock-why-label" style="color:#4ADE80">DEVELOPER NOTE</div>
-              <p class="mock-why-text blurred-text">Address the empty catch blocks at lines 129 and 164 — failed webhook retries are being swallowed silently, masking real billing failures from observability.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Imports section -->
-        <div class="mock-imports">
-          <div class="mock-imports-header">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            <span>IMPORTS (5)</span>
-          </div>
-          <div class="mock-import-row">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span class="mock-import-name">stripe.client.js</span>
-            <span class="mock-import-tag util">UTIL</span>
-            <span class="mock-import-arrow">&rsaquo;</span>
-          </div>
-          <div class="mock-import-row">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span class="mock-import-name">subscription.model.js</span>
-            <span class="mock-import-tag model">MODEL</span>
-            <span class="mock-import-arrow">&rsaquo;</span>
-          </div>
-          <div class="mock-import-row">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span class="mock-import-name">customer.model.js</span>
-            <span class="mock-import-tag model">MODEL</span>
-            <span class="mock-import-arrow">&rsaquo;</span>
-          </div>
-          <div class="mock-import-row">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span class="mock-import-name">audit.logger.js</span>
-            <span class="mock-import-tag core">CORE</span>
-            <span class="mock-import-arrow">&rsaquo;</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom: Learning path bar -->
-    <div class="mock-learningbar">
-      <div class="mock-lb-left">
-        <div class="mock-lb-icon">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <div>
-          <span class="mock-lb-title">LEARNING PATH</span>
-          <span class="mock-lb-meta">87 modules &middot; ~2h</span>
-        </div>
-      </div>
-      <div class="mock-lb-bar">
-        <div class="mock-lb-segment" style="background:#A855F7;flex:5"></div>
-        <div class="mock-lb-segment" style="background:#10B981;flex:8"></div>
-        <div class="mock-lb-segment" style="background:#10B981;flex:10"></div>
-        <div class="mock-lb-segment" style="background:#F59E0B;flex:6"></div>
-        <div class="mock-lb-segment" style="background:#06B6D4;flex:4"></div>
-      </div>
-      <div class="mock-lb-next">
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="#3B82F6"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        <span>Next: <strong>payment.controller.js</strong></span>
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      </div>
-    </div>
-
-    <!-- Bottom bar: Search -->
-    <div class="mock-searchbar">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <span class="mock-search-text">Search files, functions, or ask @mentor anything...</span>
-      <span class="mock-search-kbd">&#8984;K</span>
-    </div>
-
-    <!-- Subtle gradient at very bottom -->
-    <div class="mock-blur-overlay" aria-hidden="true"></div>
-  </div>
-
-  <!-- Trust indicators below mockup -->
-  <div class="hero-trust fade-up">
-    <div class="trust-item">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      <span>Zero code retention</span>
-    </div>
-    <div class="trust-sep">&middot;</div>
-    <div class="trust-item">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      <span>GitHub &amp; GitLab OAuth</span>
-    </div>
-    <div class="trust-sep">&middot;</div>
-    <div class="trust-item">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      <span>No AI training on your code</span>
-    </div>
-    <div class="trust-sep">&middot;</div>
-    <div class="trust-item">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      <span>5+ languages supported</span>
     </div>
   </div>
+</section>
 
+<!-- TRUST BAR -->
+<div class="trust-bar fade-up" role="note" aria-label="Privacy and compatibility">
+  <div class="container trust-bar-inner">
+    <span class="trust-bar-item">Works with GitHub &amp; GitLab</span>
+    <span class="trust-bar-sep" aria-hidden="true">&middot;</span>
+    <span class="trust-bar-item">OAuth-only access</span>
+    <span class="trust-bar-sep" aria-hidden="true">&middot;</span>
+    <span class="trust-bar-item">Zero code retention</span>
+    <span class="trust-bar-sep" aria-hidden="true">&middot;</span>
+    <span class="trust-bar-item">Never trained on your code</span>
+  </div>
 </div>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section" id="how-it-works" aria-labelledby="how-it-works-heading">
+  <div class="container">
+    <div class="section-label fade-up">// HOW IT WORKS</div>
+    <h2 class="section-title fade-up" id="how-it-works-heading">Like a structural engineer for your codebase.</h2>
+    <p class="section-sub fade-up">Some files are load-bearing walls &mdash; dozens of others rest on them. Some are decorative. Xolvyn reads the blueprint, shows new engineers around the building, and tells you which cracked walls can bring it down.</p>
+
+    <div class="how-grid">
+      <article class="how-step fade-up">
+        <div class="how-step-top"><span class="how-step-num">1</span>
+          <span class="how-step-icon" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+        </div>
+        <h3>Connect your repo</h3>
+        <p>Paste a GitHub or GitLab URL. No install, no config. Analysis runs in about 60 seconds.</p>
+      </article>
+      <article class="how-step fade-up">
+        <div class="how-step-top"><span class="how-step-num">2</span>
+          <span class="how-step-icon" style="background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8 7l3 8M16 7l-3 8"/></svg></span>
+        </div>
+        <h3>Xolvyn maps everything</h3>
+        <p>Every file, every import, every dependency becomes one living map of your codebase &mdash; and every file gets scanned for 50+ vulnerability classes and known CVEs.</p>
+      </article>
+      <article class="how-step fade-up">
+        <div class="how-step-top"><span class="how-step-num">3</span>
+          <span class="how-step-icon" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+        </div>
+        <h3>Two jobs, done</h3>
+        <p>New engineers explore the map and ask @mentor questions. Security teams get findings ranked by blast radius &mdash; fix what's load-bearing first.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <!-- ===== BRAND DEFINITION (SEO definitional content) ===== -->
