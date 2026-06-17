@@ -7940,17 +7940,30 @@ a.blog-card:hover {
 }
 
 .hiw-num {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 52px;
-  font-weight: 800;
-  /* visible watermark: soft filled number with a crisper outline on top.
-     The fill is the fallback for browsers without text-stroke support. */
-  color: rgba(255, 255, 255, 0.13);
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.28);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   line-height: 1;
-  margin-bottom: 16px;
-  letter-spacing: -0.04em
+  color: var(--accent, #3B82F6);
+  margin-bottom: 22px
+}
+
+/* thin gradient rules that fade into the accent-colored number on each side */
+.hiw-num::before,
+.hiw-num::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent, #3B82F6))
+}
+
+.hiw-num::after {
+  transform: scaleX(-1)
 }
 
 .hiw-icon {
@@ -7992,7 +8005,7 @@ a.blog-card:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   max-width: 1000px;
-  margin: 0 auto
+  margin: 52px auto 0
 }
 
 .tier-card {
@@ -8003,13 +8016,32 @@ a.blog-card:hover {
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.3s ease
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease
+}
+
+/* colored top edge — tinted to each tier's --accent, lit on hover */
+.tier-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent, #3B82F6);
+  opacity: 0;
+  transition: opacity 0.3s ease
+}
+
+.tier-card:hover::before {
+  opacity: 0.7
 }
 
 .tier-card:hover {
   background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-3px)
+  border-color: color-mix(in srgb, var(--accent, #fff) 40%, rgba(255, 255, 255, 0.12));
+  transform: translateY(-4px);
+  box-shadow: 0 16px 44px color-mix(in srgb, var(--accent, #000) 13%, transparent)
 }
 
 .tier-card--recommended {
@@ -8018,9 +8050,13 @@ a.blog-card:hover {
   box-shadow: 0 0 48px rgba(59, 130, 246, 0.06)
 }
 
+.tier-card--recommended::before {
+  opacity: 0.9
+}
+
 .tier-card--recommended:hover {
   border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 0 64px rgba(59, 130, 246, 0.12)
+  box-shadow: 0 16px 64px rgba(59, 130, 246, 0.16)
 }
 
 .tier-badge {
@@ -8078,14 +8114,22 @@ a.blog-card:hover {
   background: rgba(59, 130, 246, 0.1)
 }
 
-/* prices stay blurred until launch (a "founding price" teaser) — swap the
-   placeholder digits for real numbers and drop .tier-blur to reveal them */
+/* prices stay hidden until launch (a "founding price" teaser) — the digits are
+   masked behind soft, accent-tinted dots. Swap the placeholder digits for real
+   numbers and drop .tier-blur to reveal them. */
 .tier-blur {
   display: inline-block;
-  filter: blur(8px);
-  opacity: 0.9;
+  font-size: 0;
   -webkit-user-select: none;
   user-select: none
+}
+
+.tier-blur::after {
+  content: "\2022\2022";
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  vertical-align: 0.18em;
+  color: color-mix(in srgb, var(--accent, #fff) 62%, rgba(255, 255, 255, 0.32))
 }
 
 /* colored bullet dots, tinted per tier via the card's --accent */
@@ -8194,8 +8238,8 @@ a.blog-card:hover {
 }
 
 .tier-cta:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: color-mix(in srgb, var(--accent, #fff) 12%, rgba(255, 255, 255, 0.04));
+  border-color: color-mix(in srgb, var(--accent, #fff) 45%, rgba(255, 255, 255, 0.2));
   color: #fff
 }
 
@@ -8355,7 +8399,8 @@ a.blog-card:hover {
   }
 
   .hiw-num {
-    font-size: 40px
+    font-size: 12px;
+    margin-bottom: 18px
   }
 
   /* Pricing → single column */
