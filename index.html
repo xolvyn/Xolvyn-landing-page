@@ -152,10 +152,50 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<!-- Self-hosted fonts (same-origin) + non-blocking CSS with inlined above-the-fold critical styles -->
+<link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jetbrains-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url('/fonts/inter-variable.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/jetbrains-mono-variable.woff2') format('woff2')}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;overflow-x:hidden;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#0A0A0A;color:rgba(255,255,255,.9);line-height:1.7;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;max-width:100vw;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero .container{max-width:1240px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:500}
+.btn-primary{background:#3B82F6;color:#fff}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{display:flex;align-items:center;flex-shrink:0}
+.nav-logo-img{height:26px;width:auto;display:block;mix-blend-mode:lighten}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:rgba(255,255,255,.7);font-size:14px;font-weight:500}
+.btn-nav{padding:9px 20px;font-size:14px;border-radius:8px;font-weight:600}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(13,13,13,.9);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:5px 14px 5px 5px;margin-bottom:32px}
+.hero-pill-beta{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border:1px solid rgba(52,211,153,.45);background:rgba(34,197,94,.1);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#34D399;white-space:nowrap}
+.hero-pill-dot{width:7px;height:7px;border-radius:50%;background:#34D399;flex-shrink:0}
+.hero-pill-sep{width:1px;height:16px;background:rgba(255,255,255,.14);flex-shrink:0}
+.hero-pill-launch{font-size:13px;font-weight:500;color:rgba(255,255,255,.88);white-space:nowrap}
+.scrollhero{position:relative;background:#0A0A0A}
+.scrollhero-track{height:450vh;position:relative}
+.scrollhero-viewport{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden}
+.scrollhero-top{position:absolute;top:320px;left:0;right:0;display:flex;justify-content:center;z-index:10;pointer-events:none}
+.scrollhero-slides{position:absolute;inset:0;z-index:2}
+.scrollhero-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:26px;padding:400px 24px 40px;opacity:0;visibility:hidden;pointer-events:none;overflow:hidden}
+.scrollhero-slide[data-slide="0"]{opacity:1;visibility:visible}
+.slide-copy{text-align:center;max-width:760px}
+.slide-heading{font-size:clamp(30px,4.2vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#fff;margin-bottom:14px}
+.slide-sub{font-size:clamp(15px,1.6vw,18px);color:rgba(255,255,255,.55);line-height:1.55;max-width:620px;margin:0 auto}
+.slide-visual{width:min(960px,94vw);display:flex;justify-content:center}
+.text-blue{background:linear-gradient(90deg,#3B82F6,#A78BFA,#FB923C);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+</style>
+<link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/styles.css"></noscript>
 <!-- <script defer data-url="https://devhunt.org/tool/xolvyn" src="https://cdn.jsdelivr.net/gh/sidiDev/devhunt-banner/indexV0.js"></script> -->
 </head>
 <body>
@@ -164,7 +204,7 @@
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="/" onclick="if(location.pathname==='/'){event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}" class="nav-logo" aria-label="Xolvyn — home">
-      <img src="Xolvyn_Full_Lockup.png" alt="Xolvyn — Architecture-aware security auditing" class="nav-logo-img" width="1200" height="400">
+      <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn, architecture-aware code security" class="nav-logo-img" width="1200" height="400">
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
@@ -723,7 +763,7 @@
         <span class="tier-flag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Locked</span>
         <div class="tier-name">Free</div>
         <!-- price hidden until launch — replace the blurred placeholder with the real number -->
-        <div class="tier-price" aria-label="Price revealed at launch">
+        <div class="tier-price" role="img" aria-label="Price revealed at launch">
           <span class="tier-amount" aria-hidden="true">$<span class="tier-blur">0</span></span>
           <span class="tier-period" aria-hidden="true">/mo</span>
         </div>
@@ -742,7 +782,7 @@
         <div class="tier-badge">Most Wanted</div>
         <span class="tier-flag tier-flag--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Founding Price</span>
         <div class="tier-name" style="color:#60A5FA">Pro</div>
-        <div class="tier-price" aria-label="Price revealed at launch">
+        <div class="tier-price" role="img" aria-label="Price revealed at launch">
           <span class="tier-amount" aria-hidden="true">$<span class="tier-blur">00</span></span>
           <span class="tier-period" aria-hidden="true">/mo</span>
         </div>
@@ -761,7 +801,7 @@
       <div class="tier-card" id="tier-team" style="--accent:#10B981">
         <span class="tier-flag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Locked</span>
         <div class="tier-name" style="color:#34D399">Team</div>
-        <div class="tier-price" aria-label="Price revealed at launch">
+        <div class="tier-price" role="img" aria-label="Price revealed at launch">
           <span class="tier-amount" aria-hidden="true">$<span class="tier-blur">00</span></span>
           <span class="tier-period" aria-hidden="true">/seat/mo</span>
         </div>
@@ -903,7 +943,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="javascript:void(0)" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-logo-link" aria-label="Xolvyn &mdash; home">
-          <img src="Xolvyn_Full_Lockup.png" alt="Xolvyn" class="footer-logo-img">
+          <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn, architecture-aware code security" class="footer-logo-img" width="1200" height="400" loading="lazy">
         </a>
         <p>CVE-scanned codebase intelligence. Understand any repository in minutes, not weeks.</p>
         <p class="footer-copy">&copy; 2026 Xolvyn. All rights reserved.</p>

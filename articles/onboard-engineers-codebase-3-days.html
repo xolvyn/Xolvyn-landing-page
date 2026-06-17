@@ -147,12 +147,32 @@
 }
 </script>
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="../styles.css">
+<!-- Self-hosted fonts (same-origin) + non-blocking CSS with inlined critical styles -->
+<link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jetbrains-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url('/fonts/inter-variable.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/jetbrains-mono-variable.woff2') format('woff2')}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;overflow-x:hidden;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#0A0A0A;color:rgba(255,255,255,.9);line-height:1.7;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;max-width:100vw;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:500}
+.btn-primary{background:#3B82F6;color:#fff}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{display:flex;align-items:center;flex-shrink:0}
+.nav-logo-img{height:26px;width:auto;display:block;mix-blend-mode:lighten}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:rgba(255,255,255,.7);font-size:14px;font-weight:500}
+.btn-nav{padding:9px 20px;font-size:14px;border-radius:8px;font-weight:600}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+</style>
+<link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/styles.css"></noscript>
 </head>
 <body>
 
@@ -160,7 +180,7 @@
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="/" class="nav-logo" aria-label="Xolvyn &mdash; home">
-      <img src="../Xolvyn_Full_Lockup.png" alt="Xolvyn — AI codebase intelligence platform" class="nav-logo-img" width="1200" height="400">
+      <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn — AI codebase intelligence platform" class="nav-logo-img" width="1200" height="400">
     </a>
     <div class="nav-links">
       <a href="/#features">Features</a>
@@ -592,7 +612,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="footer-logo-link" aria-label="Xolvyn &mdash; home">
-          <img src="../Xolvyn_Full_Lockup.png" alt="Xolvyn — AI codebase intelligence platform" class="footer-logo-img" width="1200" height="400">
+          <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn — AI codebase intelligence platform" class="footer-logo-img" width="1200" height="400" loading="lazy">
         </a>
         <p>AI-powered codebase intelligence. Understand any repository in minutes, not weeks.</p>
         <p class="footer-copy">&copy; 2026 Xolvyn. All rights reserved.</p>

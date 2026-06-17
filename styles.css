@@ -5997,7 +5997,7 @@ a.blog-card:hover {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 10px;
   padding: 0 4px
 }
@@ -6032,7 +6032,7 @@ a.blog-card:hover {
 .ae-count {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.4)
+  color: rgba(255, 255, 255, 0.72)
 }
 
 .ae-detail {
@@ -6053,7 +6053,7 @@ a.blog-card:hover {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9.5px;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 7px
 }
 
