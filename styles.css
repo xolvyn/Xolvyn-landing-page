@@ -1,3 +1,20 @@
+/* ===== SELF-HOSTED FONTS (same-origin, variable woff2, latin subset) ===== */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('fonts/inter-variable.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('fonts/jetbrains-mono-variable.woff2') format('woff2')
+}
+
 /* ===== RESET & BASE ===== */
 *,
 *::before,
