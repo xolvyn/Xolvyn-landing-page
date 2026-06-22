@@ -8511,3 +8511,66 @@ a.blog-card:hover {
     display: none
   }
 }
+
+/* ===== CAREERS PAGE — CLOSED STATE ===== */
+
+/* Badge — red/amber "Applications Closed" */
+.badge-closed {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.06) 100%) !important;
+  color: #F87171 !important;
+}
+
+.badge-dot-closed {
+  background: #EF4444 !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8) !important;
+  animation: badgePulseClosed 2s ease-in-out infinite !important;
+}
+
+@keyframes badgePulseClosed {
+  0%, 100% { box-shadow: 0 0 8px rgba(239, 68, 68, 0.6) }
+  50% { box-shadow: 0 0 18px rgba(239, 68, 68, 1) }
+}
+
+/* Disabled button — grayed out, no hover */
+.btn-disabled {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Closed role cards — slightly dimmed */
+.role-card-closed {
+  opacity: 0.7;
+  position: relative;
+}
+
+.role-card-closed::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(10, 10, 10, 0.15);
+  pointer-events: none;
+}
+
+/* Closed tag — red tint */
+.role-tag-closed {
+  background: rgba(239, 68, 68, 0.12) !important;
+  color: #F87171 !important;
+  border-color: rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Challenge card — closed state */
+.challenge-card-closed {
+  opacity: 0.7;
+}
