@@ -6637,3 +6637,168 @@ a.blog-card:hover {
 .challenge-card-closed {
   opacity: 0.7;
 }
+
+/* =====================================================================
+   HERO - static, text-forward (replaces the removed scroll animation)
+   One visible H1, generous whitespace, one dominant CTA. No image.
+   ===================================================================== */
+.lp-hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 150px 0 104px;
+}
+
+/* Atmospheric blue glow behind the headline - decorative, not an image */
+.lp-hero-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(920px, 96vw);
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 66%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lp-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lp-hero-title {
+  max-width: 13em;
+  margin: 0;
+  font-size: clamp(2rem, 6.4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+/* Sole emphasized word - solid brand blue, no gradient (5.4:1 on #0A0A0A) */
+.lp-hero-em {
+  color: #3B82F6;
+}
+
+.lp-hero-sub {
+  max-width: 62ch;
+  margin: 24px 0 0;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.66);
+  text-wrap: balance;
+}
+
+.lp-hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 24px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Dominant CTA. Darker brand blue so white text clears WCAG AA
+   (5.2:1 vs 3.7:1 at #3B82F6). Reuses .btn .btn-primary base. */
+.lp-hero-cta-primary {
+  background: #2563EB;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 10px;
+  min-height: 52px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.28);
+}
+
+.lp-hero-cta-primary:hover {
+  background: #1D4ED8;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.36);
+}
+
+.lp-hero-cta-primary:active {
+  background: #1E40AF;
+  transform: translateY(0);
+}
+
+.lp-hero-cta-primary:focus-visible {
+  outline: 2px solid #93C5FD;
+  outline-offset: 3px;
+}
+
+.lp-hero-arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.lp-hero-cta-primary:hover .lp-hero-arrow {
+  transform: translateX(3px);
+}
+
+/* Quiet secondary link - clearly subordinate to the button */
+.lp-hero-cta-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 12px 8px;
+  border-radius: 8px;
+  transition: color 0.2s ease;
+}
+
+.lp-hero-cta-link:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.lp-hero-cta-link:focus-visible {
+  outline: 2px solid #93C5FD;
+  outline-offset: 3px;
+  color: #fff;
+}
+
+/* Subtle fade-up on load - enhancement over an already-visible default.
+   Pure CSS (no JS gating), so crawlers/headless render the final state. */
+@keyframes lpHeroIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.lp-hero-inner > * {
+  animation: lpHeroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.lp-hero-inner > .hero-pill { animation-delay: 0.04s; }
+.lp-hero-title { animation-delay: 0.12s; }
+.lp-hero-sub { animation-delay: 0.20s; }
+.lp-hero-cta { animation-delay: 0.28s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-hero-inner > * { animation: none; }
+  .lp-hero-cta-primary:hover { transform: none; }
+  .lp-hero-arrow { transition: none; }
+}
+
+@media (max-width: 768px) {
+  .lp-hero { padding: 120px 0 72px; }
+  .lp-hero-sub { font-size: 16px; max-width: 90%; }
+}
+
+/* Phone: single-column, full-width tappable CTA (>= 48px) */
+@media (max-width: 480px) {
+  .lp-hero { padding: 106px 0 58px; }
+  .lp-hero-title { letter-spacing: -0.02em; max-width: 100%; }
+  .lp-hero-cta { flex-direction: column; gap: 12px; width: 100%; }
+  .lp-hero-cta-primary { width: 100%; justify-content: center; }
+  .lp-hero-cta-link { width: 100%; justify-content: center; }
+}
