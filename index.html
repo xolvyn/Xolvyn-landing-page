@@ -44,101 +44,100 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Xolvyn",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Web",
-  "description": "Architecture-aware code security scanner. Xolvyn scans any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, builds an AST-based dependency graph, and ranks every finding by blast radius — how many files depend on the affected code — so teams fix what's load-bearing first. Auto-Fix Engine opens remediation pull requests for human review.",
-  "url": "https://getxolvyn.com",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for public repositories during private beta." }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "How does Xolvyn rank vulnerabilities by blast radius?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Xolvyn builds an AST-based dependency graph of your codebase, then scores each finding by how many files depend on the affected file. A medium-severity issue on a file that 47 others rely on can outrank a critical issue on an isolated file, so you fix what can actually break your system first."
-      }
+      "@type": "Organization",
+      "@id": "https://getxolvyn.com/#organization",
+      "name": "Xolvyn",
+      "url": "https://getxolvyn.com/",
+      "logo": "https://getxolvyn.com/Xolvyn_Full_Lockup.png",
+      "description": "Xolvyn is a codebase-intelligence and architecture-aware security platform. It maps how your code connects, ranks vulnerabilities by blast radius, and opens fixes as pull requests.",
+      "email": "hello@xolvyn.dev",
+      "sameAs": [
+        "https://x.com/xolvyn",
+        "https://github.com/xolvyn",
+        "https://www.linkedin.com/company/xolvyn"
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Does Xolvyn store or train on my code?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model."
-      }
+      "@type": "WebSite",
+      "@id": "https://getxolvyn.com/#website",
+      "url": "https://getxolvyn.com/",
+      "name": "Xolvyn",
+      "publisher": { "@id": "https://getxolvyn.com/#organization" }
     },
     {
-      "@type": "Question",
-      "name": "Is Xolvyn GDPR-compliant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Analysis is ephemeral and access is permission-scoped, in line with GDPR requirements."
-      }
+      "@type": "SoftwareApplication",
+      "@id": "https://getxolvyn.com/#software",
+      "name": "Xolvyn",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "description": "Architecture-aware code security scanner. Xolvyn scans any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, builds an AST-based dependency graph, and ranks every finding by blast radius — how many files depend on the affected code — so teams fix what's load-bearing first. Auto-Fix Engine opens remediation pull requests for human review.",
+      "url": "https://getxolvyn.com/",
+      "publisher": { "@id": "https://getxolvyn.com/#organization" }
     },
     {
-      "@type": "Question",
-      "name": "What programming languages does Xolvyn support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AST-based dependency mapping covers TypeScript, JavaScript, Python, Go, and Java. Security scanning runs across your whole repository, including config and infrastructure files."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is Xolvyn different from free codebase-visualization tools?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Free tools show you a map, but they don't find vulnerabilities, scan CVEs, rank by blast radius, or open fix pull requests. Xolvyn turns codebase understanding into security action."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will Xolvyn merge code without my approval?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Never. Auto-fix opens a pull request for you to review; nothing merges without a human approving it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is @mentor and how does it work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "@mentor is Xolvyn's AI assistant grounded in your actual codebase. Unlike generic AI chatbots that guess from training data, @mentor answers questions using your real dependency graph, file relationships, and architecture layers — so when you ask 'what does this service do?' or 'what breaks if I change this file?', the answer references your actual code paths, not hallucinated ones."
-      }
+      "@type": "FAQPage",
+      "@id": "https://getxolvyn.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does Xolvyn rank vulnerabilities by blast radius?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Xolvyn builds an AST-based dependency graph of your codebase, then scores each finding by how many files depend on the affected file. A medium-severity issue on a file that 47 others rely on can outrank a critical issue on an isolated file — so you fix what can actually break your system first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Xolvyn store or train on my code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Xolvyn GDPR-compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Analysis is ephemeral and access is permission-scoped, in line with GDPR requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What programming languages does Xolvyn support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AST-based dependency mapping covers TypeScript, JavaScript, Python, Go, and Java. Security scanning runs across your whole repository, including config and infrastructure files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Xolvyn different from free codebase-visualization tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free tools show you a map, but they don’t find vulnerabilities, scan CVEs, rank by blast radius, or open fix pull requests. Xolvyn turns codebase understanding into security action."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will Xolvyn merge code without my approval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. Auto-fix opens a pull request for you to review — nothing merges without a human approving it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is @mentor and how does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "@mentor is Xolvyn’s AI assistant grounded in your actual codebase. Unlike generic AI chatbots that guess from training data, @mentor answers questions using your real dependency graph, file relationships, and architecture layers — so when you ask “what does this service do?” or “what breaks if I change this file?”, the answer references your actual code paths, not hallucinated ones."
+          }
+        }
+      ]
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Xolvyn",
-  "url": "https://getxolvyn.com",
-  "logo": "https://getxolvyn.com/Xolvyn_Full_Lockup.png",
-  "description": "Xolvyn is a codebase-intelligence and architecture-aware security platform. It maps how your code connects, ranks vulnerabilities by blast radius, and opens fixes as pull requests.",
-  "email": "hello@xolvyn.dev",
-  "sameAs": [
-    "https://x.com/xolvyn",
-    "https://github.com/xolvyn",
-    "https://www.linkedin.com/company/xolvyn"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getxolvyn.com/" }
   ]
 }
 </script>
