@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="robots" content="noindex,follow">
+<title>Page not found | Xolvyn</title>
+<meta name="description" content="The page you were looking for could not be found.">
+<link rel="icon" type="image/png" href="/Xolvyn_Mark.png">
+<link rel="apple-touch-icon" href="/Xolvyn_Mark.png">
+<link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jetbrains-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .nf-wrap {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .nf-glow {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(820px, 92vw);
+    height: 520px;
+    background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 66%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .nf-inner { position: relative; z-index: 1; }
+  .nf-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(72px, 16vw, 128px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin: 0;
+  }
+  .nf-code span { color: #3B82F6; }
+  .nf-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 20px 0 12px;
+    text-wrap: balance;
+  }
+  .nf-text {
+    max-width: 46ch;
+    margin: 0 auto 32px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.66);
+  }
+  .nf-cta {
+    background: #2563EB;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 30px;
+    border-radius: 10px;
+    min-height: 50px;
+  }
+  .nf-cta:hover { background: #1D4ED8; }
+  .nf-cta:focus-visible { outline: 2px solid #93C5FD; outline-offset: 3px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo" aria-label="Xolvyn &mdash; home">
+      <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn, architecture-aware code security" class="nav-logo-img" width="1200" height="400">
+    </a>
+  </div>
+</nav>
+
+<main class="nf-wrap" id="main-content" tabindex="-1">
+  <div class="nf-glow" aria-hidden="true"></div>
+  <div class="nf-inner">
+    <p class="nf-code" aria-hidden="true">4<span>0</span>4</p>
+    <h1 class="nf-title">This page could not be found.</h1>
+    <p class="nf-text">The link may be broken, or the page may have moved. Let&rsquo;s get you back on track.</p>
+    <a href="/" class="btn btn-primary nf-cta">Back to home<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
+  </div>
+</main>
+
+</body>
+</html>
