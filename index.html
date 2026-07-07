@@ -455,7 +455,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="javascript:void(0)" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="footer-logo-link" aria-label="Xolvyn &mdash; home">
+        <a href="/" onclick="if(location.pathname==='/'){event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}" class="footer-logo-link" aria-label="Xolvyn &mdash; home">
           <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn, architecture-aware code security" class="footer-logo-img" width="1200" height="400" loading="lazy">
         </a>
         <p>CVE-scanned codebase intelligence. Understand any repository in minutes, not weeks.</p>
