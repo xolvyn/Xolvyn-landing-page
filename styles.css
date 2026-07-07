@@ -6079,262 +6079,6 @@ a.blog-card:hover {
   opacity: 0.7
 }
 
-/* ===== SECTION 6 — PRICING TIERS ===== */
-.tier-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1000px;
-  margin: 52px auto 0
-}
-
-.tier-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease
-}
-
-/* colored top edge — tinted to each tier's --accent, lit on hover */
-.tier-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 20px;
-  right: 20px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--accent, #3B82F6);
-  opacity: 0;
-  transition: opacity 0.3s ease
-}
-
-.tier-card:hover::before {
-  opacity: 0.7
-}
-
-.tier-card:hover {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: color-mix(in srgb, var(--accent, #fff) 40%, rgba(255, 255, 255, 0.12));
-  transform: translateY(-4px);
-  box-shadow: 0 16px 44px color-mix(in srgb, var(--accent, #000) 13%, transparent)
-}
-
-.tier-card--recommended {
-  border-color: rgba(59, 130, 246, 0.4);
-  background: rgba(59, 130, 246, 0.04);
-  box-shadow: 0 0 48px rgba(59, 130, 246, 0.06)
-}
-
-.tier-card--recommended::before {
-  opacity: 0.9
-}
-
-.tier-card--recommended:hover {
-  border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 16px 64px rgba(59, 130, 246, 0.16)
-}
-
-.tier-badge {
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #3B82F6, #2563EB);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: 20px;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-  z-index: 2
-}
-
-/* ===== 4-tier pricing (Free / Pro / Team / Enterprise) ===== */
-.tier-grid.tier-grid--4 {
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 1180px
-}
-
-/* top-left status flag: Locked / Founding Price / Custom */
-.tier-flag {
-  display: inline-flex;
-  align-self: flex-start;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 18px;
-  padding: 4px 9px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.03);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5)
-}
-
-.tier-flag svg {
-  width: 11px;
-  height: 11px;
-  flex-shrink: 0
-}
-
-.tier-flag--accent {
-  color: #60A5FA;
-  border-color: rgba(59, 130, 246, 0.4);
-  background: rgba(59, 130, 246, 0.1)
-}
-
-/* prices stay hidden until launch (a "founding price" teaser) — the digits are
-   masked behind soft, accent-tinted dots. Swap the placeholder digits for real
-   numbers and drop .tier-blur to reveal them. */
-.tier-blur {
-  display: inline-block;
-  font-size: 0;
-  -webkit-user-select: none;
-  user-select: none
-}
-
-.tier-blur::after {
-  content: "\2022\2022";
-  font-size: 22px;
-  letter-spacing: 0.12em;
-  vertical-align: 0.18em;
-  color: color-mix(in srgb, var(--accent, #fff) 62%, rgba(255, 255, 255, 0.32))
-}
-
-/* colored bullet dots, tinted per tier via the card's --accent */
-.tier-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent, #3B82F6);
-  flex-shrink: 0
-}
-
-@media (max-width: 1024px) {
-  .tier-grid.tier-grid--4 {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 720px
-  }
-}
-
-@media (max-width: 600px) {
-  .tier-grid.tier-grid--4 {
-    grid-template-columns: 1fr;
-    max-width: 420px
-  }
-}
-
-.tier-name {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 12px
-}
-
-.tier-price {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin-bottom: 16px
-}
-
-.tier-amount {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 36px;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: -0.02em
-}
-
-.tier-amount--custom {
-  font-size: 22px;
-  font-weight: 700
-}
-
-.tier-period {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.35)
-}
-
-.tier-desc {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.6;
-  margin-bottom: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06)
-}
-
-.tier-features {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-  flex: 1
-}
-
-.tier-features li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.4
-}
-
-.tier-features li svg {
-  flex-shrink: 0
-}
-
-.tier-cta {
-  text-align: center;
-  padding: 12px 20px;
-  border-radius: 9px;
-  font-size: 14px;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.25s ease;
-  margin-top: auto;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none
-}
-
-.tier-cta:hover {
-  background: color-mix(in srgb, var(--accent, #fff) 12%, rgba(255, 255, 255, 0.04));
-  border-color: color-mix(in srgb, var(--accent, #fff) 45%, rgba(255, 255, 255, 0.2));
-  color: #fff
-}
-
-.tier-cta--primary {
-  background: #3B82F6;
-  border-color: #3B82F6;
-  color: #fff
-}
-
-.tier-cta--primary:hover {
-  background: #2563EB;
-  border-color: #2563EB;
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3)
-}
-
 /* ===== SECTION 8 — CTA BAND ===== */
 .cta-band {
   border-top: 1px solid rgba(255, 255, 255, 0.05)
@@ -6424,10 +6168,6 @@ a.blog-card:hover {
     padding: 56px 0
   }
 
-  .tier-grid {
-    gap: 16px
-  }
-
   .footer-cols {
     gap: 40px
   }
@@ -6481,21 +6221,6 @@ a.blog-card:hover {
   .hiw-num {
     font-size: 12px;
     margin-bottom: 18px
-  }
-
-  /* Pricing → single column */
-  .tier-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    max-width: 100%
-  }
-
-  .tier-card {
-    padding: 24px 20px
-  }
-
-  .tier-amount {
-    font-size: 30px
   }
 
   /* Footer → stacked */
@@ -6554,15 +6279,13 @@ a.blog-card:hover {
   }
 
   .cap-card,
-  .tier-card,
   .hiw-step,
   .faq-item,
   .faq-q svg {
     transition: none
   }
 
-  .cap-card:hover,
-  .tier-card:hover {
+  .cap-card:hover {
     transform: none
   }
 
@@ -6801,4 +6524,54 @@ a.blog-card:hover {
   .lp-hero-cta { flex-direction: column; gap: 12px; width: 100%; }
   .lp-hero-cta-primary { width: 100%; justify-content: center; }
   .lp-hero-cta-link { width: 100%; justify-content: center; }
+}
+
+/* =====================================================================
+   FOUNDING ACCESS panel (replaces the removed 4-tier pricing grid)
+   ===================================================================== */
+.founding-panel {
+  max-width: 720px;
+  margin: 52px auto 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 48px 44px;
+}
+
+.founding-copy {
+  max-width: 56ch;
+  margin: 8px auto 30px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.founding-cta {
+  background: #2563EB;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 10px;
+  min-height: 50px;
+}
+
+.founding-cta:hover {
+  background: #1D4ED8;
+}
+
+.founding-cta:focus-visible {
+  outline: 2px solid #93C5FD;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .founding-panel {
+    padding: 32px 22px;
+  }
+  .founding-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
