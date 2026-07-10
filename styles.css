@@ -5760,108 +5760,11 @@ a.blog-card:hover {
   margin: 0 auto
 }
 
-/* Trust bar (section 3) — understated credibility strip below the hero.
-   Top hairline only, no fill, no heavy box. */
-.trust-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 30px 0
-}
-
-.trust-bar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px 28px
-}
-
-.trust-bar-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.55);
-  transition: color 0.15s ease
-}
-
-.trust-bar-icon {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.5);
-  transition: color 0.15s ease
-}
-
-.trust-bar-icon svg {
-  width: 16px;
-  height: 16px;
-  display: block
-}
-
-.trust-bar-logos {
-  gap: 7px
-}
-
-/* subtle hover: text + icon brighten together */
-.trust-bar-item:hover {
-  color: rgba(255, 255, 255, 0.85)
-}
-
-.trust-bar-item:hover .trust-bar-icon {
-  color: rgba(255, 255, 255, 0.85)
-}
-
-.trust-bar-divider {
-  width: 1px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  flex-shrink: 0
-}
-
 @media(max-width:768px) {
   .hero {
     padding: 120px 0 64px
   }
 
-  .trust-bar {
-    padding: 24px 0
-  }
-
-  /* drop the dividers; lay items out as 2x2 bordered tiles
-     (icon on top, label below) — equal-height, balanced */
-  .trust-bar-divider {
-    display: none
-  }
-
-  .trust-bar-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
-    gap: 12px;
-    max-width: 420px;
-    margin: 0 auto
-  }
-
-  .trust-bar-item {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    gap: 10px;
-    padding: 18px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    font-size: 12.5px;
-    line-height: 1.35
-  }
-
-  .trust-bar-icon svg {
-    width: 20px;
-    height: 20px
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6362,25 +6265,24 @@ a.blog-card:hover {
 }
 
 /* =====================================================================
-   HERO - static, text-forward (replaces the removed scroll animation)
-   One visible H1, generous whitespace, one dominant CTA. No image.
+   HERO - split layout: copy left, framed product shot right.
+   One visible H1; the headline is the first read, the shot supports it.
    ===================================================================== */
 .lp-hero {
   position: relative;
   overflow: hidden;
-  text-align: center;
-  padding: 150px 0 104px;
+  padding: 118px 0 64px;
 }
 
-/* Atmospheric blue glow behind the headline - decorative, not an image */
+/* Atmospheric blue glow - decorative, biased toward the visual */
 .lp-hero-glow {
   position: absolute;
-  top: -80px;
-  left: 50%;
+  top: -120px;
+  left: 55%;
   transform: translateX(-50%);
-  width: min(920px, 96vw);
-  height: 600px;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 66%);
+  width: min(980px, 96vw);
+  height: 620px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.10) 0%, transparent 66%);
   pointer-events: none;
   z-index: 0;
 }
@@ -6388,55 +6290,60 @@ a.blog-card:hover {
 .lp-hero-inner {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: 56px;
   align-items: center;
 }
 
+.lp-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
 .lp-hero-title {
-  max-width: 13em;
   margin: 0;
-  font-size: clamp(2rem, 6.4vw, 4rem);
+  font-size: clamp(1.85rem, 2.9vw, 2.55rem);
   font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -0.03em;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
   color: #fff;
   text-wrap: balance;
 }
 
-/* Sole emphasized word - solid brand blue, no gradient (5.4:1 on #0A0A0A) */
+/* Sole emphasized word - solid brand blue, no gradient */
 .lp-hero-em {
   color: #3B82F6;
 }
 
 .lp-hero-sub {
-  max-width: 62ch;
-  margin: 24px 0 0;
-  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
-  line-height: 1.6;
+  max-width: 48ch;
+  margin: 18px 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   color: rgba(255, 255, 255, 0.66);
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .lp-hero-cta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px 24px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  gap: 12px 16px;
+  margin-top: 30px;
 }
 
-/* Dominant CTA. Darker brand blue so white text clears WCAG AA
-   (5.2:1 vs 3.7:1 at #3B82F6). Reuses .btn .btn-primary base. */
+/* Dominant CTA - #2563EB keeps white text at 5.2:1 (WCAG AA) */
 .lp-hero-cta-primary {
   background: #2563EB;
   color: #fff;
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 600;
-  padding: 15px 30px;
+  padding: 13px 26px;
   border-radius: 10px;
-  min-height: 52px;
+  min-height: 48px;
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.28);
 }
 
@@ -6466,32 +6373,95 @@ a.blog-card:hover {
   transform: translateX(3px);
 }
 
-/* Quiet secondary link - clearly subordinate to the button */
-.lp-hero-cta-link {
-  display: inline-flex;
-  align-items: center;
+/* Ghost secondary sized to match the primary */
+.lp-hero-cta-ghost {
   font-size: 15px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.72);
-  padding: 12px 8px;
-  border-radius: 8px;
-  transition: color 0.2s ease;
+  padding: 13px 22px;
+  border-radius: 10px;
+  min-height: 48px;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.lp-hero-cta-link:hover {
+.lp-hero-cta-ghost:hover {
   color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
-.lp-hero-cta-link:focus-visible {
+.lp-hero-cta-ghost:focus-visible {
   outline: 2px solid #93C5FD;
   outline-offset: 3px;
-  color: #fff;
 }
 
-/* Subtle fade-up on load - enhancement over an already-visible default.
-   Pure CSS (no JS gating), so crawlers/headless render the final state. */
+/* Compact trust strip inside the copy column */
+.lp-hero-trust {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: flex-start;
+  gap: 12px 28px;
+  margin-top: 34px;
+  padding: 0;
+  list-style: none;
+}
+
+.lp-hero-trust li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.lp-hero-trust-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.lp-hero-trust-icon svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.lp-hero-trust-logos {
+  gap: 6px;
+}
+
+/* Framed product window - matches the copy column's height; the image is
+   anchored left/top and crops on the right, with a slight right bleed.
+   Shadow tinted to the page's blue-black plus a faint top glow. */
+.lp-hero-shot {
+  position: relative;
+  margin: 0;
+  align-self: stretch;
+  min-height: 430px;
+}
+
+.lp-hero-frame {
+  width: 111%;
+  height: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+  box-shadow:
+    0 -18px 70px rgba(59, 130, 246, 0.07),
+    0 30px 90px rgba(8, 12, 24, 0.72);
+}
+
+.lp-hero-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+
+/* Entrance: gentle fade-up, copy first. CSS-only so the final state
+   renders even without JS; disabled under prefers-reduced-motion. */
 @keyframes lpHeroIn {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: none; }
@@ -6501,10 +6471,8 @@ a.blog-card:hover {
   animation: lpHeroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.lp-hero-inner > .hero-pill { animation-delay: 0.04s; }
-.lp-hero-title { animation-delay: 0.12s; }
-.lp-hero-sub { animation-delay: 0.20s; }
-.lp-hero-cta { animation-delay: 0.28s; }
+.lp-hero-copy { animation-delay: 0.05s; }
+.lp-hero-shot { animation-delay: 0.18s; }
 
 @media (prefers-reduced-motion: reduce) {
   .lp-hero-inner > * { animation: none; }
@@ -6512,62 +6480,32 @@ a.blog-card:hover {
   .lp-hero-arrow { transition: none; }
 }
 
-@media (max-width: 768px) {
-  .lp-hero { padding: 120px 0 72px; }
-  .lp-hero-sub { font-size: 16px; max-width: 90%; }
+/* Tablet and below: stack - copy on top, framed shot below (full width,
+   natural aspect, nothing cropped) */
+@media (max-width: 1023px) {
+  .lp-hero { padding: 112px 0 56px; }
+  .lp-hero-glow { left: 50%; }
+  .lp-hero-inner { grid-template-columns: 1fr; gap: 44px; }
+  .lp-hero-copy { align-items: center; text-align: center; }
+  .lp-hero-title { font-size: clamp(2rem, 5.2vw, 3rem); }
+  .lp-hero-sub { max-width: 58ch; }
+  .lp-hero-cta { justify-content: center; }
+  .lp-hero-trust { justify-content: center; }
+  .lp-hero-shot { align-self: auto; min-height: 0; }
+  .lp-hero-frame { width: 100%; height: auto; }
+  .lp-hero-frame img { height: auto; }
 }
 
-/* Product shot - supporting proof below the CTA; the H1 stays the focal point */
-.lp-hero-shot {
-  width: min(1060px, 100%);
-  margin: 72px auto 0;
-  animation-delay: 0.36s;
-}
-
-.lp-hero-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  /* shadow tinted toward the page's blue-black, plus a faint top glow
-     matching the hero glow - no gradient */
-  box-shadow:
-    0 -20px 80px rgba(59, 130, 246, 0.07),
-    0 30px 90px rgba(8, 12, 24, 0.72);
-}
-
-.lp-hero-shot figcaption {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-@media (max-width: 768px) {
-  .lp-hero-shot {
-    margin-top: 52px;
-  }
-}
-
-/* Phone: single-column, compact centered CTA (tap target stays >= 48px) */
+/* Phone: compact centered CTAs (tap targets stay >= 48px) */
 @media (max-width: 480px) {
-  .lp-hero { padding: 106px 0 58px; }
-  .lp-hero-title { letter-spacing: -0.02em; max-width: 100%; }
+  .lp-hero { padding: 104px 0 48px; }
+  .lp-hero-title { letter-spacing: -0.02em; }
   .lp-hero-cta { flex-direction: column; gap: 10px; width: 100%; }
-  .lp-hero-cta-primary {
-    width: auto;
-    min-width: 220px;
-    max-width: 100%;
-    min-height: 48px;
-    padding: 12px 26px;
-    font-size: 15px;
-    justify-content: center;
-  }
-  .lp-hero-cta-link { width: 100%; justify-content: center; }
-  .lp-hero-shot { margin-top: 40px; }
-  .lp-hero-shot img { border-radius: 8px; }
-  .lp-hero-shot figcaption { font-size: 12px; }
+  .lp-hero-cta-primary { width: auto; min-width: 220px; justify-content: center; }
+  .lp-hero-cta-ghost { width: auto; min-width: 220px; justify-content: center; }
+  .lp-hero-trust { grid-template-columns: repeat(2, auto); gap: 10px 20px; }
+  .lp-hero-trust li { font-size: 12px; }
+  .lp-hero-frame { border-radius: 10px; }
 }
 
 /* =====================================================================
