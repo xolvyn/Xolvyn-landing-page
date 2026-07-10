@@ -6431,21 +6431,19 @@ a.blog-card:hover {
   gap: 6px;
 }
 
-/* Framed product window - matches the copy column's height; the image is
-   anchored left/top and crops on the right, with a slight right bleed.
+/* Framed product window - the focused crop sits fully inside the column,
+   natural aspect, frame intact on all four sides (no bleed, no cropping).
    Shadow tinted to the page's blue-black plus a faint top glow. */
 .lp-hero-shot {
   position: relative;
   margin: 0;
-  align-self: stretch;
-  min-height: 430px;
+  min-width: 0;
 }
 
 .lp-hero-frame {
-  width: 111%;
-  height: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
   box-shadow:
     0 -18px 70px rgba(59, 130, 246, 0.07),
@@ -6455,9 +6453,7 @@ a.blog-card:hover {
 .lp-hero-frame img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left top;
+  height: auto;
 }
 
 /* Entrance: gentle fade-up, copy first. CSS-only so the final state
@@ -6491,9 +6487,6 @@ a.blog-card:hover {
   .lp-hero-sub { max-width: 58ch; }
   .lp-hero-cta { justify-content: center; }
   .lp-hero-trust { justify-content: center; }
-  .lp-hero-shot { align-self: auto; min-height: 0; }
-  .lp-hero-frame { width: 100%; height: auto; }
-  .lp-hero-frame img { height: auto; }
 }
 
 /* Phone: compact centered CTAs (tap targets stay >= 48px) */
