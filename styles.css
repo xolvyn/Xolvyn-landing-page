@@ -6517,6 +6517,39 @@ a.blog-card:hover {
   .lp-hero-sub { font-size: 16px; max-width: 90%; }
 }
 
+/* Product shot - supporting proof below the CTA; the H1 stays the focal point */
+.lp-hero-shot {
+  width: min(1060px, 100%);
+  margin: 72px auto 0;
+  animation-delay: 0.36s;
+}
+
+.lp-hero-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  /* shadow tinted toward the page's blue-black, plus a faint top glow
+     matching the hero glow - no gradient */
+  box-shadow:
+    0 -20px 80px rgba(59, 130, 246, 0.07),
+    0 30px 90px rgba(8, 12, 24, 0.72);
+}
+
+.lp-hero-shot figcaption {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 768px) {
+  .lp-hero-shot {
+    margin-top: 52px;
+  }
+}
+
 /* Phone: single-column, compact centered CTA (tap target stays >= 48px) */
 @media (max-width: 480px) {
   .lp-hero { padding: 106px 0 58px; }
@@ -6532,6 +6565,9 @@ a.blog-card:hover {
     justify-content: center;
   }
   .lp-hero-cta-link { width: 100%; justify-content: center; }
+  .lp-hero-shot { margin-top: 40px; }
+  .lp-hero-shot img { border-radius: 8px; }
+  .lp-hero-shot figcaption { font-size: 12px; }
 }
 
 /* =====================================================================
