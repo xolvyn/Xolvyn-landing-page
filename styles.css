@@ -6517,12 +6517,20 @@ a.blog-card:hover {
   .lp-hero-sub { font-size: 16px; max-width: 90%; }
 }
 
-/* Phone: single-column, full-width tappable CTA (>= 48px) */
+/* Phone: single-column, compact centered CTA (tap target stays >= 48px) */
 @media (max-width: 480px) {
   .lp-hero { padding: 106px 0 58px; }
   .lp-hero-title { letter-spacing: -0.02em; max-width: 100%; }
-  .lp-hero-cta { flex-direction: column; gap: 12px; width: 100%; }
-  .lp-hero-cta-primary { width: 100%; justify-content: center; }
+  .lp-hero-cta { flex-direction: column; gap: 10px; width: 100%; }
+  .lp-hero-cta-primary {
+    width: auto;
+    min-width: 220px;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 12px 26px;
+    font-size: 15px;
+    justify-content: center;
+  }
   .lp-hero-cta-link { width: 100%; justify-content: center; }
 }
 
@@ -6564,6 +6572,12 @@ a.blog-card:hover {
 .founding-cta:focus-visible {
   outline: 2px solid #93C5FD;
   outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .founding-panel {
+    margin-top: 8px;
+  }
 }
 
 @media (max-width: 480px) {
