@@ -6458,9 +6458,9 @@ a.blog-card:hover {
 .lp-hero-frame {
   position: relative;
   z-index: 2;
-  /* leave clear breathing room on the right so the receding edge never
-     runs past the column, even with the perspective */
-  width: 94%;
+  /* left-anchored and scaled down so all four edges sit clearly inside the
+     column with room to spare on the right, even with the perspective */
+  width: 86%;
   border-radius: 12px;
   transform: perspective(2400px) rotateY(3.5deg) rotateX(1.5deg);
   transform-origin: 34% 50%;
@@ -6475,9 +6475,12 @@ a.blog-card:hover {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-  -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 99%);
-  mask-image: linear-gradient(to bottom, #000 68%, transparent 99%);
+  /* slightly more visible 1px border so all four frame edges read */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.11);
+  /* keep the soft bottom edge-fade, but pulled back so the lower-left corner
+     stays solid enough for the finding card to rest on */
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
 }
 
 /* Layer 3 - floating security finding card (HTML/CSS), overlapping the
@@ -6485,10 +6488,10 @@ a.blog-card:hover {
 .lp-hero-finding {
   position: absolute;
   z-index: 3;
-  /* hangs off the window's lower-left corner - most of the panel and both
-     file rows stay visible behind it */
-  left: -56px;
-  bottom: -64px;
+  /* rests on the window's lower-left corner - most of the card over solid
+     window content (blast bar on the window), hanging off to the lower-left */
+  left: -60px;
+  bottom: -34px;
   width: 210px;
   padding: 12px 13px 13px;
   background: rgba(14, 16, 21, 0.84);
