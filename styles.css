@@ -280,10 +280,7 @@ img {
 }
 
 .text-blue {
-  background: linear-gradient(90deg, #3B82F6, #A78BFA, #FB923C);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text
+  color: #60A5FA;
 }
 
 .text-code {
@@ -6059,11 +6056,7 @@ a.blog-card:hover {
 .footer-tagline {
   font-size: 13px;
   font-weight: 600;
-  /* exact headline gradient + order: blue -> mauve -> orange */
-  background: linear-gradient(90deg, #3B82F6, #A78BFA, #FB923C);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text
+  color: #60A5FA;
 }
 
 .footer-legal {
