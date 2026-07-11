@@ -6635,9 +6635,9 @@ a.blog-card:hover {
   .lp-hero-cta { justify-content: center; }
   .lp-hero-trust { justify-content: center; }
   .lp-hero-shot { perspective: none; }
-  /* full width, but never wider than the asset's native 840px (no upscaling);
-     centered in the stacked column */
-  .lp-hero-frame { transform: none; width: 100%; max-width: 800px; margin-inline: auto; }
+  /* full width - the asset's native width (1340px) exceeds any stacked
+     display width, so it never upscales */
+  .lp-hero-frame { transform: none; width: 100%; }
   /* stacked full-width window has no side gutter for the card to float into
      without covering content, so it stays a desktop-split flourish */
   .lp-hero-finding { display: none; }
