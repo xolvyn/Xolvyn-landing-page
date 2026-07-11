@@ -6431,29 +6431,166 @@ a.blog-card:hover {
   gap: 6px;
 }
 
-/* Framed product window - the focused crop sits fully inside the column,
-   natural aspect, frame intact on all four sides (no bleed, no cropping).
-   Shadow tinted to the page's blue-black plus a faint top glow. */
+/* Layered product composition: ambient glow behind, a gently tilted
+   screenshot window whose bottom edge fades into the page, and a floating
+   security-finding card overlapping its lower-left corner. */
 .lp-hero-shot {
   position: relative;
   margin: 0;
   min-width: 0;
+  perspective: 1500px;
 }
 
+/* Layer 2 - soft brand-blue ambient glow behind the window; reads as one
+   light source with the section glow (blue only, no gradient of hues) */
+.lp-hero-shot-glow {
+  position: absolute;
+  z-index: 0;
+  inset: -16% -8% -6% -8%;
+  background: radial-gradient(ellipse 72% 62% at 52% 42%, rgba(59, 130, 246, 0.20) 0%, rgba(59, 130, 246, 0.06) 42%, transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* Layer 1 - the product window, gently tilted in space. The drop shadow
+   lives here (unmasked) so depth is preserved; the 1px border and the
+   bottom edge-fade live on the image so they melt together. */
 .lp-hero-frame {
-  width: 100%;
+  position: relative;
+  z-index: 2;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  overflow: hidden;
+  transform: perspective(1600px) rotateY(6deg) rotateX(2deg);
+  transform-origin: 28% 50%;
   box-shadow:
-    0 -18px 70px rgba(59, 130, 246, 0.07),
-    0 30px 90px rgba(8, 12, 24, 0.72);
+    0 34px 70px -26px rgba(6, 10, 22, 0.92),
+    0 12px 30px -14px rgba(6, 10, 22, 0.7);
+  will-change: transform;
 }
 
-.lp-hero-frame img {
+.lp-hero-shot-img {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 99%);
+  mask-image: linear-gradient(to bottom, #000 68%, transparent 99%);
+}
+
+/* Layer 3 - floating security finding card (HTML/CSS), overlapping the
+   lower-left corner in front of the window with its own shadow */
+.lp-hero-finding {
+  position: absolute;
+  z-index: 3;
+  left: -34px;
+  bottom: 30px;
+  width: 264px;
+  padding: 15px 16px 16px;
+  background: rgba(14, 16, 21, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 13px;
+  box-shadow:
+    0 26px 50px -14px rgba(0, 0, 0, 0.6),
+    0 6px 16px -6px rgba(0, 0, 0, 0.5);
+  animation: findingFloat 7s ease-in-out infinite;
+}
+
+.finding-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 11px;
+}
+
+.finding-sev {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #F87171;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.38);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.finding-cvss {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.finding-file {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.finding-desc {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.finding-blast {
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.finding-blast-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.finding-blast-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* the point of the card - most eye-catching element */
+.finding-blast-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: #60A5FA;
+}
+
+.finding-blast-track {
+  height: 6px;
+  margin-top: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.finding-blast-fill {
+  display: block;
+  height: 100%;
+  width: 86%;
+  border-radius: 4px;
+  background: #3B82F6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.55);
+  transform-origin: left center;
+  animation: blastFill 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
+}
+
+@keyframes findingFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes blastFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 /* Entrance: gentle fade-up, copy first. CSS-only so the final state
@@ -6474,10 +6611,13 @@ a.blog-card:hover {
   .lp-hero-inner > * { animation: none; }
   .lp-hero-cta-primary:hover { transform: none; }
   .lp-hero-arrow { transition: none; }
+  .lp-hero-finding { animation: none; }
+  .finding-blast-fill { animation: none; }
 }
 
 /* Tablet and below: stack - copy on top, framed shot below (full width,
-   natural aspect, nothing cropped) */
+   natural aspect, nothing cropped). Flatten the tilt and move the finding
+   card inside the window's lower-left so it can't overflow. */
 @media (max-width: 1023px) {
   .lp-hero { padding: 112px 0 56px; }
   .lp-hero-glow { left: 50%; }
@@ -6487,6 +6627,11 @@ a.blog-card:hover {
   .lp-hero-sub { max-width: 58ch; }
   .lp-hero-cta { justify-content: center; }
   .lp-hero-trust { justify-content: center; }
+  .lp-hero-shot { perspective: none; }
+  .lp-hero-frame { transform: none; }
+  /* stacked full-width window has no side gutter for the card to float into
+     without covering content, so it stays a desktop-split flourish */
+  .lp-hero-finding { display: none; }
 }
 
 /* Phone: compact centered CTAs (tap targets stay >= 48px) */
@@ -6498,7 +6643,7 @@ a.blog-card:hover {
   .lp-hero-cta-ghost { width: auto; min-width: 220px; justify-content: center; }
   .lp-hero-trust { grid-template-columns: repeat(2, auto); gap: 10px 20px; }
   .lp-hero-trust li { font-size: 12px; }
-  .lp-hero-frame { border-radius: 10px; }
+  .lp-hero-shot-img { border-radius: 10px; }
 }
 
 /* =====================================================================

@@ -230,8 +230,24 @@
     </div>
 
     <figure class="lp-hero-shot">
+      <div class="lp-hero-shot-glow" aria-hidden="true"></div>
       <div class="lp-hero-frame">
-        <img src="/assets/hero-product.webp" width="840" height="660" loading="eager" fetchpriority="high" decoding="async" alt="Xolvyn onboarding view &mdash; a 'Where do I start?' panel listing the files to read first, with the demo-app repository and its A 96/100 security grade.">
+        <img class="lp-hero-shot-img" src="/assets/hero-product.webp" width="840" height="660" loading="eager" fetchpriority="high" decoding="async" alt="Xolvyn onboarding view &mdash; a 'Where do I start?' panel listing the files to read first, with the demo-app repository and its A 96/100 security grade.">
+      </div>
+      <div class="lp-hero-finding" aria-hidden="true">
+        <div class="finding-row">
+          <span class="finding-sev">Critical</span>
+          <span class="finding-cvss">CVSS 9.1</span>
+        </div>
+        <p class="finding-file">auth/session.js:47</p>
+        <p class="finding-desc">SQL injection in session lookup</p>
+        <div class="finding-blast">
+          <div class="finding-blast-top">
+            <span class="finding-blast-label">Blast radius</span>
+            <span class="finding-blast-count">47 files</span>
+          </div>
+          <div class="finding-blast-track"><span class="finding-blast-fill"></span></div>
+        </div>
       </div>
     </figure>
 
