@@ -6604,6 +6604,17 @@ a.blog-card:hover {
   to { transform: scaleX(1); }
 }
 
+/* gentle continuous lift for the product image (mobile) + a soft glow breath */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes glowBreath {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+
 /* Entrance: gentle fade-up, copy first. CSS-only so the final state
    renders even without JS; disabled under prefers-reduced-motion. */
 @keyframes lpHeroIn {
@@ -6624,13 +6635,15 @@ a.blog-card:hover {
   .lp-hero-arrow { transition: none; }
   .lp-hero-finding { animation: none; }
   .finding-blast-fill { animation: none; }
+  .lp-hero-frame { animation: none; }
+  .lp-hero-shot-glow { animation: none; }
 }
 
 /* Tablet and below: stack - copy on top, framed shot below (full width,
    natural aspect, nothing cropped). Flatten the tilt and move the finding
    card inside the window's lower-left so it can't overflow. */
 @media (max-width: 1023px) {
-  .lp-hero { padding: 112px 0 56px; }
+  .lp-hero { padding: 112px 0 64px; }
   .lp-hero-glow { left: 50%; }
   .lp-hero-inner { grid-template-columns: 1fr; gap: 44px; }
   .lp-hero-copy { align-items: center; text-align: center; }
@@ -6639,12 +6652,20 @@ a.blog-card:hover {
   .lp-hero-cta { justify-content: center; }
   .lp-hero-trust { justify-content: center; }
   .lp-hero-shot { perspective: none; }
-  /* full width - the asset's native width (1340px) exceeds any stacked
-     display width, so it never upscales */
-  .lp-hero-frame { transform: none; width: 100%; }
-  /* stacked full-width window has no side gutter for the card to float into
-     without covering content, so it stays a desktop-split flourish */
-  .lp-hero-finding { display: none; }
+  /* the product image gently lifts; the glow behind it breathes */
+  .lp-hero-frame { transform: none; width: 100%; animation: heroFloat 7s ease-in-out infinite; }
+  .lp-hero-shot-glow { animation: glowBreath 6s ease-in-out infinite; }
+  /* the animated finding card flows in centered below the image (its float +
+     blast-bar fill carry the desktop motion) rather than covering the panel */
+  .lp-hero-finding {
+    position: static;
+    display: block;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 26px auto 0;
+    width: 212px;
+  }
 }
 
 /* Phone: compact centered CTAs (tap targets stay >= 48px) */
