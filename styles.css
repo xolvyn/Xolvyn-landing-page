@@ -2356,6 +2356,20 @@ img {
   margin: 0 0 40px
 }
 
+.waitlist-error {
+  max-width: 480px;
+  margin: -4px auto 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #f87171;
+  text-align: center
+}
+
+.waitlist-form input.input-error {
+  border-color: #EF4444;
+  background: rgba(239, 68, 68, 0.05)
+}
+
 .step2-title {
   font-size: 20px;
   font-weight: 700;

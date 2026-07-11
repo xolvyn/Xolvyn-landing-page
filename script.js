@@ -213,17 +213,24 @@ function clearPlanSelection() {
 function handleWaitlistStep1() {
   const form = document.getElementById('waitlist-form-main');
   const input = document.getElementById('waitlist-email');
+  const errorEl = document.getElementById('waitlist-error');
   const email = input.value.trim();
 
-  if (!email || !email.includes('@') || !email.includes('.')) {
-    input.style.borderColor = '#EF4444';
-    input.setAttribute('placeholder', 'Please enter a valid email');
-    setTimeout(() => {
-      input.style.borderColor = '';
-      input.setAttribute('placeholder', 'your@email.com');
-    }, 2000);
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if (!valid) {
+    input.classList.add('input-error');
+    input.setAttribute('aria-invalid', 'true');
+    if (errorEl) {
+      errorEl.textContent = email ? 'That email address looks incomplete.' : 'Enter your work email to continue.';
+      errorEl.hidden = false;
+    }
+    input.focus();
     return;
   }
+
+  input.classList.remove('input-error');
+  input.removeAttribute('aria-invalid');
+  if (errorEl) errorEl.hidden = true;
 
   waitlistEmail = email;
   form.style.display = 'none';
@@ -249,9 +256,13 @@ async function handleWaitlistStep2() {
   if (!involvement || !waitlistEmail) return;
 
   const btn = document.getElementById('waitlist-step2-btn');
+  const errorEl = document.getElementById('waitlist-error-2');
   const originalText = btn.innerHTML;
-  btn.innerHTML = 'Sending...';
+  if (errorEl) errorEl.hidden = true;
+  btn.innerHTML = 'Sending&hellip;';
   btn.disabled = true;
+  btn.style.opacity = '0.6';
+  btn.style.cursor = 'wait';
 
   const intentLabels = {
     notify: 'Notify at launch',
@@ -313,6 +324,10 @@ async function handleWaitlistStep2() {
     btn.disabled = false;
     btn.style.opacity = '1';
     btn.style.cursor = 'pointer';
+    if (errorEl) {
+      errorEl.textContent = 'Something went wrong on our end. Please try again.';
+      errorEl.hidden = false;
+    }
   }
 }
 
@@ -321,5 +336,11 @@ const emailInput = document.getElementById('waitlist-email');
 if (emailInput) {
   emailInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') handleWaitlistStep1();
+  });
+  emailInput.addEventListener('input', () => {
+    emailInput.classList.remove('input-error');
+    emailInput.removeAttribute('aria-invalid');
+    const errorEl = document.getElementById('waitlist-error');
+    if (errorEl) errorEl.hidden = true;
   });
 }

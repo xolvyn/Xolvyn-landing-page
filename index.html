@@ -420,6 +420,7 @@
         <input type="email" placeholder="your@email.com" id="waitlist-email" aria-label="Your work email address">
         <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get early access &rarr;</button>
       </div>
+      <p class="waitlist-error" id="waitlist-error" role="alert" aria-live="assertive" hidden></p>
       <p class="waitlist-note fade-up" id="waitlist-note" style="text-align:center">Private beta &middot; Launching August 2026</p>
 
       <!-- Step 2: Involvement -->
@@ -453,6 +454,7 @@
           </label>
         </div>
         <button class="btn btn-primary" id="waitlist-step2-btn" onclick="handleWaitlistStep2()" disabled style="margin:28px auto 0;display:block;opacity:0.4;cursor:not-allowed">Confirm my spot &rarr;</button>
+        <p class="waitlist-error" id="waitlist-error-2" role="alert" aria-live="assertive" style="margin-top:14px" hidden></p>
       </div>
 
       <!-- Success state -->
