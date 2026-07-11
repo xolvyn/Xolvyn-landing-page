@@ -6447,7 +6447,7 @@ a.blog-card:hover {
   position: absolute;
   z-index: 0;
   inset: -16% -8% -6% -8%;
-  background: radial-gradient(ellipse 72% 62% at 52% 42%, rgba(59, 130, 246, 0.20) 0%, rgba(59, 130, 246, 0.06) 42%, transparent 70%);
+  background: radial-gradient(ellipse 72% 62% at 52% 42%, rgba(59, 130, 246, 0.16) 0%, rgba(59, 130, 246, 0.05) 42%, transparent 70%);
   filter: blur(8px);
   pointer-events: none;
 }
@@ -6475,12 +6475,11 @@ a.blog-card:hover {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  /* slightly more visible 1px border so all four frame edges read */
+  /* crisp 1px frame border on all four edges. No mask/overlay/opacity dims
+     the panel - the screenshot reads bright and legible. */
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.11);
-  /* keep the soft bottom edge-fade, but pulled back so the lower-left corner
-     stays solid enough for the finding card to rest on */
-  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+  /* high-quality resampling when downscaled (not pixelated) */
+  image-rendering: auto;
 }
 
 /* Layer 3 - floating security finding card (HTML/CSS), overlapping the
@@ -6636,7 +6635,9 @@ a.blog-card:hover {
   .lp-hero-cta { justify-content: center; }
   .lp-hero-trust { justify-content: center; }
   .lp-hero-shot { perspective: none; }
-  .lp-hero-frame { transform: none; width: 100%; }
+  /* full width, but never wider than the asset's native 840px (no upscaling);
+     centered in the stacked column */
+  .lp-hero-frame { transform: none; width: 100%; max-width: 800px; margin-inline: auto; }
   /* stacked full-width window has no side gutter for the card to float into
      without covering content, so it stays a desktop-split flourish */
   .lp-hero-finding { display: none; }
