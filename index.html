@@ -51,7 +51,12 @@
       "@id": "https://getxolvyn.com/#organization",
       "name": "Xolvyn",
       "url": "https://getxolvyn.com/",
-      "logo": "https://getxolvyn.com/Xolvyn_Full_Lockup.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://getxolvyn.com/Xolvyn_Full_Lockup.png",
+        "width": 1200,
+        "height": 400
+      },
       "description": "Xolvyn is a codebase-intelligence and architecture-aware security platform. It maps how your code connects, ranks vulnerabilities by blast radius, and opens fixes as pull requests.",
       "email": "hello@xolvyn.dev",
       "sameAs": [
@@ -72,7 +77,16 @@
       "@id": "https://getxolvyn.com/#software",
       "name": "Xolvyn",
       "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "Security",
       "operatingSystem": "Web",
+      "featureList": [
+        "AST-based dependency graph mapping",
+        "Blast-radius vulnerability ranking",
+        "50+ vulnerability classes and CVE scanning",
+        "Auto-fix pull requests for human review",
+        "@mentor codebase-grounded AI assistant",
+        "GitHub and GitLab integration"
+      ],
       "description": "Architecture-aware code security scanner. Xolvyn scans any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, builds an AST-based dependency graph, and ranks every finding by blast radius — how many files depend on the affected code — so teams fix what's load-bearing first. Auto-Fix Engine opens remediation pull requests for human review.",
       "url": "https://getxolvyn.com/",
       "publisher": { "@id": "https://getxolvyn.com/#organization" }
