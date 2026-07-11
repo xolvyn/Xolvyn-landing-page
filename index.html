@@ -376,31 +376,31 @@
 
     <div class="faq-list fade-up">
       <div class="faq-item">
-        <div class="faq-q">How does Xolvyn rank vulnerabilities by blast radius?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How does Xolvyn rank vulnerabilities by blast radius?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>Xolvyn builds an AST-based dependency graph of your codebase, then scores each finding by how many files depend on the affected file. A medium-severity issue on a file that 47 others rely on can outrank a critical issue on an isolated file &mdash; so you fix what can break your system first.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Does Xolvyn store or train on my code?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Does Xolvyn store or train on my code?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>No. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Is Xolvyn GDPR-compliant?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Is Xolvyn GDPR-compliant?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>Yes. Analysis is ephemeral and access is permission-scoped, in line with GDPR requirements.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What programming languages does Xolvyn support?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What programming languages does Xolvyn support?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>AST-based dependency mapping covers TypeScript, JavaScript, Python, Go, and Java. Security scanning runs across your whole repository, including config and infrastructure files.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How is Xolvyn different from free codebase-visualization tools?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How is Xolvyn different from free codebase-visualization tools?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>Free tools show you a map, but they don&rsquo;t find vulnerabilities, scan CVEs, rank by blast radius, or open fix pull requests. Xolvyn turns codebase understanding into security action.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Will Xolvyn merge code without my approval?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Will Xolvyn merge code without my approval?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>Never. Auto-fix opens a pull request for you to review &mdash; nothing merges without a human approving it.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What is @mentor and how does it work?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What is @mentor and how does it work?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>@mentor is Xolvyn&rsquo;s AI assistant grounded in your actual codebase. Unlike generic AI chatbots that guess from training data, @mentor answers questions using your real dependency graph, file relationships, and architecture layers &mdash; so when you ask &ldquo;what does this service do?&rdquo; or &ldquo;what breaks if I change this file?&rdquo;, the answer references your actual code paths, not hallucinated ones.</p></div>
       </div>
     </div>

@@ -79,11 +79,25 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // ===== FAQ ACCORDION =====
 document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
+  const toggle = () => {
     const item = q.parentElement;
     const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      const other = i.querySelector('.faq-q');
+      if (other) other.setAttribute('aria-expanded', 'false');
+    });
+    if (!wasOpen) {
+      item.classList.add('open');
+      q.setAttribute('aria-expanded', 'true');
+    }
+  };
+  q.addEventListener('click', toggle);
+  q.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
   });
 });
 
