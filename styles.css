@@ -6470,6 +6470,10 @@ a.blog-card:hover {
   will-change: transform;
 }
 
+.lp-hero-frame picture {
+  display: block;
+}
+
 .lp-hero-shot-img {
   display: block;
   width: 100%;
