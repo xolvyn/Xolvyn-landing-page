@@ -6292,11 +6292,17 @@ a.blog-card:hover {
   z-index: 1;
   display: grid;
   grid-template-columns: 45fr 55fr;
-  gap: 56px;
+  grid-template-areas:
+    "copy  shot"
+    "trust shot";
+  column-gap: 56px;
+  row-gap: 0;
   align-items: center;
 }
 
 .lp-hero-copy {
+  grid-area: copy;
+  align-self: end;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -6396,6 +6402,8 @@ a.blog-card:hover {
 
 /* Compact trust strip inside the copy column */
 .lp-hero-trust {
+  grid-area: trust;
+  align-self: start;
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: flex-start;
@@ -6435,6 +6443,7 @@ a.blog-card:hover {
    screenshot window whose bottom edge fades into the page, and a floating
    security-finding card overlapping its lower-left corner. */
 .lp-hero-shot {
+  grid-area: shot;
   position: relative;
   margin: 0;
   min-width: 0;
@@ -6628,6 +6637,7 @@ a.blog-card:hover {
 
 .lp-hero-copy { animation-delay: 0.05s; }
 .lp-hero-shot { animation-delay: 0.18s; }
+.lp-hero-trust { animation-delay: 0.26s; }
 
 @media (prefers-reduced-motion: reduce) {
   .lp-hero-inner > * { animation: none; }
@@ -6645,7 +6655,9 @@ a.blog-card:hover {
 @media (max-width: 1023px) {
   .lp-hero { padding: 112px 0 64px; }
   .lp-hero-glow { left: 50%; }
-  .lp-hero-inner { grid-template-columns: 1fr; gap: 44px; }
+  /* single column - items flow in DOM order: copy, image, trust */
+  .lp-hero-inner { grid-template-columns: 1fr; grid-template-areas: none; gap: 40px; }
+  .lp-hero-copy, .lp-hero-shot, .lp-hero-trust { grid-area: auto; align-self: auto; }
   .lp-hero-copy { align-items: center; text-align: center; }
   .lp-hero-title { font-size: clamp(2rem, 5.2vw, 3rem); }
   .lp-hero-sub { max-width: 58ch; }
