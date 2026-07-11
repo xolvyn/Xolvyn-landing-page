@@ -66,6 +66,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ===== SCROLL-SPY: highlight the active nav link =====
+const spyLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+if (spyLinks.length && 'IntersectionObserver' in window) {
+  const linkBySection = new Map();
+  spyLinks.forEach(a => {
+    const section = document.getElementById(a.getAttribute('href').slice(1));
+    if (section) linkBySection.set(section, a);
+  });
+  const setActive = (link) => {
+    spyLinks.forEach(a => a.classList.remove('active'));
+    if (link) link.classList.add('active');
+  };
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(linkBySection.get(entry.target));
+    });
+  }, { rootMargin: '-80px 0px -75% 0px', threshold: 0 });
+  for (const section of linkBySection.keys()) spyObserver.observe(section);
+}
+
 // ===== FADE UP ON SCROLL =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

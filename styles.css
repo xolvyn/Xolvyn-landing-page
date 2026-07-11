@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 84px;
   font-size: 16px;
   /* clip, not hidden: hidden turns html/body into scroll containers and
      silently breaks position:sticky (the scroll-hero pin). clip gives the
@@ -2610,6 +2611,17 @@ img {
 
 .footer a:hover {
   color: rgba(255, 255, 255, 0.95)
+}
+
+/* Interactive affordance: footer links and modal triggers underline on hover
+   and keyboard focus, so the modal-opening buttons read as clickable */
+.footer a:hover,
+.footer a:focus-visible,
+.footer-modal-btn:hover,
+.footer-modal-btn:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px
 }
 
 .footer-bottom {
