@@ -6458,9 +6458,12 @@ a.blog-card:hover {
 .lp-hero-frame {
   position: relative;
   z-index: 2;
+  /* leave clear breathing room on the right so the receding edge never
+     runs past the column, even with the perspective */
+  width: 94%;
   border-radius: 12px;
-  transform: perspective(1600px) rotateY(6deg) rotateX(2deg);
-  transform-origin: 28% 50%;
+  transform: perspective(2400px) rotateY(3.5deg) rotateX(1.5deg);
+  transform-origin: 34% 50%;
   box-shadow:
     0 34px 70px -26px rgba(6, 10, 22, 0.92),
     0 12px 30px -14px rgba(6, 10, 22, 0.7);
@@ -6482,17 +6485,19 @@ a.blog-card:hover {
 .lp-hero-finding {
   position: absolute;
   z-index: 3;
-  left: -34px;
-  bottom: 30px;
-  width: 264px;
-  padding: 15px 16px 16px;
-  background: rgba(14, 16, 21, 0.82);
+  /* hangs off the window's lower-left corner - most of the panel and both
+     file rows stay visible behind it */
+  left: -56px;
+  bottom: -64px;
+  width: 210px;
+  padding: 12px 13px 13px;
+  background: rgba(14, 16, 21, 0.84);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 13px;
+  border-radius: 12px;
   box-shadow:
-    0 26px 50px -14px rgba(0, 0, 0, 0.6),
+    0 24px 46px -14px rgba(0, 0, 0, 0.62),
     0 6px 16px -6px rgba(0, 0, 0, 0.5);
   animation: findingFloat 7s ease-in-out infinite;
 }
@@ -6514,32 +6519,32 @@ a.blog-card:hover {
   background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.38);
   border-radius: 6px;
-  padding: 3px 8px;
+  padding: 2px 7px;
 }
 
 .finding-cvss {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 10.5px;
   color: rgba(255, 255, 255, 0.5);
 }
 
 .finding-file {
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.92);
 }
 
 .finding-desc {
-  margin: 5px 0 0;
-  font-size: 12px;
+  margin: 4px 0 0;
+  font-size: 11px;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.5);
 }
 
 .finding-blast {
-  margin-top: 13px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -6550,7 +6555,7 @@ a.blog-card:hover {
 }
 
 .finding-blast-label {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.5);
@@ -6559,14 +6564,14 @@ a.blog-card:hover {
 /* the point of the card - most eye-catching element */
 .finding-blast-count {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #60A5FA;
 }
 
 .finding-blast-track {
-  height: 6px;
-  margin-top: 8px;
+  height: 5px;
+  margin-top: 7px;
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
@@ -6628,7 +6633,7 @@ a.blog-card:hover {
   .lp-hero-cta { justify-content: center; }
   .lp-hero-trust { justify-content: center; }
   .lp-hero-shot { perspective: none; }
-  .lp-hero-frame { transform: none; }
+  .lp-hero-frame { transform: none; width: 100%; }
   /* stacked full-width window has no side gutter for the card to float into
      without covering content, so it stays a desktop-split flourish */
   .lp-hero-finding { display: none; }
