@@ -68,22 +68,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ===== SCROLL-SPY: highlight the active nav link =====
 const spyLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-if (spyLinks.length && 'IntersectionObserver' in window) {
-  const linkBySection = new Map();
-  spyLinks.forEach(a => {
-    const section = document.getElementById(a.getAttribute('href').slice(1));
-    if (section) linkBySection.set(section, a);
-  });
-  const setActive = (link) => {
-    spyLinks.forEach(a => a.classList.remove('active'));
-    if (link) link.classList.add('active');
+if (spyLinks.length) {
+  // Pair each nav link with its section (skip links whose target is missing).
+  const spyPairs = spyLinks
+    .map(link => ({ link, section: document.getElementById(link.getAttribute('href').slice(1)) }))
+    .filter(pair => pair.section);
+
+  const updateSpy = () => {
+    const offset = 100; // just below the fixed navbar
+    // Active = the last section whose top has scrolled past the offset line.
+    // In the hero (no section past the line yet) nothing is active.
+    let active = null;
+    for (const { link, section } of spyPairs) {
+      if (section.getBoundingClientRect().top <= offset) active = link;
+    }
+    spyLinks.forEach(a => a.classList.toggle('active', a === active));
   };
-  const spyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) setActive(linkBySection.get(entry.target));
-    });
-  }, { rootMargin: '-80px 0px -75% 0px', threshold: 0 });
-  for (const section of linkBySection.keys()) spyObserver.observe(section);
+
+  let spyTicking = false;
+  const onSpyScroll = () => {
+    if (spyTicking) return;
+    spyTicking = true;
+    requestAnimationFrame(() => { updateSpy(); spyTicking = false; });
+  };
+  window.addEventListener('scroll', onSpyScroll, { passive: true });
+  window.addEventListener('resize', onSpyScroll, { passive: true });
+  updateSpy();
 }
 
 // ===== FADE UP ON SCROLL =====
