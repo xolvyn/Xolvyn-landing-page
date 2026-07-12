@@ -5897,11 +5897,11 @@ a.blog-card:hover {
   transform: translateY(-2px)
 }
 
-/* Featured card — the differentiator */
+/* Featured cards — the two differentiators (PR review + auto-fix) */
 .cap-card--featured {
-  border-color: rgba(239, 68, 68, 0.2);
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.035) 0%, rgba(255, 255, 255, 0.02) 100%);
-  box-shadow: 0 0 48px rgba(239, 68, 68, 0.05), inset 0 1px 0 rgba(239, 68, 68, 0.06);
+  border-color: rgba(59, 130, 246, 0.22);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow: 0 0 48px rgba(59, 130, 246, 0.05), inset 0 1px 0 rgba(59, 130, 246, 0.07);
   position: relative;
   overflow: hidden
 }
@@ -5913,14 +5913,14 @@ a.blog-card:hover {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #EF4444 0%, rgba(239, 68, 68, 0) 80%);
+  background: linear-gradient(90deg, #3B82F6 0%, rgba(59, 130, 246, 0) 80%);
   border-radius: 14px 14px 0 0
 }
 
 .cap-card--featured:hover {
-  border-color: rgba(239, 68, 68, 0.35);
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.055) 0%, rgba(255, 255, 255, 0.03) 100%);
-  box-shadow: 0 0 64px rgba(239, 68, 68, 0.08)
+  border-color: rgba(59, 130, 246, 0.38);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+  box-shadow: 0 0 64px rgba(59, 130, 246, 0.09)
 }
 
 .cap-tag {
@@ -5930,7 +5930,7 @@ a.blog-card:hover {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.52);
   margin-bottom: 16px
 }
 
@@ -5959,6 +5959,60 @@ a.blog-card:hover {
   font-size: 14px;
   line-height: 1.7;
   flex: 1
+}
+
+/* ===== BUILT FOR TEAMS — the competitive line in the sand ===== */
+.teams-band {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 4vw, 48px);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0.015) 62%)
+}
+
+.teams-glow {
+  position: absolute;
+  top: -42%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 92%);
+  height: 440px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.14) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0
+}
+
+.teams-band > *:not(.teams-glow) {
+  position: relative;
+  z-index: 1
+}
+
+.teams-title {
+  margin: 14px auto 20px;
+  max-width: 22ch
+}
+
+.teams-body {
+  max-width: 60ch;
+  margin: 0 auto 16px;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.66);
+  text-wrap: pretty
+}
+
+.teams-kicker {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5)
+}
+
+.teams-kicker strong {
+  color: #fff;
+  font-weight: 600
 }
 
 /* ===== SECTION 5 — HOW IT WORKS STEPS ===== */
@@ -6381,6 +6435,14 @@ a.blog-card:hover {
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.66);
   text-wrap: pretty;
+}
+
+/* Hero microcopy — the short reassurance line under the CTAs */
+.lp-hero-micro {
+  margin: 16px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .lp-hero-cta {
@@ -6856,4 +6918,51 @@ select:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   .btn:active,
   .mobile-cta:active { transform: none; }
+}
+
+/* =====================================================================
+   PRICING — 3-tier grid (reuses the retained .pricing-card system)
+   ===================================================================== */
+.pricing-grid--trio {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 960px;
+  margin: 40px auto 0
+}
+
+.pricing-grid--trio .pricing-card {
+  cursor: default
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 14px;
+  line-height: 1
+}
+
+.pricing-amount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 32px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.01em
+}
+
+.pricing-amount-sub {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.42)
+}
+
+/* .btn-plan-claim is reused as an anchor CTA; keep it pinned to the card base */
+.pricing-grid--trio .btn-plan-claim {
+  margin-top: auto
+}
+
+@media (max-width: 900px) {
+  .pricing-grid--trio {
+    grid-template-columns: 1fr;
+    max-width: 420px
+  }
 }

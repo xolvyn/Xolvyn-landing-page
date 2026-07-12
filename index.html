@@ -10,31 +10,31 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="googlebot" content="index,follow">
 
-<title>Xolvyn — Onboard in days. Fix what actually breaks first.</title>
-<meta name="description" content="Xolvyn maps how every file in your codebase connects, so new engineers ship in days and every security finding is ranked by blast radius. Private beta.">
+<title>Automated PR Review &amp; Auto-Fix for Engineering Teams | Xolvyn</title>
+<meta name="description" content="Xolvyn reviews every pull request, ranks findings by blast radius, and opens the fix as a PR. Codebase intelligence built for teams — no install required.">
 <meta name="author" content="Xolvyn">
 <link rel="canonical" href="https://getxolvyn.com/">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getxolvyn.com/">
-<meta property="og:title" content="Xolvyn — Onboard in days. Fix what actually breaks first.">
-<meta property="og:description" content="Xolvyn maps how every file in your codebase connects, so new engineers ship in days and every security finding is ranked by blast radius. Private beta.">
+<meta property="og:title" content="Automated PR Review &amp; Auto-Fix for Engineering Teams | Xolvyn">
+<meta property="og:description" content="Xolvyn reviews every pull request, ranks findings by blast radius, and opens the fix as a PR. Codebase intelligence built for teams — no install required.">
 <meta property="og:image" content="https://getxolvyn.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Xolvyn — code security ranked by blast radius">
+<meta property="og:image:alt" content="Xolvyn — automated pull request review and auto-fix for engineering teams">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Xolvyn">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@xolvyn">
-<meta name="twitter:title" content="Xolvyn — Onboard in days. Fix what actually breaks first.">
-<meta name="twitter:description" content="Xolvyn maps how every file in your codebase connects, so new engineers ship in days and every security finding is ranked by blast radius. Private beta.">
+<meta name="twitter:title" content="Automated PR Review &amp; Auto-Fix for Engineering Teams | Xolvyn">
+<meta name="twitter:description" content="Xolvyn reviews every pull request, ranks findings by blast radius, and opens the fix as a PR. Codebase intelligence built for teams — no install required.">
 <meta name="twitter:image" content="https://getxolvyn.com/og-image.png">
-<meta name="twitter:image:alt" content="Xolvyn — code security ranked by blast radius">
+<meta name="twitter:image:alt" content="Xolvyn — automated pull request review and auto-fix for engineering teams">
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -57,7 +57,7 @@
         "width": 1200,
         "height": 400
       },
-      "description": "Xolvyn is a codebase-intelligence and architecture-aware security platform. It maps how your code connects, ranks vulnerabilities by blast radius, and opens fixes as pull requests.",
+      "description": "Xolvyn is codebase intelligence built for engineering teams. It reviews every pull request, ranks findings by blast radius, and opens the fix as a pull request — in the place your team already works. No install required.",
       "email": "hello@xolvyn.dev",
       "sameAs": [
         "https://x.com/xolvyn",
@@ -80,14 +80,16 @@
       "applicationSubCategory": "Security",
       "operatingSystem": "Web",
       "featureList": [
-        "AST-based dependency graph mapping",
-        "Blast-radius vulnerability ranking",
-        "50+ vulnerability classes and CVE scanning",
+        "Automated pull request review in GitHub",
         "Auto-fix pull requests for human review",
+        "Blast-radius vulnerability ranking",
+        "AST-based dependency graph mapping",
+        "50+ vulnerability classes and CVE scanning",
         "@mentor codebase-grounded AI assistant",
+        "Team dashboard with seats and roles",
         "GitHub and GitLab integration"
       ],
-      "description": "Architecture-aware code security scanner. Xolvyn scans any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, builds an AST-based dependency graph, and ranks every finding by blast radius — how many files depend on the affected code — so teams fix what's load-bearing first. Auto-Fix Engine opens remediation pull requests for human review.",
+      "description": "Xolvyn is codebase intelligence built for engineering teams. It reviews every pull request in GitHub — grading it, surfacing security findings, and ranking them by blast radius (how many files depend on the affected code) — then opens the fix as a pull request for human review. Runs in the cloud with no install, binary, or agent required.",
       "url": "https://getxolvyn.com/",
       "publisher": { "@id": "https://getxolvyn.com/#organization" }
     },
@@ -97,42 +99,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How does Xolvyn rank vulnerabilities by blast radius?",
+          "name": "How is Xolvyn different from local code-intelligence CLI tools?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Xolvyn builds an AST-based dependency graph of your codebase, then scores each finding by how many files depend on the affected file. A medium-severity issue on a file that 47 others rely on can outrank a critical issue on an isolated file — so you fix what can break your system first."
+            "text": "Those tools make one developer’s AI agent smarter on their own machine. Xolvyn is built for the team: it lives in your pull requests, posts reviews where your team already works, opens fixes as PRs, and gives your eng lead a dashboard. No install, no binary, no agent required."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Xolvyn store or train on my code?",
+          "name": "What does the GitHub PR bot actually do?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Xolvyn GDPR-compliant?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Analysis is ephemeral and access is permission-scoped, in line with GDPR requirements."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What programming languages does Xolvyn support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AST-based dependency mapping covers TypeScript, JavaScript, Python, Go, and Java. Security scanning runs across your whole repository, including config and infrastructure files."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is Xolvyn different from free codebase-visualization tools?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Free tools show you a map, but they don’t find vulnerabilities, scan CVEs, rank by blast radius, or open fix pull requests. Xolvyn turns codebase understanding into security action."
+            "text": "On every pull request, Xolvyn analyzes the diff against your full dependency graph and posts a comment with a grade, the security findings, and the blast radius — what depends on what you changed, and what breaks if it ships."
           }
         },
         {
@@ -145,10 +123,26 @@
         },
         {
           "@type": "Question",
-          "name": "What is @mentor and how does it work?",
+          "name": "How does Xolvyn rank vulnerabilities by blast radius?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "@mentor is Xolvyn’s AI assistant grounded in your actual codebase. Unlike generic AI chatbots that guess from training data, @mentor answers questions using your real dependency graph, file relationships, and architecture layers — so when you ask “what does this service do?” or “what breaks if I change this file?”, the answer references your actual code paths, not hallucinated ones."
+            "text": "Xolvyn builds an AST-based dependency graph, then scores each finding by how many files depend on the affected file. A medium-severity issue on a file 47 others rely on can outrank a critical issue on an isolated file — so you fix what can actually break your system first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Xolvyn store or train on my code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What languages does Xolvyn support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AST-based dependency mapping covers TypeScript, JavaScript, Python, Go, and Java. Security scanning runs across your whole repository, including config and infrastructure files."
           }
         }
       ]
@@ -168,7 +162,7 @@
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="/" onclick="if(location.pathname==='/'){event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}" class="nav-logo" aria-label="Xolvyn — home">
-      <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn, architecture-aware code security" class="nav-logo-img" width="1200" height="400">
+      <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn — codebase intelligence for engineering teams" class="nav-logo-img" width="1200" height="400">
     </a>
     <div class="nav-links">
       <a href="#features">Features</a>
@@ -177,7 +171,7 @@
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a href="#waitlist" class="btn btn-ghost btn-nav">Get early access &rarr;</a>
+      <a href="#waitlist" class="btn btn-ghost btn-nav">Get Early Access &rarr;</a>
     </div>
     <button class="hamburger" aria-label="Menu" id="hamburger-btn">
       <span></span><span></span><span></span>
@@ -190,7 +184,7 @@
   <a href="#pricing">Pricing</a>
   <a href="/blog">Blog</a>
   <a href="#faq">FAQ</a>
-  <a href="#waitlist" class="mobile-cta">Get early access &rarr;</a>
+  <a href="#waitlist" class="mobile-cta">Get Early Access &rarr;</a>
 </div>
 
 <main id="main-content" tabindex="-1">
@@ -208,17 +202,19 @@
           Now in private beta
         </span>
         <span class="hero-pill-sep" aria-hidden="true"></span>
-        <span class="hero-pill-launch">Launching August 2026</span>
+        <span class="hero-pill-launch">Launching 2026</span>
       </div>
 
-      <h1 class="lp-hero-title" id="hero-title">Onboard in days. Fix what actually <span class="lp-hero-em">breaks</span> first.</h1>
+      <h1 class="lp-hero-title" id="hero-title">Your codebase, understood. Your pull requests, <span class="lp-hero-em">defended</span>.</h1>
 
-      <p class="lp-hero-sub">Xolvyn maps how every file connects, so new engineers ship in days instead of weeks, and ranks every security finding by blast radius, so you fix what&rsquo;s load-bearing before it breaks.</p>
+      <p class="lp-hero-sub">Xolvyn maps how every file in your repo connects, then puts that understanding to work in your team&rsquo;s pull requests &mdash; reviewing every PR, ranking what actually matters by how much it can break, and opening the fix as a pull request you can merge.</p>
 
       <div class="lp-hero-cta">
-        <a href="#waitlist" class="btn btn-primary lp-hero-cta-primary">Get early access<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
+        <a href="#waitlist" class="btn btn-primary lp-hero-cta-primary">Get Early Access<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
         <a href="#how-it-works" class="btn btn-ghost lp-hero-cta-ghost">See how it works</a>
       </div>
+
+      <p class="lp-hero-micro">No install &middot; Works with GitHub &amp; GitLab &middot; Results in ~60s</p>
 
     </div>
 
@@ -275,62 +271,74 @@
 <!-- ===== SECTION 4 — WHAT XOLVYN DOES ===== -->
 <section class="section section--lg" id="features" aria-labelledby="cap-heading">
   <div class="container">
-    <div class="section-label fade-up">// ONE MAP, FOUR JOBS</div>
-    <h2 class="section-title fade-up" id="cap-heading">One map of your codebase. Everything your team needs to ship safely.</h2>
-    <p class="section-sub fade-up">Xolvyn builds one dependency map of your repo &mdash; then turns it into four things engineering and security teams need.</p>
-    <p class="section-cite fade-up">67% of security alerts go uninvestigated (<a href="https://www.ibm.com/reports/data-breach" target="_blank" rel="noopener">IBM, 2024</a>), and the average breach takes 194 days to detect (<a href="https://www.ibm.com/reports/data-breach" target="_blank" rel="noopener">IBM, 2023</a>).</p>
+    <div class="section-label fade-up">// ONE MAP. YOUR WHOLE TEAM.</div>
+    <h2 class="section-title fade-up" id="cap-heading">Other tools make one developer&rsquo;s agent smarter. Xolvyn makes your whole team faster.</h2>
+    <p class="section-sub fade-up">Xolvyn builds one map of your codebase &mdash; then turns it into the four things engineering teams actually need.</p>
 
     <div class="cap-grid">
 
-      <!-- Card 1 — FEATURED (the differentiator) -->
-      <article class="cap-card cap-card--featured fade-up" id="cap-security">
-        <span class="cap-tag">For security teams</span>
-        <div class="cap-icon" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.2)" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="16.4" r=".7" fill="#EF4444" stroke="none"/></svg>
+      <!-- Card 1 — FEATURED (differentiator: PR review) -->
+      <article class="cap-card cap-card--featured fade-up" id="cap-review">
+        <span class="cap-tag">For developers &amp; reviewers</span>
+        <div class="cap-icon" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.2)" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v6a9 9 0 0 0 9 3"/></svg>
         </div>
-        <h3>Find what&rsquo;s actually dangerous</h3>
-        <p>50+ vulnerability checks and CVE scanning, every finding ranked by blast radius &mdash; how many files break if it&rsquo;s exploited. A medium-severity bug on a load-bearing file outranks a critical one on a dead end. Fix what matters first, not just what scores highest.</p>
+        <h3>Every pull request, reviewed automatically</h3>
+        <p>Xolvyn analyzes each PR right in GitHub &mdash; what it changes, what depends on it, what breaks if it ships. A grade, the findings, and the blast radius, posted as a comment before anyone hits merge.</p>
       </article>
 
-      <!-- Card 2 -->
-      <article class="cap-card fade-up" id="cap-onboard">
-        <span class="cap-tag">For new hires &amp; eng leads</span>
-        <div class="cap-icon" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.2)" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <!-- Card 2 — FEATURED (differentiator: auto-fix) -->
+      <article class="cap-card cap-card--featured fade-up" id="cap-fix">
+        <span class="cap-tag">For developers</span>
+        <div class="cap-icon" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.2)" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3>Onboard engineers in days, not weeks</h3>
-        <p>New hires explore an interactive map of your codebase &mdash; every layer, every dependency, what each module does &mdash; and ask @mentor questions answered with real file paths from your actual code.</p>
+        <h3>It doesn&rsquo;t just find problems. It fixes them.</h3>
+        <p>Vulnerable dependency? Unsafe query? Xolvyn opens a real pull request with the fix &mdash; AST-aware, confidence-scored, ready to review. You merge it. Nothing merges without you.</p>
       </article>
 
       <!-- Card 3 -->
       <article class="cap-card fade-up" id="cap-blast">
-        <span class="cap-tag">For developers &amp; reviewers</span>
-        <div class="cap-icon" style="background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.2)" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8 7l3 8M16 7l-3 8"/></svg>
+        <span class="cap-tag">For security teams</span>
+        <div class="cap-icon" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.2)" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="16.4" r=".7" fill="#EF4444" stroke="none"/></svg>
         </div>
-        <h3>Know what breaks before you merge</h3>
-        <p>See the blast radius of any pull request &mdash; what it changes, what downstream depends on it, and what&rsquo;s safe to ship. No more surprise regressions from a one-line change.</p>
+        <h3>Fix what&rsquo;s load-bearing, not what scores highest</h3>
+        <p>50+ checks and CVE scanning, with every finding ranked by blast radius &mdash; how many files break if it&rsquo;s exploited. A medium-severity bug on a file 47 others depend on outranks a critical one on a dead end.</p>
       </article>
 
       <!-- Card 4 -->
-      <article class="cap-card fade-up" id="cap-fix">
-        <span class="cap-tag">For security &amp; dev teams</span>
-        <div class="cap-icon" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.2)" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <article class="cap-card fade-up" id="cap-onboard">
+        <span class="cap-tag">For new hires, eng leads, and anyone inheriting code</span>
+        <div class="cap-icon" style="background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.2)" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
-        <h3>Don&rsquo;t just find problems &mdash; fix them</h3>
-        <p>Turn a finding into a reviewed pull request in one click. AST-aware remediation, confidence-scored, and nothing merges without your approval. You stay in control; Xolvyn does the grunt work.</p>
+        <h3>Understand any codebase &mdash; in days, not weeks</h3>
+        <p>A workspace built for humans, not agents. New engineers get a guided path through the architecture. Seniors get the risk map: what&rsquo;s load-bearing, what&rsquo;s tangled, what&rsquo;s fragile. Ask @mentor anything, grounded in your real dependency graph.</p>
       </article>
 
     </div>
   </div>
 </section>
 
-<!-- ===== SECTION 5 — HOW IT WORKS ===== -->
+<!-- ===== BUILT FOR TEAMS — the competitive line in the sand ===== -->
+<section class="section section--lg" aria-labelledby="teams-heading">
+  <div class="container">
+    <div class="teams-band fade-up">
+      <div class="teams-glow" aria-hidden="true"></div>
+      <div class="section-label">// BUILT FOR TEAMS</div>
+      <h2 class="section-title teams-title" id="teams-heading">No install. No binary.<br>No agent required.</h2>
+      <p class="teams-body">Send your team a link. Xolvyn runs in the cloud, connects to GitHub or GitLab, and works from a browser &mdash; with seats, roles, and a dashboard your eng lead can actually read.</p>
+      <p class="teams-kicker">Local CLI tools serve one developer. <strong>Xolvyn serves the team.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
 <section class="section section--lg" id="how-it-works" aria-labelledby="hiw-heading">
   <div class="container">
     <div class="section-label fade-up">// HOW IT WORKS</div>
-    <h2 class="section-title fade-up" id="hiw-heading">From a GitHub URL to a ranked report in about a minute.</h2>
+    <h2 class="section-title fade-up" id="hiw-heading">From a repo URL to a defended pull request.</h2>
 
     <div class="hiw-steps fade-up">
 
@@ -340,7 +348,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
         </div>
         <h3>Connect your repo</h3>
-        <p>Paste a GitHub or GitLab URL. No install, no config.</p>
+        <p>Paste a GitHub or GitLab URL, or install the GitHub App. No config.</p>
       </div>
 
       <div class="hiw-connector" aria-hidden="true">
@@ -353,7 +361,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <h3>Xolvyn maps and scans</h3>
-        <p>It builds an AST-based dependency graph of every file, then runs 50+ security checks plus CVE scanning.</p>
+        <p>An AST-based dependency graph of every file, plus 50+ security checks and CVE scanning.</p>
       </div>
 
       <div class="hiw-connector" aria-hidden="true">
@@ -363,24 +371,68 @@
       <div class="hiw-step" style="--accent:#22C55E">
         <span class="hiw-num">03</span>
         <div class="hiw-icon" style="background:rgba(34,197,94,0.08);border-color:rgba(34,197,94,0.2)" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v6a9 9 0 0 0 9 3"/></svg>
         </div>
-        <h3>Get a ranked report</h3>
-        <p>Vulnerabilities sorted by blast radius, an A&ndash;D security grade, PR impact, and one-click fixes.</p>
+        <h3>It goes to work in your PRs</h3>
+        <p>Every pull request reviewed and graded, findings ranked by blast radius, fixes opened as PRs.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===== SECTION 6 — PRICING ===== -->
+<!-- ===== PRICING ===== -->
 <section class="section section--lg" id="pricing" aria-labelledby="pricing-heading">
   <div class="container">
-    <div class="founding-panel fade-up">
-      <div class="section-label">// PRICING</div>
-      <h2 class="section-title" id="pricing-heading">Founding access</h2>
-      <p class="founding-copy">We&rsquo;re shaping prices with our founding users, so plans fit how engineering teams work. Join the waitlist to lock in founding terms before launch.</p>
-      <a href="#waitlist" class="btn btn-primary founding-cta">Get early access<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
+    <div class="section-label fade-up">// PRICING</div>
+    <h2 class="section-title fade-up" id="pricing-heading">Start free. Scale when you&rsquo;re ready.</h2>
+    <p class="section-sub fade-up">Xolvyn is in private beta. Join now to lock in founding terms &mdash; every tier below puts you on the early-access list.</p>
+
+    <div class="pricing-grid pricing-grid--trio fade-up">
+
+      <!-- Free -->
+      <article class="pricing-card">
+        <div class="pricing-plan-name">Free</div>
+        <div class="pricing-price"><span class="pricing-amount">$0</span></div>
+        <p class="pricing-desc">Try Xolvyn on any public repo.</p>
+        <ul class="pricing-features-hint">
+          <li><span class="dot" style="background:#3B82F6"></span>Full security audit</li>
+          <li><span class="dot" style="background:#3B82F6"></span>Blast-radius ranking</li>
+          <li><span class="dot" style="background:#3B82F6"></span>Architecture workspace</li>
+        </ul>
+        <a href="#waitlist" class="btn-plan-claim">Get Early Access &rarr;</a>
+      </article>
+
+      <!-- Team (recommended) -->
+      <article class="pricing-card pricing-locked-featured">
+        <span class="pricing-popular">Recommended</span>
+        <div class="pricing-plan-name">Team</div>
+        <div class="pricing-price"><span class="pricing-amount">Founding</span><span class="pricing-amount-sub">pricing</span></div>
+        <p class="pricing-desc">For teams shipping private code.</p>
+        <ul class="pricing-features-hint">
+          <li><span class="dot" style="background:#60A5FA"></span>Everything in Free</li>
+          <li><span class="dot" style="background:#60A5FA"></span>Private repos</li>
+          <li><span class="dot" style="background:#60A5FA"></span>The GitHub PR bot</li>
+          <li><span class="dot" style="background:#60A5FA"></span>Auto-fix pull requests</li>
+          <li><span class="dot" style="background:#60A5FA"></span>@mentor &amp; team seats</li>
+        </ul>
+        <a href="#waitlist" class="btn-plan-claim claim-featured">Get Early Access &rarr;</a>
+      </article>
+
+      <!-- Enterprise -->
+      <article class="pricing-card">
+        <div class="pricing-plan-name">Enterprise</div>
+        <div class="pricing-price"><span class="pricing-amount">Custom</span></div>
+        <p class="pricing-desc">Everything in Team, plus enterprise controls.</p>
+        <ul class="pricing-features-hint">
+          <li><span class="dot" style="background:#A78BFA"></span>SSO / SAML</li>
+          <li><span class="dot" style="background:#A78BFA"></span>Audit logs &amp; SARIF export</li>
+          <li><span class="dot" style="background:#A78BFA"></span>Self-host option</li>
+          <li><span class="dot" style="background:#A78BFA"></span>Priority support</li>
+        </ul>
+        <a href="#waitlist" class="btn-plan-claim">Get Early Access &rarr;</a>
+      </article>
+
     </div>
   </div>
 </section>
@@ -392,32 +444,28 @@
 
     <div class="faq-list fade-up">
       <div class="faq-item">
-        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How does Xolvyn rank vulnerabilities by blast radius?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>Xolvyn builds an AST-based dependency graph of your codebase, then scores each finding by how many files depend on the affected file. A medium-severity issue on a file that 47 others rely on can outrank a critical issue on an isolated file &mdash; so you fix what can break your system first.</p></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How is Xolvyn different from local code-intelligence CLI tools?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Those tools make one developer&rsquo;s AI agent smarter on their own machine. Xolvyn is built for the team: it lives in your pull requests, posts reviews where your team already works, opens fixes as PRs, and gives your eng lead a dashboard. No install, no binary, no agent required.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Does Xolvyn store or train on my code?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>No. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Is Xolvyn GDPR-compliant?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>Yes. Analysis is ephemeral and access is permission-scoped, in line with GDPR requirements.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What programming languages does Xolvyn support?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>AST-based dependency mapping covers TypeScript, JavaScript, Python, Go, and Java. Security scanning runs across your whole repository, including config and infrastructure files.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How is Xolvyn different from free codebase-visualization tools?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>Free tools show you a map, but they don&rsquo;t find vulnerabilities, scan CVEs, rank by blast radius, or open fix pull requests. Xolvyn turns codebase understanding into security action.</p></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What does the GitHub PR bot actually do?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>On every pull request, Xolvyn analyzes the diff against your full dependency graph and posts a comment with a grade, the security findings, and the blast radius &mdash; what depends on what you changed, and what breaks if it ships.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Will Xolvyn merge code without my approval?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>Never. Auto-fix opens a pull request for you to review &mdash; nothing merges without a human approving it.</p></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What is @mentor and how does it work?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
-        <div class="faq-a"><p>@mentor is Xolvyn&rsquo;s AI assistant grounded in your actual codebase. Unlike generic AI chatbots that guess from training data, @mentor answers questions using your real dependency graph, file relationships, and architecture layers &mdash; so when you ask &ldquo;what does this service do?&rdquo; or &ldquo;what breaks if I change this file?&rdquo;, the answer references your actual code paths, not hallucinated ones.</p></div>
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How does Xolvyn rank vulnerabilities by blast radius?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Xolvyn builds an AST-based dependency graph, then scores each finding by how many files depend on the affected file. A medium-severity issue on a file 47 others rely on can outrank a critical issue on an isolated file &mdash; so you fix what can actually break your system first.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Does Xolvyn store or train on my code?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>No. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What languages does Xolvyn support?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>AST-based dependency mapping covers TypeScript, JavaScript, Python, Go, and Java. Security scanning runs across your whole repository, including config and infrastructure files.</p></div>
       </div>
     </div>
   </div>
@@ -428,16 +476,16 @@
   <div class="container">
     <div class="cta-band-inner">
       <div class="cta-band-glow" aria-hidden="true"></div>
-      <h2 class="section-title fade-up" style="text-align:center;max-width:640px;margin:0 auto 16px">Stop guessing which vulnerabilities matter.</h2>
-      <p class="section-sub fade-up" style="text-align:center;margin:0 auto 40px">Get early access to Xolvyn and see your codebase ranked by what can break it.</p>
+      <h2 class="section-title fade-up" style="text-align:center;max-width:640px;margin:0 auto 16px">Stop reviewing pull requests blind.</h2>
+      <p class="section-sub fade-up" style="text-align:center;margin:0 auto 40px">Get early access and let Xolvyn review, rank, and fix &mdash; in the place your team already works.</p>
 
       <!-- Email form -->
       <div class="waitlist-form fade-up" id="waitlist-form-main">
         <input type="email" placeholder="your@email.com" id="waitlist-email" aria-label="Your work email address">
-        <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get early access &rarr;</button>
+        <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get Early Access &rarr;</button>
       </div>
       <p class="waitlist-error" id="waitlist-error" role="alert" aria-live="assertive" hidden></p>
-      <p class="waitlist-note fade-up" id="waitlist-note" style="text-align:center">Private beta &middot; Launching August 2026</p>
+      <p class="waitlist-note fade-up" id="waitlist-note" style="text-align:center">Free for public repos &middot; No install &middot; Launching 2026</p>
 
       <!-- Step 2: Involvement -->
       <div id="waitlist-step-2" style="display:none">
@@ -490,9 +538,9 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" onclick="if(location.pathname==='/'){event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}" class="footer-logo-link" aria-label="Xolvyn &mdash; home">
-          <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn, architecture-aware code security" class="footer-logo-img" width="1200" height="400" loading="lazy">
+          <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn — codebase intelligence for engineering teams" class="footer-logo-img" width="1200" height="400" loading="lazy">
         </a>
-        <p>Onboard engineers in days. Rank vulnerabilities by what can break your code.</p>
+        <p>Xolvyn reviews every pull request, ranks what matters by blast radius, and opens the fix as a PR. Built for teams.</p>
         <p class="footer-copy">&copy; 2026 Xolvyn. All rights reserved.</p>
       </div>
       <div>
