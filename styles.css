@@ -291,10 +291,17 @@ img {
   font-family: 'JetBrains Mono', monospace
 }
 
+/* Progressive enhancement: content is visible by default. The hidden/animated
+   pre-state only applies when JS is present (html.js set inline in <head>),
+   so no-JS crawlers and failed renders still see every section.
+   :where() keeps specificity at (0,1,0) so the reduced-motion override wins. */
 .fade-up {
-  opacity: 0;
-  transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease
+}
+
+:where(.js) .fade-up {
+  opacity: 0;
+  transform: translateY(30px)
 }
 
 .fade-up.visible {
