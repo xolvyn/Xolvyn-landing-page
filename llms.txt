@@ -1,19 +1,20 @@
 # Xolvyn
-> Architecture-aware code security. Xolvyn is a DevSecOps platform that scans
-> any GitHub or GitLab repository for 50+ vulnerability classes and CVEs, builds
-> an AST-based dependency graph, and ranks every finding by blast radius — how
-> many files depend on the affected code — so engineering teams fix what is
-> load-bearing first. Auto-Fix Engine opens remediation pull requests for human
-> review. Private beta; launching August 2026.
+> Automated pull request review and auto-fix for engineering teams. Xolvyn maps
+> how every file in a repository connects, then works in your team's pull
+> requests — reviewing every PR, ranking findings by blast radius, and opening
+> the fix as a pull request you can merge. Runs in the cloud; no install, no
+> binary, no agent required. Private beta; launching 2026.
 
 ## What is Xolvyn?
-Xolvyn is an architecture-aware code security scanner. It maps every file,
-dependency, and architecture layer in a codebase, then runs 50+ security checks
-plus CVE scanning and ranks each finding by blast radius — a metric that
-combines severity with how many other files depend on the affected code. A
-medium-severity bug on a file that 47 others import outranks a critical bug on
-an isolated file. The result is a prioritized security report (scored 0–100,
-graded A–D) with one-click pull-request fixes.
+Xolvyn is codebase intelligence built for engineering teams. It maps every file,
+dependency, and architecture layer in a codebase, then puts that understanding
+to work where the team already ships: it reviews every pull request in GitHub —
+grading it, surfacing security findings, and ranking them by blast radius
+(severity combined with how many files depend on the affected code) — and opens
+the fix as a pull request for human review. A medium-severity bug on a file that
+47 others import outranks a critical bug on an isolated file. Unlike local CLI
+tools that serve one developer's AI agent, Xolvyn serves the team: seats, roles,
+and a dashboard, with no install required.
 
 ## Core pages
 - [Home](https://getxolvyn.com): Product overview, features, pricing, FAQ, waitlist.
@@ -22,13 +23,14 @@ graded A–D) with one-click pull-request fixes.
 - [Careers](https://getxolvyn.com/careers): Open roles — full-stack and AI/ML developer internships.
 
 ## Key facts
-- Ranks vulnerabilities by blast radius (severity × number of dependent files), not CVSS alone.
+- Reviews every pull request in GitHub: a grade, security findings, and blast radius, posted as a comment before merge.
+- Auto-Fix opens remediation pull requests on GitHub/GitLab; human review required, nothing merges without approval.
+- Ranks findings by blast radius (severity × number of dependent files), not CVSS alone.
 - AST-based dependency mapping for TypeScript, JavaScript, Python, Go, and Java.
 - 50+ security checks + CVE scanning; OWASP/CWE-aligned; letter grade (A–D) and 0–100 score.
-- Auto-Fix Engine opens remediation pull requests on GitHub/GitLab; human review required.
-- PR Impact Analysis grades every pull request before merge.
+- Built for teams: runs in the cloud from a browser, no install/binary/agent; seats, roles, and an eng-lead dashboard.
 - @mentor: AI assistant grounded in your real dependency graph, not generic training data.
-- Privacy: shallow clone, in-memory analysis, immediate deletion; never trains on user code.
-- Free for public repositories; Pro, Team, and Enterprise tiers available.
+- Privacy: shallow clone, in-memory analysis, immediate deletion; OAuth-only; never trains on user code.
+- Free for public repositories; Team and Enterprise tiers.
 - Contact: hello@xolvyn.dev
 - Social: https://x.com/xolvyn | https://github.com/xolvyn | https://www.linkedin.com/company/xolvyn
