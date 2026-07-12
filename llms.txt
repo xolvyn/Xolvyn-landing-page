@@ -1,20 +1,23 @@
 # Xolvyn
-> Automated pull request review and auto-fix for engineering teams. Xolvyn maps
-> how every file in a repository connects, then works in your team's pull
-> requests — reviewing every PR, ranking findings by blast radius, and opening
-> the fix as a pull request you can merge. Runs in the cloud; no install, no
-> binary, no agent required. Private beta; launching 2026.
+> One map of your codebase, two jobs: understand it and defend it. Xolvyn maps
+> how every file connects, then helps new engineers onboard in days and reviews
+> every pull request — ranking findings by blast radius and opening the fix as a
+> pull request you merge. Built for your team, not your terminal. Hosted; no
+> install, no binary, no agent required. Private beta; launching 2026.
 
 ## What is Xolvyn?
-Xolvyn is codebase intelligence built for engineering teams. It maps every file,
-dependency, and architecture layer in a codebase, then puts that understanding
-to work where the team already ships: it reviews every pull request in GitHub —
-grading it, surfacing security findings, and ranking them by blast radius
-(severity combined with how many files depend on the affected code) — and opens
-the fix as a pull request for human review. A medium-severity bug on a file that
-47 others import outranks a critical bug on an isolated file. Unlike local CLI
-tools that serve one developer's AI agent, Xolvyn serves the team: seats, roles,
-and a dashboard, with no install required.
+Xolvyn is codebase intelligence built for engineering teams, powered by one
+AST-based map of every file, dependency, and architecture layer in a codebase.
+It has two pillars. UNDERSTAND: new engineers get a guided path through the
+architecture (built for humans, not agents), seniors get the risk map of what is
+load-bearing, tangled, and fragile, and @mentor answers questions from your real
+dependency graph with actual file paths. DEFEND: every pull request is reviewed
+in GitHub — graded, with security findings ranked by blast radius (severity
+combined with how many files depend on the affected code) — and the fix opened
+as a pull request for human review. A medium-severity bug on a file that 47
+others import outranks a critical bug on an isolated file. Unlike local CLI tools
+that serve one developer's AI agent, Xolvyn serves the team: seats, roles, and a
+dashboard, with no install required.
 
 ## Core pages
 - [Home](https://getxolvyn.com): Product overview, features, pricing, FAQ, waitlist.
