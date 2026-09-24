@@ -6794,58 +6794,471 @@ a.blog-card:hover {
 }
 
 /* =====================================================================
-   FOUNDING ACCESS panel (replaces the removed 4-tier pricing grid)
+   PRICING — four plans (Free / Starter / Team / Enterprise), shared by the
+   #pricing section on the homepage and the /pricing page
    ===================================================================== */
-.founding-panel {
+.pricing-head {
   max-width: 720px;
-  margin: 52px auto 0;
+  margin: 0 auto;
   text-align: center;
+}
+
+.pricing-head .section-sub {
+  margin: 0 auto 28px;
+}
+
+/* Monthly / yearly switch — only shown when JS can drive it; without JS the
+   yearly prices baked into the markup stay visible. */
+.billing-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.billing-toggle {
+  display: none;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
   background: rgba(255, 255, 255, 0.02);
+}
+
+.js .billing-toggle {
+  display: inline-flex;
+}
+
+.billing-toggle button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.billing-toggle button:hover {
+  color: #fff;
+}
+
+.billing-toggle button[aria-pressed="true"] {
+  background: rgba(59, 130, 246, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.45);
+  color: #fff;
+}
+
+.billing-save {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ADE80;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  padding: 48px 44px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.founding-copy {
-  max-width: 56ch;
-  margin: 8px auto 30px;
-  font-size: 17px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.66);
+.plan:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.founding-cta {
+.plan--featured {
+  border-color: rgba(59, 130, 246, 0.45);
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.08) 0%, rgba(255, 255, 255, 0.02) 55%);
+}
+
+.plan--featured:hover {
+  border-color: rgba(59, 130, 246, 0.65);
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0.03) 55%);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 12px;
+  border-radius: 999px;
   background: #2563EB;
   color: #fff;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: 600;
-  padding: 14px 30px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.plan-name {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* min-height keeps prices and buttons aligned across the four cards */
+.plan-for {
+  min-height: 42px;
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6);
+  text-wrap: pretty;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin: 22px 0 4px;
+}
+
+.plan-amount {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.plan-unit {
+  font-size: 13px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.plan-billing {
+  min-height: 20px;
+  margin: 0 0 20px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.plan-cta {
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  margin-bottom: 22px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 10px;
-  min-height: 50px;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
 }
 
-.founding-cta:hover {
+.plan-cta:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+/* #2563EB keeps white text at AA contrast (same as the hero CTA) */
+.plan-cta.btn-primary {
+  border-color: #2563EB;
+  background: #2563EB;
+  color: #fff;
+}
+
+.plan-cta.btn-primary:hover {
+  border-color: #1D4ED8;
   background: #1D4ED8;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
 }
 
-.founding-cta:focus-visible {
-  outline: 2px solid #93C5FD;
-  outline-offset: 3px;
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* CSS checkmark — no icon markup per row */
+.plan-features li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 5px;
+  height: 9px;
+  margin: 5px 3px 0 3px;
+  border: solid #60A5FA;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.plan-features li.plan-inherit {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.plan-features li.plan-inherit::before {
+  display: none;
+}
+
+.plans-fineprint {
+  max-width: 72ch;
+  margin: 28px auto 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+  text-wrap: pretty;
+}
+
+.founding-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  max-width: 880px;
+  margin: 28px auto 0;
+  padding: 18px 24px;
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  border-radius: 14px;
+  background: rgba(34, 197, 94, 0.05);
+}
+
+.founding-strip p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.founding-strip strong {
+  color: #fff;
+}
+
+.founding-strip-link {
+  flex-shrink: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #4ADE80;
+}
+
+.founding-strip-link:hover {
+  color: #86EFAC;
+}
+
+.plans-compare-link {
+  display: table;
+  margin: 28px auto 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #60A5FA;
+}
+
+.plans-compare-link:hover {
+  color: #93C5FD;
+}
+
+@media (max-width: 1100px) {
+  .plans {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+  .plan-for,
+  .plan-billing {
+    min-height: 0;
+  }
+  .founding-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===== /pricing page ===== */
+.pricing-hero .blog-header-inner {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-hero .blog-intro {
+  margin: 0 auto;
+}
+
+.pricing-hero {
+  padding-bottom: 32px;
+}
+
+.pricing-plans-section {
+  padding: 8px 0 64px;
+}
+
+/* Feature comparison table — scrolls sideways inside its own box on small
+   screens so the page itself never scrolls horizontally */
+.compare-wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.015);
+  -webkit-overflow-scrolling: touch;
+}
+
+.compare {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.compare th,
+.compare td {
+  padding: 13px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.compare thead th {
+  padding-top: 20px;
+  padding-bottom: 16px;
+  background: #0F0F0F;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.compare thead th.is-featured {
+  color: #60A5FA;
+}
+
+.compare thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+.compare tbody th[scope="row"] {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 34%;
+  background: #0D0D0D;
+  text-align: left;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.compare td {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.compare td.is-featured {
+  background: rgba(59, 130, 246, 0.04);
+}
+
+.compare .compare-group th {
+  padding-top: 24px;
+  background: transparent;
+  text-align: left;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* keep the group label in view while the table scrolls sideways */
+.compare .compare-group th span {
+  position: sticky;
+  left: 16px;
+  display: inline-block;
+}
+
+.compare tbody tr:last-child th,
+.compare tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.compare .yes,
+.compare .no {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.compare .yes::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 11px;
+  margin-top: -3px;
+  border: solid #60A5FA;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.compare .no::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-cta-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 16px;
 }
 
 @media (max-width: 768px) {
-  .founding-panel {
-    margin-top: 8px;
+  .compare th,
+  .compare td {
+    padding: 12px;
   }
 }
 
-@media (max-width: 480px) {
-  .founding-panel {
-    padding: 32px 22px;
+/* narrower label column on phones so two plan columns fit beside it */
+@media (max-width: 640px) {
+  .compare {
+    min-width: 600px;
+    font-size: 13px;
   }
-  .founding-cta {
-    width: 100%;
-    justify-content: center;
+  .compare tbody th[scope="row"] {
+    width: 150px;
   }
 }
 

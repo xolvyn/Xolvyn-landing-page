@@ -396,14 +396,99 @@
 </section>
 
 <!-- ===== PRICING ===== -->
+<!-- PLACEHOLDER URLS: the app on xolvyn.dev isn't live yet. Every
+     "https://xolvyn.dev/signup?plan=…" link here and on /pricing is a
+     placeholder — confirm the real signup URLs before launch. Plan cards are
+     duplicated in pricing.html; keep the two in sync. -->
 <section class="section section--lg" id="pricing" aria-labelledby="pricing-heading">
   <div class="container">
-    <div class="founding-panel fade-up">
+    <div class="pricing-head fade-up">
       <div class="section-label">// PRICING</div>
-      <h2 class="section-title" id="pricing-heading">Founding access</h2>
-      <p class="founding-copy">We&rsquo;re shaping prices with our founding users, so plans fit how engineering teams work. Join the waitlist to lock in founding terms before launch.</p>
-      <a href="#waitlist" class="btn btn-primary founding-cta">Get Early Access<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
+      <h2 class="section-title" id="pricing-heading">Simple pricing that grows with your team.</h2>
+      <p class="section-sub">Start free on public repos. Pay per active developer when you bring private code &mdash; viewers are always free.</p>
     </div>
+
+    <div class="billing-toggle-wrap fade-up">
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" data-billing="monthly" aria-pressed="false">Monthly</button>
+        <button type="button" data-billing="yearly" aria-pressed="true">Yearly <span class="billing-save">Save 20%</span></button>
+      </div>
+    </div>
+
+    <div class="plans fade-up">
+      <article class="plan" aria-labelledby="plan-free-name">
+        <h3 class="plan-name" id="plan-free-name">Free</h3>
+        <p class="plan-for">For open source and trying Xolvyn on public code.</p>
+        <p class="plan-price"><span class="plan-amount">$0</span><span class="plan-unit">forever</span></p>
+        <p class="plan-billing">No credit card required</p>
+        <a href="https://xolvyn.dev/signup?plan=free" class="btn plan-cta">Start free</a>
+        <ul class="plan-features">
+          <li>Unlimited public repositories</li>
+          <li>Codebase map &amp; onboarding path</li>
+          <li>PR reviews with grade &amp; blast radius</li>
+          <li>50+ security checks &amp; CVE scanning</li>
+          <li>@mentor: 50 questions a month</li>
+        </ul>
+      </article>
+
+      <article class="plan" aria-labelledby="plan-starter-name">
+        <h3 class="plan-name" id="plan-starter-name">Starter</h3>
+        <p class="plan-for">For small teams bringing their private repos.</p>
+        <p class="plan-price"><span class="plan-amount" data-monthly="$19" data-yearly="$15">$15</span><span class="plan-unit">per active dev / month</span></p>
+        <p class="plan-billing" data-monthly="Billed monthly" data-yearly="$180 per dev, billed yearly">$180 per dev, billed yearly</p>
+        <a href="https://xolvyn.dev/signup?plan=starter" class="btn plan-cta">Start 14-day trial</a>
+        <ul class="plan-features">
+          <li class="plan-inherit">Everything in Free, plus:</li>
+          <li>Private repositories</li>
+          <li>Up to 10 active developers</li>
+          <li>Risk map: load-bearing, tangled &amp; fragile files</li>
+          <li>Unlimited @mentor</li>
+          <li>Email support</li>
+        </ul>
+      </article>
+
+      <article class="plan plan--featured" aria-labelledby="plan-team-name">
+        <span class="plan-badge">Most popular</span>
+        <h3 class="plan-name" id="plan-team-name">Team</h3>
+        <p class="plan-for">For teams that want every pull request defended.</p>
+        <p class="plan-price"><span class="plan-amount" data-monthly="$36" data-yearly="$29">$29</span><span class="plan-unit">per active dev / month</span></p>
+        <p class="plan-billing" data-monthly="Billed monthly" data-yearly="$348 per dev, billed yearly">$348 per dev, billed yearly</p>
+        <a href="https://xolvyn.dev/signup?plan=team" class="btn btn-primary plan-cta">Start 14-day trial</a>
+        <ul class="plan-features">
+          <li class="plan-inherit">Everything in Starter, plus:</li>
+          <li>Unlimited active developers</li>
+          <li>Auto-Fix: the fix opened as a pull request</li>
+          <li>Eng-lead dashboard</li>
+          <li>Roles &amp; permissions</li>
+          <li>Priority support</li>
+        </ul>
+      </article>
+
+      <article class="plan" aria-labelledby="plan-enterprise-name">
+        <h3 class="plan-name" id="plan-enterprise-name">Enterprise</h3>
+        <p class="plan-for">For organizations with security and compliance requirements.</p>
+        <p class="plan-price"><span class="plan-amount">Custom</span></p>
+        <p class="plan-billing">Annual contract &middot; volume pricing</p>
+        <a href="mailto:hello@xolvyn.dev?subject=Xolvyn%20Enterprise" class="btn plan-cta">Talk to sales</a>
+        <ul class="plan-features">
+          <li class="plan-inherit">Everything in Team, plus:</li>
+          <li>SSO / SAML</li>
+          <li>Self-hosted or air-gapped deployment</li>
+          <li>Audit logs &amp; SARIF export</li>
+          <li>Custom DPA &amp; security review</li>
+          <li>Dedicated support &amp; SLA</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="plans-fineprint">Prices in USD. An active developer is anyone who opens a pull request in a billing month &mdash; managers and new hires reading the map don&rsquo;t count. Every plan: GitHub &amp; GitLab, OAuth-only access, zero code retention.</p>
+
+    <div class="founding-strip fade-up">
+      <p><strong>On the waitlist?</strong> Founding members get Team at <strong>$19 per developer / month, locked in for life.</strong></p>
+      <a href="#waitlist" class="founding-strip-link">Join the waitlist &rarr;</a>
+    </div>
+
+    <a href="/pricing" class="plans-compare-link">Compare every feature &rarr;</a>
   </div>
 </section>
 

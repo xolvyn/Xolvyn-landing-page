@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="googlebot" content="index,follow">
+
+<title>Pricing — Xolvyn</title>
+<meta name="description" content="Xolvyn pricing: free for public repositories, with Starter, Team and Enterprise plans billed per active developer. Compare every plan and feature.">
+<meta name="author" content="Xolvyn">
+<link rel="canonical" href="https://getxolvyn.com/pricing">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getxolvyn.com/pricing">
+<meta property="og:title" content="Pricing — Xolvyn">
+<meta property="og:description" content="Free for public repositories. Starter, Team and Enterprise plans billed per active developer — viewers are always free.">
+<meta property="og:image" content="https://getxolvyn.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:site_name" content="Xolvyn">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@xolvyn">
+<meta name="twitter:title" content="Pricing — Xolvyn">
+<meta name="twitter:description" content="Free for public repositories. Starter, Team and Enterprise plans billed per active developer — viewers are always free.">
+<meta name="twitter:image" content="https://getxolvyn.com/og-image.png">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/webp" href="Xolvyn_Mark.webp?v=2">
+<link rel="apple-touch-icon" href="Xolvyn_Mark.png?v=2">
+
+<!-- Breadcrumb schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getxolvyn.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://getxolvyn.com/pricing" }
+  ]
+}
+</script>
+
+<!-- Self-hosted fonts (same-origin), preloaded -->
+<link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jetbrains-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo" aria-label="Xolvyn &mdash; home">
+      <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn — codebase intelligence for engineering teams" class="nav-logo-img" width="1200" height="400">
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/pricing" class="active" aria-current="page">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/#waitlist" class="btn btn-primary btn-nav">Get Early Access &rarr;</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/#features">Features</a>
+  <a href="/pricing" aria-current="page">Pricing</a>
+  <a href="/blog">Blog</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/#waitlist" class="mobile-cta">Get Early Access &rarr;</a>
+</div>
+
+<main id="main-content" tabindex="-1">
+
+<!-- HEADER -->
+<section class="blog-header pricing-hero">
+  <div class="container">
+    <div class="blog-header-inner">
+      <div class="section-label">// PRICING</div>
+      <h1 class="blog-h1">Simple pricing that grows with your team.</h1>
+      <p class="blog-intro">Start free on public repos. Pay per active developer when you bring private code &mdash; viewers are always free.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<!-- PLACEHOLDER URLS: the app on xolvyn.dev isn't live yet. Every
+     "https://xolvyn.dev/signup?plan=…" link on this page is a placeholder —
+     confirm the real signup URLs before launch. Plan cards are duplicated in
+     index.html (#pricing); keep the two in sync. -->
+<section class="pricing-plans-section" aria-label="Plans">
+  <div class="container">
+    <div class="billing-toggle-wrap">
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" data-billing="monthly" aria-pressed="false">Monthly</button>
+        <button type="button" data-billing="yearly" aria-pressed="true">Yearly <span class="billing-save">Save 20%</span></button>
+      </div>
+    </div>
+
+    <div class="plans">
+      <article class="plan" aria-labelledby="plan-free-name">
+        <h2 class="plan-name" id="plan-free-name">Free</h2>
+        <p class="plan-for">For open source and trying Xolvyn on public code.</p>
+        <p class="plan-price"><span class="plan-amount">$0</span><span class="plan-unit">forever</span></p>
+        <p class="plan-billing">No credit card required</p>
+        <a href="https://xolvyn.dev/signup?plan=free" class="btn plan-cta">Start free</a>
+        <ul class="plan-features">
+          <li>Unlimited public repositories</li>
+          <li>Codebase map &amp; onboarding path</li>
+          <li>PR reviews with grade &amp; blast radius</li>
+          <li>50+ security checks &amp; CVE scanning</li>
+          <li>@mentor: 50 questions a month</li>
+        </ul>
+      </article>
+
+      <article class="plan" aria-labelledby="plan-starter-name">
+        <h2 class="plan-name" id="plan-starter-name">Starter</h2>
+        <p class="plan-for">For small teams bringing their private repos.</p>
+        <p class="plan-price"><span class="plan-amount" data-monthly="$19" data-yearly="$15">$15</span><span class="plan-unit">per active dev / month</span></p>
+        <p class="plan-billing" data-monthly="Billed monthly" data-yearly="$180 per dev, billed yearly">$180 per dev, billed yearly</p>
+        <a href="https://xolvyn.dev/signup?plan=starter" class="btn plan-cta">Start 14-day trial</a>
+        <ul class="plan-features">
+          <li class="plan-inherit">Everything in Free, plus:</li>
+          <li>Private repositories</li>
+          <li>Up to 10 active developers</li>
+          <li>Risk map: load-bearing, tangled &amp; fragile files</li>
+          <li>Unlimited @mentor</li>
+          <li>Email support</li>
+        </ul>
+      </article>
+
+      <article class="plan plan--featured" aria-labelledby="plan-team-name">
+        <span class="plan-badge">Most popular</span>
+        <h2 class="plan-name" id="plan-team-name">Team</h2>
+        <p class="plan-for">For teams that want every pull request defended.</p>
+        <p class="plan-price"><span class="plan-amount" data-monthly="$36" data-yearly="$29">$29</span><span class="plan-unit">per active dev / month</span></p>
+        <p class="plan-billing" data-monthly="Billed monthly" data-yearly="$348 per dev, billed yearly">$348 per dev, billed yearly</p>
+        <a href="https://xolvyn.dev/signup?plan=team" class="btn btn-primary plan-cta">Start 14-day trial</a>
+        <ul class="plan-features">
+          <li class="plan-inherit">Everything in Starter, plus:</li>
+          <li>Unlimited active developers</li>
+          <li>Auto-Fix: the fix opened as a pull request</li>
+          <li>Eng-lead dashboard</li>
+          <li>Roles &amp; permissions</li>
+          <li>Priority support</li>
+        </ul>
+      </article>
+
+      <article class="plan" aria-labelledby="plan-enterprise-name">
+        <h2 class="plan-name" id="plan-enterprise-name">Enterprise</h2>
+        <p class="plan-for">For organizations with security and compliance requirements.</p>
+        <p class="plan-price"><span class="plan-amount">Custom</span></p>
+        <p class="plan-billing">Annual contract &middot; volume pricing</p>
+        <a href="mailto:hello@xolvyn.dev?subject=Xolvyn%20Enterprise" class="btn plan-cta">Talk to sales</a>
+        <ul class="plan-features">
+          <li class="plan-inherit">Everything in Team, plus:</li>
+          <li>SSO / SAML</li>
+          <li>Self-hosted or air-gapped deployment</li>
+          <li>Audit logs &amp; SARIF export</li>
+          <li>Custom DPA &amp; security review</li>
+          <li>Dedicated support &amp; SLA</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="plans-fineprint">Prices in USD. An active developer is anyone who opens a pull request in a billing month &mdash; managers and new hires reading the map don&rsquo;t count. Every plan: GitHub &amp; GitLab, OAuth-only access, zero code retention.</p>
+
+    <div class="founding-strip">
+      <p><strong>On the waitlist?</strong> Founding members get Team at <strong>$19 per developer / month, locked in for life.</strong></p>
+      <a href="/#waitlist" class="founding-strip-link">Join the waitlist &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section section--lg" aria-labelledby="compare-heading">
+  <div class="container">
+    <div class="pricing-head fade-up">
+      <div class="section-label">// COMPARE PLANS</div>
+      <h2 class="section-title" id="compare-heading">Every feature, side by side.</h2>
+      <p class="section-sub">Every plan runs on the same map of your codebase. Higher plans add private code, Auto-Fix, and the controls bigger teams need.</p>
+    </div>
+
+    <div class="compare-wrap fade-up" role="region" aria-labelledby="compare-heading" tabindex="0">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col"><span class="sr-only">Feature</span></th>
+            <th scope="col">Free</th>
+            <th scope="col">Starter</th>
+            <th scope="col" class="is-featured">Team</th>
+            <th scope="col">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="compare-group"><th scope="rowgroup" colspan="5"><span>Usage</span></th></tr>
+          <tr><th scope="row">Public repositories</th><td>Unlimited</td><td>Unlimited</td><td class="is-featured">Unlimited</td><td>Unlimited</td></tr>
+          <tr><th scope="row">Private repositories</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Active developers</th><td>Unlimited</td><td>Up to 10</td><td class="is-featured">Unlimited</td><td>Unlimited</td></tr>
+          <tr><th scope="row">Viewers (managers, new hires)</th><td>Free</td><td>Free</td><td class="is-featured">Free</td><td>Free</td></tr>
+        </tbody>
+        <tbody>
+          <tr class="compare-group"><th scope="rowgroup" colspan="5"><span>Understand</span></th></tr>
+          <tr><th scope="row">Codebase map &amp; dependency graph</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Guided onboarding path</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Risk map (load-bearing, tangled, fragile files)</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">@mentor questions</th><td>50 / month</td><td>Unlimited</td><td class="is-featured">Unlimited</td><td>Unlimited</td></tr>
+        </tbody>
+        <tbody>
+          <tr class="compare-group"><th scope="rowgroup" colspan="5"><span>Defend</span></th></tr>
+          <tr><th scope="row">PR review with grade &amp; findings</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Findings ranked by blast radius</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">50+ security checks &amp; CVE scanning</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Auto-Fix pull requests</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">SARIF export</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+        </tbody>
+        <tbody>
+          <tr class="compare-group"><th scope="rowgroup" colspan="5"><span>Team &amp; admin</span></th></tr>
+          <tr><th scope="row">GitHub &amp; GitLab</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Eng-lead dashboard</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Roles &amp; permissions</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">SSO / SAML</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Audit logs</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+        </tbody>
+        <tbody>
+          <tr class="compare-group"><th scope="rowgroup" colspan="5"><span>Security &amp; deployment</span></th></tr>
+          <tr><th scope="row">OAuth-only access, zero code retention</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Never trained on your code</th><td><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td><td class="is-featured"><span class="yes"><span class="sr-only">Included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Self-hosted or air-gapped deployment</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+          <tr><th scope="row">Custom DPA &amp; security review</th><td><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="no"><span class="sr-only">Not included</span></span></td><td class="is-featured"><span class="no"><span class="sr-only">Not included</span></span></td><td><span class="yes"><span class="sr-only">Included</span></span></td></tr>
+        </tbody>
+        <tbody>
+          <tr class="compare-group"><th scope="rowgroup" colspan="5"><span>Support</span></th></tr>
+          <tr><th scope="row">Support</th><td>Community</td><td>Email</td><td class="is-featured">Priority</td><td>Dedicated + SLA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING FAQ -->
+<section class="section section--lg" aria-labelledby="pricing-faq-heading">
+  <div class="container">
+    <h2 class="section-title fade-up" id="pricing-faq-heading" style="text-align:center">Pricing questions</h2>
+
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What counts as an active developer?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Anyone who opens a pull request on a connected private repository during a billing month. People who only read the map or view the dashboard &mdash; engineering managers, new hires still ramping up &mdash; don&rsquo;t count, so you never pay for them.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Is there a free trial?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Yes. Starter and Team include a 14-day free trial on your private repositories. Public repositories are free on every plan, forever.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Can I switch between monthly and yearly billing?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Yes. Yearly billing saves 20%. You can switch billing period or change plans at any time, and the change applies from your next billing cycle.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">I joined the waitlist. What is founding pricing?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Teams who join the waitlist before general availability get the Team plan at $19 per active developer per month, locked in for life.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Does any plan store or train on my code?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>No &mdash; on every plan, including Free. Xolvyn shallow-clones your repository, analyzes it in memory, and deletes it immediately. Access is OAuth-only, and your code is never used to train any model.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section section--lg cta-band" aria-labelledby="pricing-cta-heading">
+  <div class="container">
+    <div class="cta-band-inner">
+      <div class="cta-band-glow" aria-hidden="true"></div>
+      <h2 class="section-title fade-up" id="pricing-cta-heading" style="text-align:center;margin:0 auto 16px">Start with a public repo. It&rsquo;s free.</h2>
+      <p class="section-sub fade-up" style="text-align:center;margin:0 auto 32px">See your codebase map, security grade, and blast radius &mdash; then bring your team.</p>
+      <div class="pricing-cta-row fade-up">
+        <a href="https://xolvyn.dev/signup?plan=free" class="btn lp-hero-cta-primary">Start free<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
+        <a href="mailto:hello@xolvyn.dev?subject=Xolvyn%20Enterprise" class="btn btn-ghost lp-hero-cta-ghost">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo-link" aria-label="Xolvyn — home">
+          <img src="/Xolvyn_Full_Lockup.webp" srcset="/Xolvyn_Full_Lockup.webp 1x, /Xolvyn_Full_Lockup@2x.webp 2x" alt="Xolvyn — codebase intelligence for engineering teams" class="footer-logo-img" width="1200" height="400" loading="lazy">
+        </a>
+        <p>One map of your codebase &mdash; onboard new engineers in days and defend every pull request. Built for teams.</p>
+        <p class="footer-copy">&copy; 2026 Xolvyn. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="/#features">Features</a>
+        <a href="/#how-it-works">How it works</a>
+        <a href="/pricing" class="active">Pricing</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <button type="button" class="footer-modal-btn" onclick="openModal('about-modal')">About</button>
+        <a href="/careers">Careers</a>
+        <a href="/blog">Blog</a>
+        <a href="mailto:hello@xolvyn.dev">Contact</a>
+      </div>
+      <div>
+        <h4>Stay in Touch</h4>
+        <a href="https://x.com/xolvyn" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://github.com/xolvyn" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/company/xolvyn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:hello@xolvyn.dev">hello@xolvyn.dev</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-tagline">Built for engineering teams who give a damn about their codebase.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MODALS ===== -->
+<!-- About modal — same content/pattern as index.html so the footer "About" link works here too -->
+<div class="modal-overlay" id="about-modal" onclick="closeModalIfOverlay(event, 'about-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('about-modal')" aria-label="Close">&times;</button>
+    <div class="modal-icon" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.25)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><circle cx="12" cy="8" r="1" fill="#3B82F6"/></svg>
+    </div>
+    <h3>About Xolvyn</h3>
+    <p>Xolvyn is building the intelligence layer for modern codebases — an AI-powered platform that maps your architecture, audits your security, and ranks every finding by blast radius so teams fix what can actually break things first.</p>
+    <p>We're a small team of engineers who've felt the pain firsthand: 3-week onboarding, invisible dependencies, security issues discovered at 2am. Xolvyn is what we wished existed at every company we've worked at.</p>
+    <p class="modal-meta">Launching August 2026 &middot; <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a></p>
+  </div>
+</div>
+
+<script defer src="script.js"></script>
+</body>
+</html>

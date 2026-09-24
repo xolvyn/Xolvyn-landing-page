@@ -21,6 +21,7 @@ dashboard, with no install required.
 
 ## Core pages
 - [Home](https://getxolvyn.com): Product overview, features, pricing, FAQ, waitlist.
+- [Pricing](https://getxolvyn.com/pricing): Free, Starter, Team, and Enterprise plans, billed per active developer; feature comparison.
 - [Blog](https://getxolvyn.com/blog): Code security, dependency graphs, engineering onboarding.
 - [How to Onboard New Engineers in 3 Days](https://getxolvyn.com/articles/onboard-engineers-codebase-3-days): Systematic 3-day framework for cutting new engineer ramp-up time.
 - [Careers](https://getxolvyn.com/careers): Open roles — full-stack and AI/ML developer internships.
@@ -34,6 +35,6 @@ dashboard, with no install required.
 - Built for teams: runs in the cloud from a browser, no install/binary/agent; seats, roles, and an eng-lead dashboard.
 - @mentor: AI assistant grounded in your real dependency graph, not generic training data.
 - Privacy: shallow clone, in-memory analysis, immediate deletion; OAuth-only; never trains on user code.
-- Free for public repositories; Team and Enterprise tiers.
+- Free for public repositories; Starter, Team, and Enterprise plans billed per active developer (anyone who opens a pull request in a month); viewers are free.
 - Contact: hello@xolvyn.dev
 - Social: https://x.com/xolvyn | https://github.com/xolvyn | https://www.linkedin.com/company/xolvyn

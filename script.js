@@ -131,6 +131,20 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 
+// ===== PRICING — MONTHLY / YEARLY TOGGLE =====
+// Prices carry both values as data-monthly / data-yearly; the markup ships
+// with the yearly ones so the page reads correctly without JS.
+const billingButtons = document.querySelectorAll('.billing-toggle button[data-billing]');
+billingButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const period = btn.dataset.billing;
+    billingButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.billing === period)));
+    document.querySelectorAll('[data-monthly][data-yearly]').forEach(el => {
+      el.textContent = el.dataset[period];
+    });
+  });
+});
+
 // ===== WAITLIST FORM — TWO-STEP FLOW =====
 // =====================================================================
 // EMAIL STORAGE STRATEGY
