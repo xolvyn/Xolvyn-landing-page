@@ -443,7 +443,22 @@ img {
 }
 
 .nav-cta {
-  flex-shrink: 0
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px
+}
+
+/* Returning users: plain text link beside the Start free button */
+.nav-signin {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s
+}
+
+.nav-signin:hover {
+  color: #fff
 }
 
 .btn-nav {
@@ -2249,96 +2264,15 @@ img {
   line-height: 1.75
 }
 
-/* ===== WAITLIST CTA ===== */
-.final-cta {
-  border-top: 1px solid rgba(255, 255, 255, 0.05)
-}
-
-.waitlist-inner {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative
-}
-
-.waitlist-glow {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  height: 300px;
-  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
-  pointer-events: none
-}
-
-/* Plan selection banner (above form) */
-.plan-banner {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px 10px 14px;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 0 auto 18px;
-  backdrop-filter: blur(8px);
-  animation: slideInBanner 0.4s ease
-}
-
-@keyframes slideInBanner {
-  from {
-    opacity: 0;
-    transform: translateY(-8px)
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0)
-  }
-}
-
-.plan-banner-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 8px currentColor
-}
-
-.plan-banner-text {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 500
-}
-
-.plan-banner-text strong {
-  font-weight: 700
-}
-
-.plan-banner-close {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  padding: 0 0 0 4px;
-  transition: color 0.2s
-}
-
-.plan-banner-close:hover {
-  color: rgba(255, 255, 255, 0.85)
-}
-
-.waitlist-form {
+/* ===== TRY-A-PUBLIC-REPO FORM (final CTA) ===== */
+.repo-form {
   max-width: 480px;
   margin: 0 auto 12px;
   display: flex;
   gap: 10px
 }
 
-.waitlist-form input {
+.repo-form input {
   flex: 1;
   padding: 13px 16px;
   background: rgba(255, 255, 255, 0.03);
@@ -2351,22 +2285,38 @@ img {
   transition: border 0.2s
 }
 
-.waitlist-form input:focus {
+.repo-form input:focus {
   border-color: #3B82F6;
   background: rgba(59, 130, 246, 0.04)
 }
 
-.waitlist-form input::placeholder {
-  color: rgba(255, 255, 255, 0.2)
+.repo-form input::placeholder {
+  color: rgba(255, 255, 255, 0.35)
 }
 
-.waitlist-note {
+.repo-note {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
-  margin: 0 0 40px
+  margin: 0 0 20px
 }
 
-.waitlist-error {
+.repo-alt {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0
+}
+
+.repo-alt a {
+  color: #60A5FA;
+  text-decoration: underline;
+  text-underline-offset: 2px
+}
+
+.repo-alt a:hover {
+  color: #93C5FD
+}
+
+.repo-error {
   max-width: 480px;
   margin: -4px auto 16px;
   font-size: 13px;
@@ -2375,203 +2325,9 @@ img {
   text-align: center
 }
 
-.waitlist-form input.input-error {
+.repo-form input.input-error {
   border-color: #EF4444;
   background: rgba(239, 68, 68, 0.05)
-}
-
-.step2-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 8px
-}
-
-.step2-sub {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.35);
-  margin-bottom: 24px
-}
-
-.waitlist-success {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #5fbe82;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 16px 24px;
-  background: rgba(34, 197, 94, 0.06);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  border-radius: 12px;
-  max-width: 400px;
-  margin: 0 auto
-}
-
-.waitlist-proof {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  flex-wrap: wrap
-}
-
-.wp-item {
-  text-align: center
-}
-
-.wp-item strong {
-  display: block;
-  font-size: 20px;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.85);
-  font-family: 'JetBrains Mono', monospace
-}
-
-.wp-item span {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.3)
-}
-
-.wp-sep {
-  width: 1px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.06)
-}
-
-/* ===== INVOLVEMENT CARDS ===== */
-.involvement-options {
-  max-width: 480px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: left
-}
-
-.involvement-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 18px 20px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  cursor: pointer;
-  transition: all 0.25s;
-  position: relative
-}
-
-.involvement-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.12)
-}
-
-.involvement-card input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none
-}
-
-.involvement-radio {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: all 0.25s;
-  position: relative
-}
-
-.involvement-radio::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #fff;
-  transition: transform 0.2s
-}
-
-.involvement-card input[type="radio"]:checked~.involvement-radio::after {
-  transform: translate(-50%, -50%) scale(1)
-}
-
-.involvement-card:has(input[type="radio"]:checked) {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04)
-}
-
-.involvement-card:has(input[type="radio"]:checked) .involvement-radio {
-  border-color: rgba(255, 255, 255, 0.4)
-}
-
-.involvement-card[data-accent="#3B82F6"]:has(input[type="radio"]:checked) {
-  border-color: #3B82F6;
-  background: rgba(59, 130, 246, 0.06)
-}
-
-.involvement-card[data-accent="#3B82F6"]:has(input[type="radio"]:checked) .involvement-radio {
-  border-color: #3B82F6
-}
-
-.involvement-card[data-accent="#3B82F6"]:has(input[type="radio"]:checked) .involvement-radio::after {
-  background: #3B82F6
-}
-
-.involvement-card[data-accent="#22C55E"]:has(input[type="radio"]:checked) {
-  border-color: #22C55E;
-  background: rgba(34, 197, 94, 0.06)
-}
-
-.involvement-card[data-accent="#22C55E"]:has(input[type="radio"]:checked) .involvement-radio {
-  border-color: #22C55E
-}
-
-.involvement-card[data-accent="#22C55E"]:has(input[type="radio"]:checked) .involvement-radio::after {
-  background: #22C55E
-}
-
-.involvement-text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px
-}
-
-.involvement-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9)
-}
-
-.involvement-desc {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.35);
-  line-height: 1.5
-}
-
-#waitlist-step-2 {
-  animation: fadeSlideUp 0.4s ease forwards
-}
-
-@keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px)
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0)
-  }
 }
 
 /* ===== FOOTER ===== */
@@ -2904,28 +2660,17 @@ img {
     font-size: 16px
   }
 
-  /* Waitlist form */
-  .waitlist-form {
+  /* Try-a-public-repo form */
+  .repo-form {
     flex-direction: column;
     gap: 10px
   }
 
-  .waitlist-form input,
-  .waitlist-form button {
+  .repo-form input,
+  .repo-form button {
     width: 100%;
     min-height: 48px;
     font-size: 16px
-  }
-
-  /* Plan banner */
-  .plan-banner {
-    max-width: 100%;
-    font-size: 12px;
-    padding: 9px 14px 9px 12px
-  }
-
-  .plan-banner-text {
-    font-size: 12px
   }
 
   /* ===== MOBILE MOCKUP — compact ===== */
@@ -3191,51 +2936,6 @@ img {
 
   .footer-logo-img {
     height: 32px
-  }
-
-  /* Waitlist proof bar */
-  .waitlist-proof {
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 12px;
-    margin-top: 32px;
-    padding-top: 24px;
-    flex-wrap: wrap
-  }
-
-  .wp-sep {
-    display: none
-  }
-
-  .wp-item strong {
-    font-size: 18px
-  }
-
-  .wp-item span {
-    font-size: 11px
-  }
-
-  /* Step 2 — involvement */
-  .step2-title {
-    font-size: 18px;
-    line-height: 1.3
-  }
-
-  .step2-sub {
-    font-size: 12px
-  }
-
-  .involvement-card {
-    padding: 14px 14px
-  }
-
-  .involvement-label {
-    font-size: 14px
-  }
-
-  .involvement-desc {
-    font-size: 12px;
-    line-height: 1.5
   }
 
   /* Hero glow softer on mobile */
@@ -5708,7 +5408,7 @@ a.blog-card:hover {
 }
 
 /* Minimal muted status pill */
-/* Two-segment status pill: green "private beta" badge + launch date */
+/* Two-segment status pill: green "now live" badge + what's-new link */
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -5759,12 +5459,17 @@ a.blog-card:hover {
   flex-shrink: 0
 }
 
-/* right segment — launch date */
+/* right segment — link to what's new */
 .hero-pill-launch {
   font-size: 13px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.88);
-  white-space: nowrap
+  white-space: nowrap;
+  transition: color 0.2s
+}
+
+a.hero-pill-launch:hover {
+  color: #93C5FD
 }
 
 @keyframes badgePulseGreen {

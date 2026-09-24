@@ -92,12 +92,44 @@
       ],
       "description": "Xolvyn is codebase intelligence built for engineering teams, powered by one AST-based map of your codebase. Understand: new engineers get a guided path through the architecture and @mentor answers grounded in your real dependency graph. Defend: every pull request is reviewed in GitHub, findings ranked by blast radius (how many files depend on the affected code), and the fix opened as a pull request for human review. Hosted, in the browser — no install or agent required.",
       "url": "https://getxolvyn.com/",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "0",
+        "highPrice": "36",
+        "offerCount": "4",
+        "url": "https://getxolvyn.com/pricing"
+      },
       "publisher": { "@id": "https://getxolvyn.com/#organization" }
     },
     {
       "@type": "FAQPage",
       "@id": "https://getxolvyn.com/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sign up at xolvyn.dev with GitHub or GitLab, pick a repository, and Xolvyn maps it and posts its first review in minutes. Public repositories are free forever; Starter and Team include a 14-day trial on private code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What access does Xolvyn need to my repositories?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Xolvyn signs in with GitHub or GitLab OAuth and only works on the repositories you choose to connect. You can disconnect a repository, or your whole account, at any time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I joined the waitlist. What happens now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sign up with the same email address you used for the waitlist. Founding pricing — Team at $19 per active developer per month, locked in for life — applies to your workspace."
+          }
+        },
         {
           "@type": "Question",
           "name": "How is Xolvyn different from local code-intelligence CLI tools?",
@@ -172,8 +204,10 @@
       <a href="/blog">Blog</a>
       <a href="#faq">FAQ</a>
     </div>
+    <!-- PLACEHOLDER URLS: xolvyn.dev/login and xolvyn.dev/signup — confirm before launch -->
     <div class="nav-cta">
-      <a href="#waitlist" class="btn btn-ghost btn-nav">Get Early Access &rarr;</a>
+      <a href="https://xolvyn.dev/login" class="nav-signin">Sign in</a>
+      <a href="https://xolvyn.dev/signup?ref=nav" class="btn btn-primary btn-nav">Start free &rarr;</a>
     </div>
     <button class="hamburger" aria-label="Menu" id="hamburger-btn">
       <span></span><span></span><span></span>
@@ -186,7 +220,8 @@
   <a href="#pricing">Pricing</a>
   <a href="/blog">Blog</a>
   <a href="#faq">FAQ</a>
-  <a href="#waitlist" class="mobile-cta">Get Early Access &rarr;</a>
+  <a href="https://xolvyn.dev/login">Sign in</a>
+  <a href="https://xolvyn.dev/signup?ref=nav" class="mobile-cta">Start free &rarr;</a>
 </div>
 
 <main id="main-content" tabindex="-1">
@@ -201,10 +236,10 @@
       <div class="hero-pill">
         <span class="hero-pill-beta">
           <span class="hero-pill-dot"></span>
-          Now in private beta
+          Now live
         </span>
         <span class="hero-pill-sep" aria-hidden="true"></span>
-        <span class="hero-pill-launch">Launching 2026</span>
+        <a href="https://xolvyn.dev/changelog" class="hero-pill-launch">See what&rsquo;s new &rarr;</a>
       </div>
 
       <h1 class="lp-hero-title" id="hero-title">Onboard in days. Fix what actually <span class="lp-hero-em">breaks</span> first.</h1>
@@ -212,9 +247,11 @@
       <p class="lp-hero-sub">Xolvyn maps how every file in your codebase connects &mdash; so new engineers get productive in days, and every pull request gets reviewed, ranked by what it can actually break, and fixed with a PR you can merge. Built for your team, not your terminal.</p>
 
       <div class="lp-hero-cta">
-        <a href="#waitlist" class="btn btn-primary lp-hero-cta-primary">Get Early Access<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
-        <a href="#how-it-works" class="btn btn-ghost lp-hero-cta-ghost">See how it works</a>
+        <a href="https://xolvyn.dev/signup?ref=hero" class="btn btn-primary lp-hero-cta-primary">Start free<span class="lp-hero-arrow" aria-hidden="true">&rarr;</span></a>
+        <a href="mailto:hello@xolvyn.dev?subject=Xolvyn%20demo" class="btn btn-ghost lp-hero-cta-ghost">Book a demo</a>
       </div>
+
+      <p class="lp-hero-micro">Free for public repos &middot; No credit card &middot; No install</p>
 
     </div>
 
@@ -484,8 +521,8 @@
     <p class="plans-fineprint">Prices in USD. An active developer is anyone who opens a pull request in a billing month &mdash; managers and new hires reading the map don&rsquo;t count. Every plan: GitHub &amp; GitLab, OAuth-only access, zero code retention.</p>
 
     <div class="founding-strip fade-up">
-      <p><strong>On the waitlist?</strong> Founding members get Team at <strong>$19 per developer / month, locked in for life.</strong></p>
-      <a href="#waitlist" class="founding-strip-link">Join the waitlist &rarr;</a>
+      <p><strong>Joined the waitlist?</strong> Sign up with the same email and Team is <strong>$19 per developer / month, locked in for life.</strong></p>
+      <a href="https://xolvyn.dev/signup?plan=team&amp;founding=1" class="founding-strip-link">Claim founding pricing &rarr;</a>
     </div>
 
     <a href="/pricing" class="plans-compare-link">Compare every feature &rarr;</a>
@@ -498,6 +535,18 @@
     <h2 class="section-title fade-up" id="faq-heading">Frequently asked questions</h2>
 
     <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How do I get started?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Sign up at xolvyn.dev with GitHub or GitLab, pick a repository, and Xolvyn maps it and posts its first review in minutes. Public repositories are free forever; Starter and Team include a 14-day trial on private code.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What access does Xolvyn need to my repositories?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Xolvyn signs in with GitHub or GitLab OAuth and only works on the repositories you choose to connect. You can disconnect a repository, or your whole account, at any time.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" tabindex="0" role="button" aria-expanded="false">I joined the waitlist. What happens now?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
+        <div class="faq-a"><p>Sign up with the same email address you used for the waitlist. Founding pricing &mdash; Team at $19 per active developer per month, locked in for life &mdash; applies to your workspace.</p></div>
+      </div>
       <div class="faq-item">
         <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How is Xolvyn different from local code-intelligence CLI tools?<svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></div>
         <div class="faq-a"><p>Those tools make one developer&rsquo;s AI agent smarter on their own machine. Xolvyn is built for the team: a workspace humans read, reviews posted right in your pull requests, seats, and a dashboard your eng lead can actually read. No install, no binary, no agent required.</p></div>
@@ -527,60 +576,22 @@
 </section>
 
 <!-- ===== SECTION 8 — FINAL CTA ===== -->
-<section class="section section--lg cta-band" id="waitlist">
+<!-- PLACEHOLDER URL: the form submits to xolvyn.dev/analyze?repo=… — confirm before launch -->
+<section class="section section--lg cta-band" id="get-started" aria-labelledby="cta-heading">
   <div class="container">
     <div class="cta-band-inner">
       <div class="cta-band-glow" aria-hidden="true"></div>
-      <h2 class="section-title fade-up" style="text-align:center;max-width:640px;margin:0 auto 16px">Stop reviewing pull requests blind.</h2>
-      <p class="section-sub fade-up" style="text-align:center;margin:0 auto 40px">Get early access and let Xolvyn review, rank, and fix &mdash; in the place your team already works.</p>
+      <h2 class="section-title fade-up" id="cta-heading" style="text-align:center;max-width:640px;margin:0 auto 16px">Stop reviewing pull requests blind.</h2>
+      <p class="section-sub fade-up" style="text-align:center;margin:0 auto 40px">Paste any public GitHub or GitLab repo and see its map, security grade, and blast radius &mdash; free.</p>
 
-      <!-- Email form -->
-      <div class="waitlist-form fade-up" id="waitlist-form-main">
-        <input type="email" placeholder="your@email.com" id="waitlist-email" aria-label="Your work email address">
-        <button class="btn btn-primary" onclick="handleWaitlistStep1()">Get Early Access &rarr;</button>
-      </div>
-      <p class="waitlist-error" id="waitlist-error" role="alert" aria-live="assertive" hidden></p>
-      <p class="waitlist-note fade-up" id="waitlist-note" style="text-align:center">Free for public repos &middot; No install &middot; Launching 2026</p>
-
-      <!-- Step 2: Involvement -->
-      <div id="waitlist-step-2" style="display:none">
-        <h3 class="step2-title">One more thing &mdash; how do you want to be involved?</h3>
-        <p class="step2-sub">This helps us prioritize who gets access first and how we reach out.</p>
-        <div class="involvement-options">
-          <label class="involvement-card" data-value="notify">
-            <input type="radio" name="involvement" value="notify">
-            <div class="involvement-radio"></div>
-            <div class="involvement-text">
-              <span class="involvement-label">Notify me at launch</span>
-              <span class="involvement-desc">Send me an email when Xolvyn goes live. I want to explore it then.</span>
-            </div>
-          </label>
-          <label class="involvement-card" data-value="beta" data-accent="#3B82F6">
-            <input type="radio" name="involvement" value="beta">
-            <div class="involvement-radio"></div>
-            <div class="involvement-text">
-              <span class="involvement-label" style="color:#60A5FA">I want to beta test</span>
-              <span class="involvement-desc">I&rsquo;ll give feedback, report issues, and help shape the product roadmap.</span>
-            </div>
-          </label>
-          <label class="involvement-card" data-value="founding" data-accent="#22C55E">
-            <input type="radio" name="involvement" value="founding">
-            <div class="involvement-radio"></div>
-            <div class="involvement-text">
-              <span class="involvement-label" style="color:#4ADE80">My team is ready &mdash; founding access</span>
-              <span class="involvement-desc">We want to pay from day one and lock in founding pricing. I want direct founder contact.</span>
-            </div>
-          </label>
-        </div>
-        <button class="btn btn-primary" id="waitlist-step2-btn" onclick="handleWaitlistStep2()" disabled style="margin:28px auto 0;display:block;opacity:0.4;cursor:not-allowed">Confirm my spot &rarr;</button>
-        <p class="waitlist-error" id="waitlist-error-2" role="alert" aria-live="assertive" style="margin-top:14px" hidden></p>
-      </div>
-
-      <!-- Success state -->
-      <div class="waitlist-success" id="waitlist-success">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        You&rsquo;re on the list. We&rsquo;ll be in touch soon.
-      </div>
+      <form class="repo-form fade-up" id="repo-form" action="https://xolvyn.dev/analyze" method="get" novalidate>
+        <label for="repo-url" class="sr-only">Public repository URL</label>
+        <input type="text" inputmode="url" autocomplete="off" spellcheck="false" name="repo" id="repo-url" placeholder="github.com/owner/repo" aria-describedby="repo-error">
+        <button type="submit" class="btn btn-primary">Analyze repo &rarr;</button>
+      </form>
+      <p class="repo-error" id="repo-error" role="alert" aria-live="assertive" hidden></p>
+      <p class="repo-note fade-up">Free for public repos &middot; No credit card &middot; No install</p>
+      <p class="repo-alt fade-up">Private code? <a href="https://xolvyn.dev/signup?plan=team&amp;ref=cta">Start a 14-day trial</a> or <a href="mailto:hello@xolvyn.dev?subject=Xolvyn%20Enterprise">talk to sales</a>.</p>
     </div>
   </div>
 </section>
@@ -601,9 +612,11 @@
       <div>
         <h4>Product</h4>
         <a href="#features">Features</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
+        <a href="/pricing">Pricing</a>
+        <a href="https://xolvyn.dev/docs">Docs</a>
+        <a href="https://xolvyn.dev/changelog">Changelog</a>
+        <a href="https://status.xolvyn.dev">Status</a>
+        <a href="https://xolvyn.dev/login">Sign in</a>
       </div>
       <div>
         <h4>Company</h4>
@@ -640,7 +653,7 @@
     <h3>About Xolvyn</h3>
     <p>Xolvyn is building the intelligence layer for modern codebases — a platform that runs 50+ security checks, maps your architecture, and ranks every finding by blast radius so teams fix what can break things first.</p>
     <p>We're a small team of engineers who've felt the pain firsthand: 3-week onboarding, invisible dependencies, security issues discovered at 2am. Xolvyn is what we wished existed at every company we've worked at.</p>
-    <p class="modal-meta">Launching August 2026 &middot; <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a></p>
+    <p class="modal-meta">Live at <a href="https://xolvyn.dev" style="color:#60A5FA">xolvyn.dev</a> &middot; <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a></p>
   </div>
 </div>
 
@@ -655,10 +668,10 @@
       <li><strong>Zero code retention.</strong> Xolvyn performs a shallow git clone, runs analysis in memory, and immediately deletes your source. We store only computed metadata — never your actual code.</li>
       <li><strong>No AI training on your code.</strong> Your codebase is never used to train any AI model — ours or third-party.</li>
       <li><strong>OAuth-only authentication.</strong> We use GitHub and GitLab OAuth. Your tokens are encrypted at rest with AES-256 and transmitted over TLS 1.3.</li>
-      <li><strong>SOC 2 Type II in progress.</strong> Targeting certification before general availability. Enterprise self-hosted option available for air-gapped environments.</li>
+      <li><strong>SOC 2 Type II in progress.</strong> Enterprise self-hosted option available for air-gapped environments.</li>
       <li><strong>GDPR &amp; CCPA compliant.</strong> Right to data deletion honored within 30 days. Email <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a> for requests.</li>
     </ul>
-    <p class="modal-meta">Last updated: 2026 &middot; A full security whitepaper will be published at launch.</p>
+    <p class="modal-meta">Last updated: 2026 &middot; Need our security whitepaper? Email <a href="mailto:hello@xolvyn.dev?subject=Security%20whitepaper" style="color:#60A5FA">hello@xolvyn.dev</a>.</p>
   </div>
 </div>
 
@@ -669,11 +682,11 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
     <h3>Privacy Policy</h3>
-    <p><strong>Data we collect:</strong> Only your email address (waitlist), GitHub OAuth tokens (encrypted, when product launches), and computed metadata from your analyses.</p>
+    <p><strong>Data we collect:</strong> Your account email, GitHub or GitLab OAuth tokens (encrypted), and computed metadata from your analyses.</p>
     <p><strong>Data we never collect:</strong> Your source code, your conversations with @mentor, your IP address for tracking, or any data beyond what's needed for the product to function.</p>
-    <p><strong>Third parties:</strong> Web3Forms (waitlist email delivery), Gemini AI (for @mentor — no code training, no retention). That's it.</p>
+    <p><strong>Third parties:</strong> Gemini AI (for @mentor — no code training, no retention).</p>
     <p><strong>Your rights:</strong> Email <a href="mailto:hello@xolvyn.dev" style="color:#60A5FA">hello@xolvyn.dev</a> to access, export, or delete your data. We honor requests within 30 days.</p>
-    <p class="modal-meta">A complete privacy policy will be published at product launch.</p>
+    <p class="modal-meta"><a href="https://xolvyn.dev/privacy" style="color:#60A5FA">Read the full privacy policy &rarr;</a></p>
   </div>
 </div>
 
@@ -684,14 +697,14 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
     </div>
     <h3>Terms of Service</h3>
-    <p>Xolvyn is currently in pre-launch. By joining the waitlist, you agree that:</p>
+    <p>The short version of what you agree to when you create a Xolvyn account:</p>
     <ul class="modal-list">
-      <li>Your email will be used to notify you about Xolvyn's launch and product updates.</li>
-      <li>You can unsubscribe at any time using the link in any email we send.</li>
-      <li>Founding member pricing — locked in for life — applies only to waitlist signups before general availability.</li>
-      <li>Beta participation, if you opt in, includes providing product feedback in good faith.</li>
+      <li>Xolvyn only works on the repositories you connect, and you can disconnect them at any time.</li>
+      <li>Auto-Fix opens pull requests for your review &mdash; nothing merges without a human approving it.</li>
+      <li>Founding member pricing &mdash; locked in for life &mdash; applies to teams who joined the waitlist before general availability.</li>
+      <li>Product emails can be turned off at any time using the link in any email we send.</li>
     </ul>
-    <p class="modal-meta">Full terms of service will be published at product launch.</p>
+    <p class="modal-meta"><a href="https://xolvyn.dev/terms" style="color:#60A5FA">Read the full terms of service &rarr;</a></p>
   </div>
 </div>
 

@@ -3,7 +3,7 @@
 > how every file connects, then helps new engineers onboard in days and reviews
 > every pull request — ranking findings by blast radius and opening the fix as a
 > pull request you merge. Built for your team, not your terminal. Hosted; no
-> install, no binary, no agent required. Private beta; launching 2026.
+> install, no binary, no agent required. Live now; sign up at xolvyn.dev.
 
 ## What is Xolvyn?
 Xolvyn is codebase intelligence built for engineering teams, powered by one
@@ -20,7 +20,7 @@ that serve one developer's AI agent, Xolvyn serves the team: seats, roles, and a
 dashboard, with no install required.
 
 ## Core pages
-- [Home](https://getxolvyn.com): Product overview, features, pricing, FAQ, waitlist.
+- [Home](https://getxolvyn.com): Product overview, features, pricing, FAQ, and a free public-repo analysis.
 - [Pricing](https://getxolvyn.com/pricing): Free, Starter, Team, and Enterprise plans, billed per active developer; feature comparison.
 - [Blog](https://getxolvyn.com/blog): Code security, dependency graphs, engineering onboarding.
 - [How to Onboard New Engineers in 3 Days](https://getxolvyn.com/articles/onboard-engineers-codebase-3-days): Systematic 3-day framework for cutting new engineer ramp-up time.
